@@ -1,0 +1,4 @@
+slug: baremetal
+weight: 20
+lang: zh
+description: "RakSmart 裸机云（Bare Metal Cloud）融合了物理服务器的独占性能与云计算的敏捷和弹性，具备分钟级交付能力，是追求极致稳定性和性价比的理想基础设施。"
