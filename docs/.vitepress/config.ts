@@ -1,0 +1,56 @@
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  base: '/rakcloud-docs/',
+  lang: 'zh-CN',
+  title: 'RakCloud 文档中心',
+  description: 'RakCloud 产品文档',
+
+  // 本轮试点只转换了 VPS 一本书，素材里指向其他书（新手指南/OPS知识库等）的站内链接
+  // 暂时无法解析。转换脚本生成的站内链接一律是纯 ASCII slug（不含 %），
+  // 所以含 % 的相对链接必然是本轮未处理的跨书链接，等后续批量转换其余书时再去掉这条规则
+  ignoreDeadLinks: [/%/],
+
+  themeConfig: {
+    nav: [
+      { text: '首页', link: '/' },
+      { text: 'VPS', link: '/vps/product-intro/overview' },
+    ],
+
+    sidebar: {
+      '/vps/': [
+        {
+          text: '产品介绍',
+          items: [
+            { text: '产品概述', link: '/vps/product-intro/overview' },
+            { text: '产品优势', link: '/vps/product-intro/advantages' },
+            { text: '产品类型', link: '/vps/product-intro/product-types' },
+            { text: '区域和可用区', link: '/vps/product-intro/regions-and-zones' },
+          ],
+        },
+        {
+          text: '快速入门',
+          items: [
+            { text: '购买 VPS', link: '/vps/quickstart/purchase' },
+            { text: '登录 VPS', link: '/vps/quickstart/login' },
+          ],
+        },
+        {
+          text: '管理 VPS',
+          items: [
+            { text: '查看已购的 VPS', link: '/vps/manage-vps/view-instances' },
+            { text: '查看 VPS 详情信息', link: '/vps/manage-vps/instance-details' },
+            { text: '执行 VPS 操作', link: '/vps/manage-vps/vps-operations' },
+            { text: '弹性 IP', link: '/vps/manage-vps/elastic-ip' },
+            { text: '独立云盘', link: '/vps/manage-vps/cloud-disk' },
+            { text: '安全组', link: '/vps/manage-vps/security-groups' },
+            { text: 'VPS 升降级', link: '/vps/manage-vps/upgrade-downgrade' },
+            { text: 'VPS 取消', link: '/vps/manage-vps/cancellation' },
+            { text: '账单与续费管理', link: '/vps/manage-vps/billing' },
+            { text: '新开工单', link: '/vps/manage-vps/new-ticket' },
+          ],
+        },
+      ],
+    },
+  },
+})

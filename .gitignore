@@ -1,2 +1,5 @@
 .DS_Store
-docs/**/.obsidian/
+materials/**/.obsidian/
+node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
