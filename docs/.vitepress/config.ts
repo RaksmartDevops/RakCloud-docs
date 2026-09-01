@@ -1,56 +1,42 @@
 import { defineConfig } from 'vitepress'
 
+import vpsSidebar from './sidebar/vps.json'
+import dedicatedserverSidebar from './sidebar/dedicatedserver.json'
+import baremetalSidebar from './sidebar/baremetal.json'
+import beginnersGuideSidebar from './sidebar/beginners-guide.json'
+import opsKnowledgeBaseSidebar from './sidebar/ops-knowledge-base.json'
+
 export default defineConfig({
   base: '/rakcloud-docs/',
   lang: 'zh-CN',
   title: 'RakCloud 文档中心',
   description: 'RakCloud 产品文档',
 
-  // 本轮试点只转换了 VPS 一本书，素材里指向其他书（新手指南/OPS知识库等）的站内链接
-  // 暂时无法解析。转换脚本生成的站内链接一律是纯 ASCII slug（不含 %），
-  // 所以含 % 的相对链接必然是本轮未处理的跨书链接，等后续批量转换其余书时再去掉这条规则
+  // 素材里有一批跨书/跨章节的文件名式相对链接（如 "购买%20RakSmart%20产品.md"），
+  // 这类链接不是纯锚点，转换脚本的 rewrite_links() 只能靠显式的 LINK_FIXES 表逐条
+  // 修复已知案例（见 scripts/convert_material_to_vitepress.py）。已核实并修复了当前
+  // 五本书素材里全部这类案例，但不排除未来新增/编辑素材时再引入同类问题，这条规则
+  // 作为兜底继续保留，避免个别遗漏直接导致构建失败。
   ignoreDeadLinks: [/%/],
 
   themeConfig: {
+    logo: { light: '/logo-new.png', dark: '/logo-new-white.png' },
+
     nav: [
       { text: '首页', link: '/' },
       { text: 'VPS', link: '/vps/product-intro/overview' },
+      { text: '独服', link: '/dedicatedserver/product-intro/overview' },
+      { text: '裸机云', link: '/baremetal/product-intro/overview' },
+      { text: '新手指南', link: '/beginners-guide/about-raksmart/products-and-services' },
+      { text: 'OPS 知识库', link: '/ops-knowledge-base/' },
     ],
 
     sidebar: {
-      '/vps/': [
-        {
-          text: '产品介绍',
-          items: [
-            { text: '产品概述', link: '/vps/product-intro/overview' },
-            { text: '产品优势', link: '/vps/product-intro/advantages' },
-            { text: '产品类型', link: '/vps/product-intro/product-types' },
-            { text: '区域和可用区', link: '/vps/product-intro/regions-and-zones' },
-          ],
-        },
-        {
-          text: '快速入门',
-          items: [
-            { text: '购买 VPS', link: '/vps/quickstart/purchase' },
-            { text: '登录 VPS', link: '/vps/quickstart/login' },
-          ],
-        },
-        {
-          text: '管理 VPS',
-          items: [
-            { text: '查看已购的 VPS', link: '/vps/manage-vps/view-instances' },
-            { text: '查看 VPS 详情信息', link: '/vps/manage-vps/instance-details' },
-            { text: '执行 VPS 操作', link: '/vps/manage-vps/vps-operations' },
-            { text: '弹性 IP', link: '/vps/manage-vps/elastic-ip' },
-            { text: '独立云盘', link: '/vps/manage-vps/cloud-disk' },
-            { text: '安全组', link: '/vps/manage-vps/security-groups' },
-            { text: 'VPS 升降级', link: '/vps/manage-vps/upgrade-downgrade' },
-            { text: 'VPS 取消', link: '/vps/manage-vps/cancellation' },
-            { text: '账单与续费管理', link: '/vps/manage-vps/billing' },
-            { text: '新开工单', link: '/vps/manage-vps/new-ticket' },
-          ],
-        },
-      ],
+      '/vps/': vpsSidebar,
+      '/dedicatedserver/': dedicatedserverSidebar,
+      '/baremetal/': baremetalSidebar,
+      '/beginners-guide/': beginnersGuideSidebar,
+      '/ops-knowledge-base/': opsKnowledgeBaseSidebar,
     },
   },
 })

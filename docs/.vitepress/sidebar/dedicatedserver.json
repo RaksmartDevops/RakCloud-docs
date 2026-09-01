@@ -1,0 +1,65 @@
+[
+  {
+    "text": "产品介绍",
+    "items": [
+      {
+        "text": "产品简介",
+        "link": "/dedicatedserver/product-intro/overview"
+      },
+      {
+        "text": "产品优势",
+        "link": "/dedicatedserver/product-intro/advantages"
+      },
+      {
+        "text": "产品类型",
+        "link": "/dedicatedserver/product-intro/product-types"
+      },
+      {
+        "text": "区域和可用区",
+        "link": "/dedicatedserver/product-intro/regions-and-zones"
+      }
+    ]
+  },
+  {
+    "text": "快速入门",
+    "items": [
+      {
+        "text": "购买物理服务器",
+        "link": "/dedicatedserver/quickstart/purchase"
+      },
+      {
+        "text": "登录物理服务器",
+        "link": "/dedicatedserver/quickstart/login"
+      }
+    ]
+  },
+  {
+    "text": "管理物理服务器",
+    "items": [
+      {
+        "text": "查看已购的物理服务器",
+        "link": "/dedicatedserver/manage-servers/view-servers"
+      },
+      {
+        "text": "查看服务器详细信息",
+        "link": "/dedicatedserver/manage-servers/server-details"
+      },
+      {
+        "text": "执行服务器操作",
+        "link": "/dedicatedserver/manage-servers/server-operations"
+      },
+      {
+        "text": "物理服务器取消",
+        "link": "/dedicatedserver/manage-servers/cancellation"
+      },
+      {
+        "text": "账单与续费管理",
+        "link": "/dedicatedserver/manage-servers/billing"
+      },
+      {
+        "text": "新开工单",
+        "link": "/dedicatedserver/manage-servers/new-ticket"
+      }
+    ]
+  }
+]

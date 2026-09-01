@@ -1,0 +1,179 @@
+[
+  {
+    "text": "了解 RakSmart",
+    "items": [
+      {
+        "text": "产品和服务",
+        "link": "/beginners-guide/about-raksmart/products-and-services"
+      },
+      {
+        "text": "区域和可用区",
+        "link": "/beginners-guide/about-raksmart/regions-and-zones"
+      }
+    ]
+  },
+  {
+    "text": "注册 RakSmart 账号",
+    "items": [
+      {
+        "text": "通过官网首页注册",
+        "link": "/beginners-guide/register-account/register-via-website"
+      },
+      {
+        "text": "使用 QQ 账号快捷注册",
+        "link": "/beginners-guide/register-account/qq-register"
+      }
+    ]
+  },
+  {
+    "text": "了解 RakSmart 控制台",
+    "items": [
+      {
+        "text": "控制台简介",
+        "link": "/beginners-guide/console-overview/console-intro"
+      },
+      {
+        "text": "登录控制台",
+        "link": "/beginners-guide/console-overview/login-console"
+      },
+      {
+        "text": "控制台总览",
+        "link": "/beginners-guide/console-overview/console-dashboard"
+      },
+      {
+        "text": "技术支持",
+        "link": "/beginners-guide/console-overview/tech-support-overview"
+      }
+    ]
+  },
+  {
+    "text": "购买 RakSmart 产品",
+    "items": [
+      {
+        "text": "了解 RakSmart 产品购买方式",
+        "link": "/beginners-guide/buy-products/purchase-methods"
+      },
+      {
+        "text": "购买 RakSmart 产品",
+        "link": "/beginners-guide/buy-products/purchase"
+      }
+    ]
+  },
+  {
+    "text": "管理已购买的产品",
+    "items": [
+      {
+        "text": "产品管理",
+        "link": "/beginners-guide/manage-products/product-management"
+      },
+      {
+        "text": "升降级",
+        "link": "/beginners-guide/manage-products/upgrade-downgrade"
+      },
+      {
+        "text": "产品取消和退订",
+        "link": "/beginners-guide/manage-products/cancellation"
+      }
+    ]
+  },
+  {
+    "text": "钱包管理",
+    "items": [
+      {
+        "text": "账户余额管理",
+        "link": "/beginners-guide/wallet/balance"
+      },
+      {
+        "text": "代金券管理",
+        "link": "/beginners-guide/wallet/vouchers"
+      },
+      {
+        "text": "优惠券管理",
+        "link": "/beginners-guide/wallet/coupons"
+      }
+    ]
+  },
+  {
+    "text": "账户管理",
+    "items": [
+      {
+        "text": "查看账户余额",
+        "link": "/beginners-guide/account/view-balance"
+      },
+      {
+        "text": "查看账户资料",
+        "link": "/beginners-guide/account/profile"
+      },
+      {
+        "text": "用户身份与权限",
+        "link": "/beginners-guide/account/user-roles"
+      },
+      {
+        "text": "为普通用户授权",
+        "link": "/beginners-guide/account/user-permissions"
+      },
+      {
+        "text": "配置联系人和邮件通知",
+        "link": "/beginners-guide/account/contacts"
+      },
+      {
+        "text": "配置付款方式",
+        "link": "/beginners-guide/account/payment-methods"
+      },
+      {
+        "text": "账号安全设置",
+        "link": "/beginners-guide/account/security"
+      },
+      {
+        "text": "其他设置",
+        "link": "/beginners-guide/account/other-settings"
+      }
+    ]
+  },
+  {
+    "text": "账单管理",
+    "items": [
+      {
+        "text": "操作入口",
+        "link": "/beginners-guide/billing/billing-entry"
+      },
+      {
+        "text": "账单管理",
+        "link": "/beginners-guide/billing/billing-management"
+      }
+    ]
+  },
+  {
+    "text": "技术支持",
+    "items": [
+      {
+        "text": "公告信息",
+        "link": "/beginners-guide/technical-support/announcements"
+      },
+      {
+        "text": "文档中心",
+        "link": "/beginners-guide/technical-support/documentation-center"
+      },
+      {
+        "text": "我的工单",
+        "link": "/beginners-guide/technical-support/my-tickets"
+      },
+      {
+        "text": "服务面板密码重置",
+        "link": "/beginners-guide/technical-support/panel-password-reset"
+      },
+      {
+        "text": "设置 SSH 公钥",
+        "link": "/beginners-guide/technical-support/ssh-keys"
+      },
+      {
+        "text": "查看投诉封停",
+        "link": "/beginners-guide/technical-support/abuse-list"
+      },
+      {
+        "text": "联系我们",
+        "link": "/beginners-guide/technical-support/contact-us"
+      }
+    ]
+  }
+]

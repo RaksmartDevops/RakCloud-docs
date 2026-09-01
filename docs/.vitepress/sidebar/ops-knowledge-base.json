@@ -1,0 +1,536 @@
+[
+  {
+    "text": "网络",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "服务器无法ping通如何处理",
+        "link": "/ops-knowledge-base/network/server-not-responding-to-ping"
+      },
+      {
+        "text": "MTR工具安装及使用",
+        "link": "/ops-knowledge-base/network/mtr-installation-and-usage"
+      }
+    ]
+  },
+  {
+    "text": "SSL",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "SSL 证书 FAQ",
+        "link": "/ops-knowledge-base/ssl/ssl-certificate-faq"
+      },
+      {
+        "text": "SSL证书验证方式指南",
+        "link": "/ops-knowledge-base/ssl/ssl-certificate-verification-guide"
+      },
+      {
+        "text": "企业邮箱 FAQ",
+        "link": "/ops-knowledge-base/ssl/enterprise-email-faq"
+      }
+    ]
+  },
+  {
+    "text": "云原生",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "云原生负载均衡",
+        "link": "/ops-knowledge-base/cloud-native/load-balancer"
+      },
+      {
+        "text": "云原生安全组设置",
+        "link": "/ops-knowledge-base/cloud-native/security-group-setup"
+      },
+      {
+        "text": "云原生备份使用操作",
+        "link": "/ops-knowledge-base/cloud-native/backup-guide"
+      },
+      {
+        "text": "Cloud DB MySQL Plus",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "数据库连接1",
+            "link": "/ops-knowledge-base/cloud-native/cloud-db-mysql-plus/database-connection-1"
+          },
+          {
+            "text": "数据库连接2",
+            "link": "/ops-knowledge-base/cloud-native/cloud-db-mysql-plus/database-connection-2"
+          },
+          {
+            "text": "无法连接数据库",
+            "link": "/ops-knowledge-base/cloud-native/cloud-db-mysql-plus/cannot-connect-database"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "销售问题",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "域名注册信息要求",
+        "link": "/ops-knowledge-base/sales-issues/domain-registration-requirements"
+      },
+      {
+        "text": "用户注册与登录",
+        "link": "/ops-knowledge-base/sales-issues/user-registration-and-login"
+      },
+      {
+        "text": "如何注册账号",
+        "link": "/ops-knowledge-base/sales-issues/how-to-register-account"
+      },
+      {
+        "text": "如何下单",
+        "link": "/ops-knowledge-base/sales-issues/how-to-place-order"
+      },
+      {
+        "text": "如何购买裸机云",
+        "link": "/ops-knowledge-base/sales-issues/how-to-purchase-baremetal"
+      }
+    ]
+  },
+  {
+    "text": "操作系统",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "linux",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "CentOS 7.X系统重置密码",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-7-reset-password"
+          },
+          {
+            "text": "Linux系统/etc/fstab 配置错误导致无法登录",
+            "link": "/ops-knowledge-base/operating-system/linux/fstab-misconfiguration-login-failure"
+          },
+          {
+            "text": "CentOS7.x防火墙开/关和添加端口",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-7-firewall-and-ports"
+          },
+          {
+            "text": "CentOS 6 / 7修改语言及时区",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-6-7-change-language-timezone"
+          },
+          {
+            "text": "CentOS 8 EOL如何切换源",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-8-eol-switch-mirror"
+          },
+          {
+            "text": "linux系统yum报错没有足够的缓存安装",
+            "link": "/ops-knowledge-base/operating-system/linux/yum-insufficient-cache-error"
+          },
+          {
+            "text": "Centos8 无法使用Yum及Dnf",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-8-yum-dnf-not-working"
+          },
+          {
+            "text": "Ubuntu18.04-22.04防火墙开/关和修改远程端口",
+            "link": "/ops-knowledge-base/operating-system/linux/ubuntu-firewall-and-remote-port"
+          },
+          {
+            "text": "linux系统硬盘的挂载与扩容",
+            "link": "/ops-knowledge-base/operating-system/linux/disk-mount-and-expand"
+          },
+          {
+            "text": "如何使用Putty工具远程linux系统",
+            "link": "/ops-knowledge-base/operating-system/linux/remote-login-with-putty"
+          },
+          {
+            "text": "Centos7.x系统修改网卡名称",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-7-rename-network-interface"
+          },
+          {
+            "text": "Linux系统宝塔面板安装教程",
+            "link": "/ops-knowledge-base/operating-system/linux/install-baota-panel"
+          },
+          {
+            "text": "Linux系统如何使用atop监控工具",
+            "link": "/ops-knowledge-base/operating-system/linux/how-to-use-atop"
+          },
+          {
+            "text": "linux系统如何传输数据",
+            "link": "/ops-knowledge-base/operating-system/linux/how-to-transfer-data"
+          },
+          {
+            "text": "SSH登录Linux时提示“Permission denied, please try again”错误如何处理",
+            "link": "/ops-knowledge-base/operating-system/linux/ssh-permission-denied"
+          },
+          {
+            "text": "Linux系统扩容inode可用空间",
+            "link": "/ops-knowledge-base/operating-system/linux/expand-inode-space"
+          },
+          {
+            "text": "Linux系统如何查看内存使用情况以及清理缓存",
+            "link": "/ops-knowledge-base/operating-system/linux/check-memory-and-clear-cache"
+          },
+          {
+            "text": "CentOS 7.x系统升级到CentOS 7.9系统",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-7-upgrade-to-7-9"
+          },
+          {
+            "text": "CentOS系统修改主机名",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-change-hostname"
+          },
+          {
+            "text": "CentOS 操作系统如何配置多个IP",
+            "link": "/ops-knowledge-base/operating-system/linux/centos-configure-multiple-ips"
+          },
+          {
+            "text": "Linux系统锐速安装教程",
+            "link": "/ops-knowledge-base/operating-system/linux/install-serverspeeder"
+          },
+          {
+            "text": "linux系统如何设置开启/禁止ping",
+            "link": "/ops-knowledge-base/operating-system/linux/enable-disable-ping"
+          },
+          {
+            "text": "ubuntu防火墙开启与关闭",
+            "link": "/ops-knowledge-base/operating-system/linux/ubuntu-firewall-on-off"
+          }
+        ]
+      },
+      {
+        "text": "windows",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Windows系统安装使用宝塔面板",
+            "link": "/ops-knowledge-base/operating-system/windows/install-baota-panel"
+          },
+          {
+            "text": "Windows系统磁盘空间的压缩/扩展",
+            "link": "/ops-knowledge-base/operating-system/windows/shrink-extend-disk-space"
+          },
+          {
+            "text": "Windows 2012系统卸载某些软件后无法进入系统桌面怎么办",
+            "link": "/ops-knowledge-base/operating-system/windows/windows-2012-desktop-not-loading-after-uninstall"
+          },
+          {
+            "text": "windows系统如何更改语言",
+            "link": "/ops-knowledge-base/operating-system/windows/change-system-language"
+          },
+          {
+            "text": "Windows修改管理员密码",
+            "link": "/ops-knowledge-base/operating-system/windows/change-administrator-password"
+          },
+          {
+            "text": "Windows 服务器一键部署幻兽帕鲁",
+            "link": "/ops-knowledge-base/operating-system/windows/deploy-palworld-one-click"
+          },
+          {
+            "text": "Windows远程桌面出现CredSSP加密数据修正问题解决方案",
+            "link": "/ops-knowledge-base/operating-system/windows/rdp-credssp-encryption-fix"
+          },
+          {
+            "text": "Windows关闭系统自动更新",
+            "link": "/ops-knowledge-base/operating-system/windows/disable-automatic-updates"
+          },
+          {
+            "text": "Windows系统如何添加IP",
+            "link": "/ops-knowledge-base/operating-system/windows/add-ip-address"
+          },
+          {
+            "text": "Windows系统使用IE浏览器打开网站提示“增强安全配置正在阻止来自下列网站内容”如何处理",
+            "link": "/ops-knowledge-base/operating-system/windows/ie-enhanced-security-blocking-content"
+          },
+          {
+            "text": "windows远程连接提示“发生身份验证错误要求的安全包不存在” 解决方法",
+            "link": "/ops-knowledge-base/operating-system/windows/rdp-authentication-error-security-package"
+          },
+          {
+            "text": "windows系统如何远程登录",
+            "link": "/ops-knowledge-base/operating-system/windows/remote-desktop-login"
+          },
+          {
+            "text": "Windows修改远程端口号",
+            "link": "/ops-knowledge-base/operating-system/windows/change-remote-desktop-port"
+          },
+          {
+            "text": "Windows系统无法启用远程协助",
+            "link": "/ops-knowledge-base/operating-system/windows/remote-assistance-not-working"
+          },
+          {
+            "text": "Windows系统如何设置图标快捷方式",
+            "link": "/ops-knowledge-base/operating-system/windows/create-desktop-shortcut"
+          },
+          {
+            "text": "通过远程桌面连接Windows实例提示“要远程登录，你需要具有通过远程桌面服务进行登录的权限。”信息如何解决",
+            "link": "/ops-knowledge-base/operating-system/windows/rdp-permission-required-error"
+          },
+          {
+            "text": "Windows系统如何创建分区",
+            "link": "/ops-knowledge-base/operating-system/windows/create-disk-partition"
+          },
+          {
+            "text": "Windows系统设置禁Ping",
+            "link": "/ops-knowledge-base/operating-system/windows/disable-ping"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "账单问题",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "财务管理 - 我的账单",
+        "link": "/ops-knowledge-base/billing-issues/my-bills"
+      },
+      {
+        "text": "充值-支持虚拟货币转账",
+        "link": "/ops-knowledge-base/billing-issues/recharge-via-crypto-transfer"
+      }
+    ]
+  },
+  {
+    "text": "VPS",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "VPS 独立云盘使用指南",
+        "link": "/ops-knowledge-base/vps/cloud-disk-guide"
+      },
+      {
+        "text": "VPS 弹性 IP 使用指南",
+        "link": "/ops-knowledge-base/vps/elastic-ip-guide"
+      },
+      {
+        "text": "如何生成SSH密钥对",
+        "link": "/ops-knowledge-base/vps/generate-ssh-key-pair"
+      },
+      {
+        "text": "SSH 公钥管理指南",
+        "link": "/ops-knowledge-base/vps/ssh-key-management-guide"
+      },
+      {
+        "text": "VPS 安全组使用指南",
+        "link": "/ops-knowledge-base/vps/security-group-guide"
+      },
+      {
+        "text": "VPS 控制台操作指南",
+        "link": "/ops-knowledge-base/vps/console-guide"
+      },
+      {
+        "text": "VPS 监控功能说明",
+        "link": "/ops-knowledge-base/vps/monitoring-guide"
+      },
+      {
+        "text": "如何使用私钥进行远程登录",
+        "link": "/ops-knowledge-base/vps/remote-login-with-private-key"
+      },
+      {
+        "text": "VPS（小时计费）产品购买及注意事项",
+        "link": "/ops-knowledge-base/vps/hourly-billing-purchase-notes"
+      }
+    ]
+  },
+  {
+    "text": "托管云",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "如何进行服务器托管",
+        "link": "/ops-knowledge-base/managed-cloud/how-to-host-server"
+      }
+    ]
+  },
+  {
+    "text": "账户和安全",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "启用登陆Raksmart动态验证",
+        "link": "/ops-knowledge-base/account-security/enable-login-2fa"
+      }
+    ]
+  },
+  {
+    "text": "售前支持",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "安全中心 - 安全设置",
+        "link": "/ops-knowledge-base/presales-support/security-settings"
+      },
+      {
+        "text": "我的钱包 - 代金券",
+        "link": "/ops-knowledge-base/presales-support/wallet-vouchers"
+      },
+      {
+        "text": "账户管理 - 付款方式",
+        "link": "/ops-knowledge-base/presales-support/payment-methods"
+      },
+      {
+        "text": "安全中心 - 修改密码",
+        "link": "/ops-knowledge-base/presales-support/change-password"
+      },
+      {
+        "text": "我的钱包 - 账户余额",
+        "link": "/ops-knowledge-base/presales-support/wallet-balance"
+      },
+      {
+        "text": "账户管理 - 我的资料",
+        "link": "/ops-knowledge-base/presales-support/my-profile"
+      },
+      {
+        "text": "如何查找已购买的产品",
+        "link": "/ops-knowledge-base/presales-support/find-purchased-products"
+      },
+      {
+        "text": "登录日志",
+        "link": "/ops-knowledge-base/presales-support/login-logs"
+      },
+      {
+        "text": "账户管理 - 用户管理",
+        "link": "/ops-knowledge-base/presales-support/user-management"
+      },
+      {
+        "text": "投诉封停使用指南",
+        "link": "/ops-knowledge-base/presales-support/complaint-suspension-guide"
+      },
+      {
+        "text": "我的钱包 - 优惠券",
+        "link": "/ops-knowledge-base/presales-support/wallet-coupons"
+      },
+      {
+        "text": "技术支持 - 我的工单",
+        "link": "/ops-knowledge-base/presales-support/my-tickets"
+      },
+      {
+        "text": "账户管理 - 联系人",
+        "link": "/ops-knowledge-base/presales-support/contacts"
+      }
+    ]
+  },
+  {
+    "text": "共享主机",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "如何购买共享主机",
+        "link": "/ops-knowledge-base/shared-hosting/how-to-purchase"
+      }
+    ]
+  },
+  {
+    "text": "域名",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "SSL购买认证指南",
+        "link": "/ops-knowledge-base/domain/ssl-purchase-verification-guide"
+      },
+      {
+        "text": "DNS 解析管理",
+        "link": "/ops-knowledge-base/domain/dns-management"
+      },
+      {
+        "text": "域名相关问题解答",
+        "link": "/ops-knowledge-base/domain/domain-faq"
+      }
+    ]
+  },
+  {
+    "text": "独服",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "物理服务器BCM重置",
+        "link": "/ops-knowledge-base/dedicated-server/bmc-reset"
+      },
+      {
+        "text": "物理服务器BIOS说明介绍",
+        "link": "/ops-knowledge-base/dedicated-server/bios-overview"
+      },
+      {
+        "text": "物理服务器打开VNC窗口",
+        "link": "/ops-knowledge-base/dedicated-server/open-vnc-window"
+      },
+      {
+        "text": "物理服务器控制面板",
+        "link": "/ops-knowledge-base/dedicated-server/control-panel"
+      },
+      {
+        "text": "物理服务器控制面板管理介绍",
+        "link": "/ops-knowledge-base/dedicated-server/control-panel-management-overview"
+      },
+      {
+        "text": "物理服务器救援模式操作",
+        "link": "/ops-knowledge-base/dedicated-server/rescue-mode-operations"
+      },
+      {
+        "text": "物理服务器无法正常启动，检测是否为无法识别到硬盘",
+        "link": "/ops-knowledge-base/dedicated-server/boot-failure-disk-not-detected"
+      },
+      {
+        "text": "物理服务器格式化硬盘操作",
+        "link": "/ops-knowledge-base/dedicated-server/format-disk"
+      },
+      {
+        "text": "物理服务器检查磁盘健康状态",
+        "link": "/ops-knowledge-base/dedicated-server/check-disk-health"
+      },
+      {
+        "text": "物理服务器流量统计",
+        "link": "/ops-knowledge-base/dedicated-server/traffic-statistics"
+      },
+      {
+        "text": "物理服务器网络监控",
+        "link": "/ops-knowledge-base/dedicated-server/network-monitoring"
+      },
+      {
+        "text": "物理服务器进入救援模式无响应故障描述",
+        "link": "/ops-knowledge-base/dedicated-server/rescue-mode-no-response-issue"
+      },
+      {
+        "text": "物理服务机器破解密码",
+        "link": "/ops-knowledge-base/dedicated-server/password-recovery"
+      },
+      {
+        "text": "物理服务机器重装系统",
+        "link": "/ops-knowledge-base/dedicated-server/reinstall-os"
+      }
+    ]
+  },
+  {
+    "text": "裸机云",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "裸机云 Rescue（救援系统）使用指南",
+        "link": "/ops-knowledge-base/baremetal/rescue-mode-guide"
+      },
+      {
+        "text": "裸机云 VNC 控制台使用指南",
+        "link": "/ops-knowledge-base/baremetal/vnc-console-guide"
+      },
+      {
+        "text": "裸机云升级/降级操作指南",
+        "link": "/ops-knowledge-base/baremetal/upgrade-downgrade-guide"
+      },
+      {
+        "text": "裸机云密码修改与重置指南",
+        "link": "/ops-knowledge-base/baremetal/password-change-reset-guide"
+      },
+      {
+        "text": "裸机云控制台操作指南",
+        "link": "/ops-knowledge-base/baremetal/console-guide"
+      },
+      {
+        "text": "裸机云监控功能说明",
+        "link": "/ops-knowledge-base/baremetal/monitoring-guide"
+      },
+      {
+        "text": "裸机云重装系统指南",
+        "link": "/ops-knowledge-base/baremetal/reinstall-os-guide"
+      }
+    ]
+  }
+]

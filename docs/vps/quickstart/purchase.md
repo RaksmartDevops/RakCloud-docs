@@ -10,13 +10,13 @@ title: 购买 VPS
 
 1. 注册 RakSmart 账号，详细步骤可参考[注册 RakSmart 账号](https://cn.raksmart.com/login/index.html)。
 
-2. 为账户充值，确保账户有足够的资金，以免购买产品失败。具体操作，请参考[为 RakSmart 账号充值](钱包管理.md#为%20RakSmart%20账号充值)。
+2. 为账户充值，确保账户有足够的资金，以免购买产品失败。具体操作，请参考[为 RakSmart 账号充值](/beginners-guide/wallet/balance.md#为-raksmart-账号充值)。
 
    > **说明**
    >
    > 目前仅 VPS 支持小时计费。小时计费会从账户余额中扣款，为了保证业务连续性，请保持余额充足。
 
-3. 了解 RakSmart 产品和配置项、计费周期、付款方式等信息，参考[购买 RakSmart 产品](购买%20RakSmart%20产品.md#购买%20RakSmart%20产品))。
+3. 了解 RakSmart 产品和配置项、计费周期、付款方式等信息，参考[购买 RakSmart 产品](/beginners-guide/buy-products/purchase.md))。
 
 ---
 
@@ -72,7 +72,7 @@ title: 购买 VPS
 
    ![vpsvps.png](./images/vpsvps.png)
 
-5. 根据业务需求完成产品配置选择。配置方法和付款流程的详细介绍可参考[通过官网 VPS 入口购买](#通过官网-vps-入口购买)。
+5. 根据业务需求完成产品配置选择。配置方法和付款流程的详细介绍可参考[通过官网 VPS 入口购买](#通过官网%20VPS%20入口购买)。
    ![自定义vps配置.png](./images/自定义vps配置.png)
 
 ---

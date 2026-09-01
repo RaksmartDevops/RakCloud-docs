@@ -1,0 +1,73 @@
+[
+  {
+    "text": "产品介绍",
+    "items": [
+      {
+        "text": "产品简介",
+        "link": "/baremetal/product-intro/overview"
+      },
+      {
+        "text": "产品优势",
+        "link": "/baremetal/product-intro/advantages"
+      },
+      {
+        "text": "产品类型",
+        "link": "/baremetal/product-intro/product-types"
+      },
+      {
+        "text": "区域和可用区",
+        "link": "/baremetal/product-intro/regions-and-zones"
+      }
+    ]
+  },
+  {
+    "text": "快速入门",
+    "items": [
+      {
+        "text": "购买裸机云",
+        "link": "/baremetal/quickstart/purchase"
+      },
+      {
+        "text": "登录裸机云",
+        "link": "/baremetal/quickstart/login"
+      }
+    ]
+  },
+  {
+    "text": "管理裸机云",
+    "items": [
+      {
+        "text": "查看已购的裸机云",
+        "link": "/baremetal/manage-baremetal/view-instances"
+      },
+      {
+        "text": "查看裸机云详细信息",
+        "link": "/baremetal/manage-baremetal/instance-details"
+      },
+      {
+        "text": "执行服务器操作",
+        "link": "/baremetal/manage-baremetal/server-operations"
+      },
+      {
+        "text": "管理安全组",
+        "link": "/baremetal/manage-baremetal/security-groups"
+      },
+      {
+        "text": "裸机云升降级",
+        "link": "/baremetal/manage-baremetal/upgrade-downgrade"
+      },
+      {
+        "text": "裸机云取消",
+        "link": "/baremetal/manage-baremetal/cancellation"
+      },
+      {
+        "text": "账单与续费管理",
+        "link": "/baremetal/manage-baremetal/billing"
+      },
+      {
+        "text": "新开工单",
+        "link": "/baremetal/manage-baremetal/new-ticket"
+      }
+    ]
+  }
+]
