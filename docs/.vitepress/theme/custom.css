@@ -15,3 +15,45 @@
   /* 深藏青在深色背景上对比度不够，深色模式下改用品牌橙 */
   color: #ff8f32;
 }
+
+/* 首屏加一层柔和的品牌橙径向渐变，避免大片纯色显得单调 */
+.VPHero.has-image .container {
+  position: relative;
+}
+
+.VPHome .VPHero {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% -10%,
+    rgba(255, 143, 50, 0.16),
+    transparent 70%
+  );
+}
+
+.dark .VPHome .VPHero {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% -10%,
+    rgba(255, 143, 50, 0.1),
+    transparent 70%
+  );
+}
+
+.VPHero .tagline {
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* Feature 卡片 hover 效果：上浮 + 阴影加深 + 边框描边品牌色 */
+.VPFeature {
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px);
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 12px 24px rgba(255, 143, 50, 0.14);
+}
+
+.dark .VPFeature:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}

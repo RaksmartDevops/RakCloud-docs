@@ -6,6 +6,16 @@ import baremetalSidebar from './sidebar/baremetal.json'
 import beginnersGuideSidebar from './sidebar/beginners-guide.json'
 import opsKnowledgeBaseSidebar from './sidebar/ops-knowledge-base.json'
 
+function withPdfDownload(sidebar: any[], pdfPath: string) {
+  return [
+    {
+      text: '资源下载',
+      items: [{ text: '⬇ 下载 PDF 手册', link: pdfPath }],
+    },
+    ...sidebar,
+  ]
+}
+
 export default defineConfig({
   base: '/rakcloud-docs/',
   lang: 'zh-CN',
@@ -19,8 +29,16 @@ export default defineConfig({
   // 作为兜底继续保留，避免个别遗漏直接导致构建失败。
   ignoreDeadLinks: [/%/],
 
+  // 产品手册类的 4 本书支持整书 PDF 下载（scripts/export-pdf.mjs 在构建后生成到
+  // dist/pdf/<book-slug>.pdf）。这个入口加在 sidebar 顶部而不是写进某篇 docs/*.md
+  // 正文里，是因为 docs/ 是转换脚本生成的产物，手改正文下次跑脚本会被覆盖掉；
+  // config.ts 是手工维护的文件，不受脚本重跑影响。
   themeConfig: {
     logo: { light: '/logo-new.png', dark: '/logo-new-white.png' },
+
+    search: {
+      provider: 'local',
+    },
 
     nav: [
       { text: '首页', link: '/' },
@@ -32,10 +50,10 @@ export default defineConfig({
     ],
 
     sidebar: {
-      '/vps/': vpsSidebar,
-      '/dedicatedserver/': dedicatedserverSidebar,
-      '/baremetal/': baremetalSidebar,
-      '/beginners-guide/': beginnersGuideSidebar,
+      '/vps/': withPdfDownload(vpsSidebar, '/pdf/vps.pdf'),
+      '/dedicatedserver/': withPdfDownload(dedicatedserverSidebar, '/pdf/dedicatedserver.pdf'),
+      '/baremetal/': withPdfDownload(baremetalSidebar, '/pdf/baremetal.pdf'),
+      '/beginners-guide/': withPdfDownload(beginnersGuideSidebar, '/pdf/beginners-guide.pdf'),
       '/ops-knowledge-base/': opsKnowledgeBaseSidebar,
     },
   },
