@@ -9,10 +9,11 @@ RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver�
 ## 常用命令
 
 ```bash
-npm install                                   # 安装依赖（devDependencies 只有 vitepress）
+npm install                                   # 安装依赖（devDependencies：vitepress、puppeteer）
 npm run docs:dev                              # 本地预览（vitepress dev docs）
 npm run docs:build                            # 构建产物到 docs/.vitepress/dist（vitepress build docs）
 npm run docs:preview                          # 预览构建产物
+npm run docs:pdf                              # 构建后运行，把 4 本产品手册导出成整书 PDF（需要先 docs:build）
 
 python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成 docs/ 内容 + sidebar json
 ```
@@ -45,6 +46,17 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
 
 这些链接目前点击后跳转不到目标位置（非阻断性问题，不影响构建/发布）。如果以后要处理，做法是把 `#标题%20带空格` 改成 `#标题-带空格对应部分转小写连字符`（例如 `#购买弹性-ip` 这个已验证过的写法：原标题空格转 `-`，英文字母转小写，中文字符不变）。**新增文档时如果沿用 Obsidian 导出的 `%20` 锚点写法，会持续产生同类问题**，写作时应直接使用 VitePress 标准锚点格式。
 
+## 站点功能（2026-09-02 新增）
+
+- **站内搜索**：`docs/.vitepress/config.ts` 里 `themeConfig.search: { provider: 'local' }`，用 VitePress 内置 minisearch，构建时自动为全站建索引，没有引入任何外部依赖/第三方服务。
+- **首页样式**：只改了 `docs/.vitepress/theme/custom.css`（Hero 区域品牌橙渐变背景、Feature 卡片 hover 上浮+阴影），没有改 `docs/index.md` 的内容结构，也没有加任何具体数字类宣传文案（如 SLA、开通时长）——这类需要真实业务数据支撑的文案本轮刻意没加，避免不实宣传。
+- **产品手册 PDF 导出**：`scripts/export-pdf.mjs`，新增 `puppeteer` devDependency（无头 Chromium 渲染，只在生成 PDF 这一步用到）。
+  - 只覆盖 VPS / 独服 / 裸机云 / 新手指南 4 本"产品手册"类书；OPS 知识库（126 篇散文章）不做整书合并，判断是合并成一份大 PDF 对这类知识库文章集合意义不大。
+  - 原理：起本地静态服务器 serve 已构建的 `docs/.vitepress/dist/`，puppeteer 按 `docs/.vitepress/sidebar/<book>.json` 的章节/页面顺序依次打开每一页，提取 `.vp-doc` 正文 HTML 拼成一份大 HTML（章节分隔页 + 扉页），再整体 `page.pdf()` 一次性输出，比逐页转 PDF 再合并更简单。
+  - 输出到 `docs/.vitepress/dist/pdf/<book-slug>.pdf`（写进已构建的 dist 里，dist 本来就不进 git、每次部署整份 rsync 过去，不需要额外拷贝逻辑）。
+  - PDF 下载入口**没有**写进 `docs/*.md`（那是转换脚本生成的产物，手改了下次重新转换会被覆盖），而是在 `config.ts` 里用 `withPdfDownload()` 给对应书的 sidebar 数组顶部插入一条"⬇ 下载 PDF 手册"链接——`config.ts` 是手工维护文件，不受脚本重跑影响。
+  - **CI 中文字体风险**：`ubuntu-latest` runner 默认没有中文字体，无头 Chromium 渲染中文转 PDF 会变方块，`deploy.yml` 里在跑 `docs:pdf` 之前加了 `apt-get install -y fonts-noto-cjk`。本机 macOS 有中文字体，本地验证不出这个问题，第一次在 CI 上跑 `docs:pdf` 时需要重点看生成的 PDF 是否正常。
+
 ## 部署
 
 - `.github/workflows/deploy.yml`：**仅 `workflow_dispatch` 手动触发**（不会因为 push 到 main 自动部署）。
@@ -56,6 +68,6 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
     gh workflow run deploy.yml -R RaksmartDevops/RakCloud-docs  # 手动触发一次部署
     gh run watch -R RaksmartDevops/RakCloud-docs                # 触发后跟踪运行状态
     ```
-- 部署链路：checkout → setup-node@20 → `npm ci` → `npm run docs:build` → 校验 `docs/.vitepress/dist/index.html` 存在 → 用 GitHub secret `SERVER_SSH_KEY_B64`（base64 编码的 SSH 私钥）准备好 `~/.ssh/deploy_key` → `rsync -az --delete` 到 `root@47.103.103.48:/var/www/rakcloud-docs/` → curl 校验 `http://47.103.103.48/rakcloud-docs/` 返回 200。
+- 部署链路：checkout → setup-node@20 → `npm ci` → `npm run docs:build` → 校验 `docs/.vitepress/dist/index.html` 存在 → 安装中文字体（`fonts-noto-cjk`）→ `npm run docs:pdf` 生成 4 本产品手册 PDF → 用 GitHub secret `SERVER_SSH_KEY_B64`（base64 编码的 SSH 私钥）准备好 `~/.ssh/deploy_key` → `rsync -az --delete` 到 `root@47.103.103.48:/var/www/rakcloud-docs/` → curl 校验 `http://47.103.103.48/rakcloud-docs/` 返回 200。
 - 服务器上的 Nginx 配置（`/etc/nginx/sites-available/docs-raksmart`，不在本仓库里）已有 `/rakcloud-docs/` 的 location block（`alias /var/www/rakcloud-docs/`），不需要改动。
 - 本地临时验证可参考：SSH 用 `~/ccp/key_aly.pem`（RSA 私钥，不是 TLS 证书）连接 `root@47.103.103.48`。
