@@ -313,6 +313,7 @@ LINK_FIXES: dict[str, str] = {
     # 源素材里这条链接本身格式有误（多写了一层路径前缀和多余的 ##），照原样匹配后改写
     "新手指南/07、账户管理/账户管理.md#账户管理##为普通用户授权": "/beginners-guide/account/user-permissions.md",
     "账单管理.md": "/beginners-guide/billing/index.md",
+    "账单管理.md#账单管理": "/beginners-guide/billing/billing-management.md",
     "技术支持.md": "/beginners-guide/technical-support/index.md",
     "独服/01、产品介绍/产品介绍.md": "/dedicatedserver/product-intro/overview.md",
     "裸机云/01、产品介绍/产品介绍.md": "/baremetal/product-intro/overview.md",
