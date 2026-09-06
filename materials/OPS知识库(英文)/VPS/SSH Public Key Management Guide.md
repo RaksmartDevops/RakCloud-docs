@@ -1,0 +1,218 @@
+# SSH Public Key Management Guide
+
+## Purpose
+
+This document explains how to create, import, and manage SSH public keys in the Raksmart Client Portal. It also introduces common use cases for SSH keys, helping you authenticate securely and improve the security of Linux server access.
+
+**Applicable Products:**
+
+- Bare Metal Cloud
+- VPS
+
+---
+
+# 1. What is an SSH Public Key?
+
+SSH Key authentication is a secure authentication method based on a pair of cryptographic keys. Compared with password authentication, SSH Key authentication provides enhanced security.
+
+An SSH Key pair consists of two parts:
+
+- **Public Key** – Stored on the server or in the Raksmart Client Portal for identity verification.
+- **Private Key** – Stored on your local computer and used to log in to the server.
+
+During login, the client uses the private key for authentication, while the server verifies the corresponding public key.
+
+> **Note:**
+>
+> After creating an SSH key pair, the system automatically downloads the private key file (**id\_rsa.pem**). Only the corresponding public key is stored in the Raksmart Client Portal. The private key is **not** stored by the system.
+
+---
+
+# 2. Accessing the SSH Public Key Management Page
+
+1. Log in to the **Raksmart Client Portal**.
+2. Go to **Member Center**.
+3. Click **Technical Support**.
+4. Select **SSH Public Keys**.
+
+On this page, you can view, create, import, and manage your SSH public keys.
+
+---
+
+# 3. Adding an SSH Public Key
+
+Click the **Add** button at the top of the page to open the **Add Information** window.
+
+Before creating a key, choose the method that best suits your needs.
+
+> **Note:**
+>
+> - If you are using SSH Keys for the first time, it is recommended to select **Create New Key Pair**. The system will automatically generate both the public and private keys.
+> - If you already have an SSH public key, select **Use Existing Public Key** to import it without generating a new key pair.
+
+---
+
+## 1. Name
+
+Enter a descriptive name for the SSH key, for example:
+
+- Office-PC
+- Laptop
+- Linux-Server
+
+It is recommended to use a meaningful name based on the device or intended purpose for easier management.
+
+---
+
+## 2. Method
+
+The following two methods are available:
+
+### Method 1: Create New Key Pair (Recommended)
+
+Select **Create New Key Pair**, and the system will automatically generate a new SSH key pair.
+
+After creation:
+
+- The private key file (**id\_rsa.pem**) will be downloaded automatically.
+- The corresponding public key will be saved in the Client Portal.
+
+> **Important:**
+>
+> The **id\_rsa.pem** file is your SSH private key and is available **only once** during creation.
+>
+> Please save it securely. If it is lost, it cannot be downloaded again, and you will need to generate a new SSH key pair.
+
+---
+
+### Method 2: Use Existing Public Key
+
+If you already have an SSH public key, select **Use Existing Public Key**.
+
+Simply paste the contents of your existing public key into the corresponding input field.
+
+> **Note:**
+>
+> Only the public key is required. Do **not** upload your private key.
+
+---
+
+## 3. Encryption Method
+
+The following encryption algorithms are currently supported:
+
+- ssh-rsa
+- ssh-dss
+- ecdsa-sha2-nistp521
+- ssh-ed25519
+
+Select the encryption algorithm that best matches your environment.
+
+> **Recommendation:**
+>
+> **ssh-ed25519** and **ssh-rsa** are recommended due to their broad compatibility and strong security.
+
+---
+
+## 4. Submit
+
+After confirming that all information is correct, click **Submit** to create the SSH public key.
+
+If you wish to cancel the operation, click **Close**.
+
+---
+
+# 4. Managing SSH Public Keys
+
+After an SSH public key has been created, it will appear in the management list.
+
+You can view information such as:
+
+- Name
+- Public Key
+- Encryption Algorithm
+- Creation Time (if displayed)
+
+You may also delete SSH public keys that are no longer needed.
+
+---
+
+# 5. Common Use Cases for SSH Public Keys
+
+SSH public keys are primarily used for Linux server authentication.
+
+You can choose SSH Key authentication in the following scenarios:
+
+- Creating a Bare Metal Cloud instance
+- Reinstalling a Linux operating system
+- Other products that support SSH Key authentication
+
+When **SSH Key** is selected as the login method, simply choose one of your existing SSH public keys.
+
+The system will automatically install the selected public key on the server, enabling SSH Key authentication.
+
+> **Note:**
+>
+> After creating an SSH key pair, please refer to **"[How to Log In to a Linux Server Using an SSH Private Key](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F977%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%A7%81%E9%92%A5%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95.html&language=english)"** for instructions on using the downloaded private key (**id\_rsa.pem**) to access your server.
+
+---
+
+# 6. Frequently Asked Questions
+
+### Q1: What is the id\_rsa.pem file?
+
+The **id\_rsa.pem** file is the SSH private key generated by the system.
+
+It is required for SSH authentication and should be stored securely on your local computer. Never share it with others.
+
+---
+
+### Q2: Why can I only see the public key in the Client Portal?
+
+For security reasons, the Client Portal stores **only the public key**.
+
+The private key is available for download **only once** when the key pair is created and cannot be viewed or downloaded again.
+
+---
+
+### Q3: What should I do if I lose my private key?
+
+The private key cannot be recovered.
+
+If it is lost, you must generate a new SSH key pair and configure the server to use the new public key.
+
+---
+
+### Q4: Can SSH public keys be used for Windows login?
+
+SSH public keys are primarily intended for Linux SSH authentication.
+
+Windows supports SSH Key authentication only if services such as **OpenSSH Server** have been installed and configured.
+
+---
+
+### Q5: When should I use SSH Key authentication?
+
+SSH Key authentication is recommended for:
+
+- Daily Linux server administration
+- Automated operations and maintenance
+- Managing multiple servers
+- Improving login security
+- Reducing the risks associated with password-based authentication
+
+---
+
+# Notes
+
+⚠️ The **id\_rsa.pem** private key is available **only once** during creation. Please download and store it securely.
+
+⚠️ The private key contains sensitive information. Do not share it or upload it to public locations.
+
+⚠️ The Raksmart Client Portal stores only the public key. The private key cannot be downloaded again.
+
+⚠️ If the private key is lost, you must create a new SSH key pair and update the server with the new public key.
+
+⚠️ It is recommended to use **ssh-ed25519** or **ssh-rsa** whenever possible for better compatibility and security.
+
+---
