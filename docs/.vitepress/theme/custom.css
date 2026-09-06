@@ -42,6 +42,32 @@
   opacity: 0.85;
 }
 
+/* 首页 Hero 去掉右侧 Logo 后改为单栏居中展示 */
+.VPHero .container,
+.VPHero .main {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* .name/.text/.tagline 默认是 width: fit-content，只加 text-align 不会让盒子本身
+   居中，必须显式 margin: 0 auto 让盒子在 .main 里居中 */
+.VPHero .name,
+.VPHero .text,
+.VPHero .tagline {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* 保证副标题在正常桌面宽度下不换行显示为一行 */
+.VPHero .text {
+  white-space: nowrap;
+}
+
+.VPHero .actions {
+  justify-content: center;
+}
+
 /* Feature 卡片 hover 效果：上浮 + 阴影加深 + 边框描边品牌色 */
 .VPFeature {
   border-radius: 14px;

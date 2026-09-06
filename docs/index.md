@@ -5,9 +5,6 @@ hero:
   name: "RakCloud 文档中心"
   text: "让每一次上云都有据可依"
   tagline: VPS、物理服务器、裸机云、新手指南与运维知识库，一站式查阅
-  image:
-    src: /logo-new.png
-    alt: RakCloud
   actions:
     - theme: brand
       text: 从 VPS 开始
