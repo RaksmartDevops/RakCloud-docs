@@ -9,7 +9,7 @@ import opsKnowledgeBaseSidebar from './sidebar/ops-knowledge-base.json'
 export default defineConfig({
   base: '/rakcloud-docs/',
   lang: 'zh-CN',
-  title: 'RakCloud 文档中心',
+  title: '产品文档中心',
   description: 'RakCloud 产品文档',
 
   // 素材里有一批跨书/跨章节的文件名式相对链接（如 "购买%20RakSmart%20产品.md"），
@@ -21,6 +21,13 @@ export default defineConfig({
 
   themeConfig: {
     logo: { light: '/logo-new.png', dark: '/logo-new-white.png' },
+
+    // 全站正文小节标题统一用 h3（###），不是 VitePress 默认采集的 h2，
+    // 不显式设置的话大纲收集不到标题，页面右侧的"本页导航"就完全不渲染。
+    outline: {
+      level: [2, 3],
+      label: '本页导航',
+    },
 
     search: {
       provider: 'local',
