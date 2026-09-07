@@ -23,6 +23,7 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
 这是本仓库最关键的架构点，不了解会踩坑：
 
 - **`materials/`** 是产品文档的唯一源头（Format C 素材，按“书 → 章节目录 → .md 文件”组织，如 `materials/VPS/03、管理 VPS/管理 VPS.md`）。**改文档内容一律改这里**，改完需要重新跑一次转换脚本。后续所有内容编辑都直接在 GitHub 上进行，不需要在本地维护一份常驻 clone——需要跑脚本/构建校验时，临时 clone 一份到本地即可，用完不必保留。
+  - 例外：姊妹项目 `rs-docs-v2`（Hugo 版本，独立仓库）会用 `rsync -a --delete` 把它自己的 `materials/` 整包镜像过来、commit 后 push 到本仓库，这条同步路径确实需要一份持续存在的本地 clone（习惯放在 `/Users/shenou/ccp/RakCloud-docs`）来接收镜像、执行 commit/push。**每次执行这个镜像同步前必须先 `git pull`**：本仓库 GitHub 上会有独立于 `rs-docs-v2` 的变更（dependabot 依赖更新、本项目自己的功能改动等），2026-09-07 就发现过本地落后 origin/main 13 个提交才被发现，不先 pull 会导致镜像提交建立在过期基础上、可能覆盖掉这些独立变更。
 - **`docs/`** 不是手写的，是 `scripts/convert_material_to_vitepress.py` 从 `materials/` 生成后**提交进仓库的产物**（和一般“运行时生成、gitignore 掉”的 build 产物不同）。同时生成的还有 `docs/.vitepress/sidebar/<slug>.json`（`config.ts` 里 import 这些 JSON 拼进 `themeConfig.sidebar`，避免手写大量 sidebar 条目）。
 - 转换脚本区分两种素材结构：
   - “一章节一文件”（VPS/独服/裸机云/新手指南）：`convert_book()`，按 H2 拆成多个独立页面
