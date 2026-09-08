@@ -10,7 +10,15 @@ export default defineConfig({
   base: '/rakcloud-docs/',
   lang: 'zh-CN',
   title: '产品文档中心',
-  description: 'RakCloud 产品文档',
+  description: 'RakSmart产品文档',
+
+  lastUpdated: true,
+  metaChunk: true,
+
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/rakcloud-docs/favicon.ico' }],
+    ['link', { rel: 'apple-touch-icon', href: '/rakcloud-docs/apple-touch-icon.png' }],
+  ],
 
   // 素材里有一批跨书/跨章节的文件名式相对链接（如 "购买%20RakSmart%20产品.md"），
   // 这类链接不是纯锚点，转换脚本的 rewrite_links() 只能靠显式的 LINK_FIXES 表逐条
@@ -21,6 +29,7 @@ export default defineConfig({
 
   themeConfig: {
     logo: { light: '/logo-new.png', dark: '/logo-new-white.png' },
+    lastUpdatedText: '最后更新于',
 
     // 全站正文小节标题统一用 h3（###），不是 VitePress 默认采集的 h2，
     // 不显式设置的话大纲收集不到标题，页面右侧的"本页导航"就完全不渲染。
