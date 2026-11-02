@@ -55,7 +55,8 @@ if [[ "$previous" == "$target_name" ]]; then
   exit 0
 fi
 
-ln -s "$target_dir" "$PRODUCTION_LINK.tmp"
+# 相对路径链接，宿主机与 Nginx 容器内均可解析
+ln -s "releases/$target_name" "$PRODUCTION_LINK.tmp"
 mv -T "$PRODUCTION_LINK.tmp" "$PRODUCTION_LINK"
 log "production: $previous -> $target_name"
 if [[ "$previous" != "-" ]]; then
