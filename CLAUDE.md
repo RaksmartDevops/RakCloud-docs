@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概览
 
-RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、OPS 知识库（ops-knowledge-base）共五本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。目标上线地址 `https://docs.raksmart.com/`（根路径）；目前测试环境为 `http://47.103.103.48/rakcloud-docs/`，发布方案正在按"GitHub 构建产物 → 文档服务器 staging/production"重做，见"部署"一节。
+RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、OPS 知识库（ops-knowledge-base）共五本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。上线地址 `https://docs.raksmart.com/`（根路径）；发布采用"GitHub 构建产物 → `dist` 分支 → 文档服务器拉取到 staging → 人工晋升 production"，见"部署"一节。
 
 ## 常用命令
 
@@ -53,17 +53,36 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
 
 ## 部署
 
-> **过渡中（重做中）**：生产服务器将位于 JumpServer 之后，GitHub runner 无法再 SSH 推送。新方案为：push `main` 后 Actions 构建 dist 并发布到 `dist` 分支 → 文档服务器主动扫描并拉取到 staging（Nginx 验证）→ 人工确认后晋升到 production（`docs.raksmart.com` 根路径，`base` 将改为 `/`）。落地前以下为**当前测试环境**的现状，届时会被改写。
+拉取模式：GitHub 只负责构建，不连任何服务器；文档服务器主动拉取，先到 staging 验证，再人工晋升到 production。生产服务器位于 JumpServer 之后，GitHub runner 无法 SSH 推送，所以不能用推送模式。
 
-- `.github/workflows/deploy.yml`：**仅 `workflow_dispatch` 手动触发**（不会因为 push 到 main 自动部署）。
-- **如何在 GitHub 上查看**：仓库页面 → **Actions** 标签 → 左侧 "Deploy RakCloud Docs" workflow → 点进具体一次 run，可以看到 build、rsync、curl 校验每一步的日志。
-  - 命令行等效操作：
-    ```bash
-    gh run list -R RaksmartDevops/RakCloud-docs -w deploy.yml   # 列出历史运行记录
-    gh run view <run-id> -R RaksmartDevops/RakCloud-docs --log  # 查看某次运行的完整日志
-    gh workflow run deploy.yml -R RaksmartDevops/RakCloud-docs  # 手动触发一次部署
-    gh run watch -R RaksmartDevops/RakCloud-docs                # 触发后跟踪运行状态
-    ```
-- 部署链路：checkout（`fetch-depth: 0`，`lastUpdated` 需要完整历史）→ setup-node@20 → `npm ci` → `npm run docs:build` → 校验 `docs/.vitepress/dist/index.html` 存在 → 用 GitHub secret `SERVER_SSH_KEY_B64`（base64 编码的 SSH 私钥）准备好 `~/.ssh/deploy_key` → `rsync -az --delete` 到 `root@47.103.103.48:/var/www/rakcloud-docs/` → curl 校验 `http://47.103.103.48/rakcloud-docs/` 返回 200。
-- 服务器上的 Nginx 配置（`/etc/nginx/sites-available/docs-raksmart`，不在本仓库里）已有 `/rakcloud-docs/` 的 location block（`alias /var/www/rakcloud-docs/`），不需要改动。
-- 本地临时验证可参考：SSH 用 `~/ccp/key_aly.pem`（RSA 私钥，不是 TLS 证书）连接 `root@47.103.103.48`。
+```text
+push main → Actions 构建 → dist 分支（孤立提交，每次覆盖）
+                              ↓ pull-dist.timer 每 2 分钟
+              /var/www/releases/<sha>/    每个版本一份，不可变，保留最近 5 个
+              /var/www/staging    → releases/<sha>    自动更新
+              /var/www/production → releases/<sha>    仅 promote.sh 改变
+```
+
+- **`.github/workflows/build-dist.yml`**：PR 事件只构建校验，不发布；push `main` 或手动触发时构建并强制推送到 `dist` 分支。校验项：`index.html`/`404.html`/`sitemap.xml` 存在，产物中不含 `/rakcloud-docs/` 旧路径。`dist` 分支根目录就是站点根，附带 `BUILD_INFO`（源 commit SHA、构建时间）。Actions 均锁定到 commit SHA，由 Dependabot 提交升级 PR。
+- **`deploy/`**：服务器端脚本与配置，详见 `deploy/README.md`。`pull-dist.sh` 拉取并切换 staging，`promote.sh` 晋升或回滚（秒级切软链接，无需重新构建），`nginx-docs.conf` 是测试机配置，`pull-dist.{service,timer}` 是 systemd 定时器。
+- **`base` 为 `/`**，staging 与 production 使用同一份构建产物，不需要区分构建。
+- **正式环境**：`https://docs.raksmart.com/`（production）与 `https://staging-docs.raksmart.com/`（staging），服务器 `199.180.101.100`。Nginx 按域名区分两个 server 块，证书需自行配置，写法见 `deploy/README.md`。
+- **测试机** `47.103.103.48`（无域名）：production 在 `:80`，staging 在 `:8080`，脚本装在 `/opt/rakcloud-docs-deploy/`。SSH 用 `~/ccp/key_aly.pem`（RSA 私钥，不是 TLS 证书）连接 `root@47.103.103.48`。
+
+常用操作（在服务器上执行）：
+
+```bash
+promote.sh --list      # 查看 staging / production 当前版本及可用版本
+promote.sh             # 验证 staging 无误后晋升到 production
+promote.sh <版本名>     # 回滚到 releases/ 下的旧版本
+journalctl -u pull-dist.service -n 20   # 查看拉取日志
+```
+
+查看 Actions 运行情况：
+
+```bash
+gh run list -R RaksmartDevops/RakCloud-docs -w build-dist.yml
+gh run view <run-id> -R RaksmartDevops/RakCloud-docs --log
+```
+
+旧的 `deploy.yml`（SSH + rsync 推送）和 GitHub secret `SERVER_SSH_KEY_B64` 已不再使用，secret 需在 GitHub 仓库设置中手动删除。
