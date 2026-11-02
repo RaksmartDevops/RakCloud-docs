@@ -7,7 +7,7 @@ import beginnersGuideSidebar from './sidebar/beginners-guide.json'
 import opsKnowledgeBaseSidebar from './sidebar/ops-knowledge-base.json'
 
 export default defineConfig({
-  base: '/rakcloud-docs/',
+  base: '/',
   lang: 'zh-CN',
   title: '产品文档中心',
   description: 'RakSmart产品文档',
@@ -16,9 +16,13 @@ export default defineConfig({
   metaChunk: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/rakcloud-docs/favicon.ico' }],
-    ['link', { rel: 'apple-touch-icon', href: '/rakcloud-docs/apple-touch-icon.png' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
   ],
+
+  sitemap: {
+    hostname: 'https://docs.raksmart.com',
+  },
 
   // 素材里有一批跨书/跨章节的文件名式相对链接（如 "购买%20RakSmart%20产品.md"），
   // 这类链接不是纯锚点，转换脚本的 rewrite_links() 只能靠显式的 LINK_FIXES 表逐条
