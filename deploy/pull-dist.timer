@@ -1,0 +1,10 @@
+[Unit]
+Description=Poll RakCloud docs dist branch every 2 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=2min
+Unit=pull-dist.service
+
+[Install]
+WantedBy=timers.target

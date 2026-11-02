@@ -1,0 +1,8 @@
+[Unit]
+Description=Pull RakCloud docs dist branch into staging
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/rakcloud-docs-deploy/pull-dist.sh
