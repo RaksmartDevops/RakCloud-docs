@@ -6,3 +6,5 @@ After=network-online.target
 [Service]
 Type=oneshot
 ExecStart=/opt/rakcloud-docs-deploy/pull-dist.sh
+# 兜底：脚本整体卡住时由 systemd 终止，避免 oneshot 一直处于运行中而挡住后续定时触发
+TimeoutStartSec=300
