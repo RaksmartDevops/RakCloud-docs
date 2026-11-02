@@ -26,10 +26,12 @@ mkdir -p "$RELEASES_DIR"
 exec 9>"$LOCK_FILE"
 flock -n 9 || { log "已有拉取任务在运行，跳过"; exit 0; }
 
-# 原子切换软链接：先建临时链接再 rename，避免 Nginx 读到不存在的中间状态
+# 原子切换软链接：先建临时链接再 rename，避免 Nginx 读到不存在的中间状态。
+# 链接用相对路径（releases/<版本>），Nginx 跑在容器里时，只要整个 WWW_ROOT 被挂载，
+# 宿主机和容器内都能正确解析；绝对路径在容器内会失效。
 switch_link() {
-  local target="$1" link="$2"
-  ln -s "$target" "$link.tmp"
+  local release_name="$1" link="$2"
+  ln -s "releases/$release_name" "$link.tmp"
   mv -T "$link.tmp" "$link"
 }
 
@@ -67,22 +69,22 @@ else
   trap - EXIT
 fi
 
-current_staging="$(readlink "$STAGING_LINK" 2>/dev/null || true)"
-if [[ "$current_staging" == "$release_dir" ]]; then
+current_staging="$(basename "$(readlink "$STAGING_LINK" 2>/dev/null || echo '-')")"
+if [[ "$current_staging" == "$release_name" ]]; then
   log "staging 已指向 $release_name"
 else
-  switch_link "$release_dir" "$STAGING_LINK"
+  switch_link "$release_name" "$STAGING_LINK"
   log "staging 已切换到 $release_name（$(grep '^commit=' "$release_dir/BUILD_INFO" || true)）"
 fi
 
 # 清理旧版本：保留最新 KEEP_RELEASES 个，且永远不删 staging / production 正在使用的
-in_use=("$(readlink "$STAGING_LINK" 2>/dev/null || true)" "$(readlink "$PRODUCTION_LINK" 2>/dev/null || true)")
+in_use=("$(basename "$(readlink "$STAGING_LINK" 2>/dev/null || echo '-')")" "$(basename "$(readlink "$PRODUCTION_LINK" 2>/dev/null || echo '-')")")
 mapfile -t all_releases < <(find "$RELEASES_DIR" -mindepth 1 -maxdepth 1 -type d ! -name '.tmp-*' -printf '%T@ %p\n' | sort -rn | cut -d' ' -f2-)
 index=0
 for dir in "${all_releases[@]}"; do
   index=$((index + 1))
   (( index <= KEEP_RELEASES )) && continue
-  if [[ " ${in_use[*]} " == *" $dir "* ]]; then
+  if [[ " ${in_use[*]} " == *" $(basename "$dir") "* ]]; then
     continue
   fi
   log "清理旧版本 $(basename "$dir")"
