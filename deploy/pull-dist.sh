@@ -8,6 +8,8 @@ DIST_BRANCH="${DIST_BRANCH:-dist}"
 WWW_ROOT="${WWW_ROOT:-/var/www}"
 KEEP_RELEASES="${KEEP_RELEASES:-5}"
 SHA_LEN=12
+# 网络连接可能僵死不返回，git 命令超过该秒数就放弃，等下个周期重试
+GIT_TIMEOUT_SECS="${GIT_TIMEOUT_SECS:-120}"
 # 构建产物中必须存在的文件，缺任何一个都视为坏版本，不上线
 REQUIRED_FILES=(index.html 404.html sitemap.xml BUILD_INFO)
 
@@ -31,7 +33,10 @@ switch_link() {
   mv -T "$link.tmp" "$link"
 }
 
-remote_sha="$(git ls-remote "$REPO_URL" "refs/heads/$DIST_BRANCH" | cut -f1)"
+# 清理上次异常中断遗留的半成品（已持有锁，不会误删正在下载的目录）
+rm -rf "$RELEASES_DIR"/.tmp-*
+
+remote_sha="$(timeout "$GIT_TIMEOUT_SECS" git ls-remote "$REPO_URL" "refs/heads/$DIST_BRANCH" | cut -f1)"
 if [[ -z "$remote_sha" ]]; then
   log "错误：远程没有 $DIST_BRANCH 分支，或无法访问 $REPO_URL"
   exit 1
@@ -48,7 +53,7 @@ else
   trap 'rm -rf "$tmp_dir"' EXIT
 
   log "下载 $DIST_BRANCH @ $release_name"
-  git clone --quiet --depth 1 --branch "$DIST_BRANCH" "$REPO_URL" "$tmp_dir"
+  timeout "$GIT_TIMEOUT_SECS" git clone --quiet --depth 1 --branch "$DIST_BRANCH" "$REPO_URL" "$tmp_dir"
 
   for f in "${REQUIRED_FILES[@]}"; do
     if [[ ! -f "$tmp_dir/$f" ]]; then
