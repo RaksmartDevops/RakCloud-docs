@@ -37,6 +37,11 @@ features:
     details: 从注册账号到购买、管理产品，快速上手 RakSmart 控制台
     link: /beginners-guide/about-raksmart/products-and-services
     linkText: 查看文档
+  - icon: 🌐
+    title: IP 及网络服务
+    details: 双ISP DIA（家庭属性 IP）等 IP 与网络产品的介绍、购买与验证方法
+    link: /ip-network/dual-isp-dia/what-is
+    linkText: 查看文档
   - icon: 📚
     title: OPS 知识库
     details: 常见问题、故障排查与运维操作指南，覆盖网络/系统/账单等场景

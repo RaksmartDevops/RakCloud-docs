@@ -1,0 +1,43 @@
+[
+  {
+    "text": "双ISP DIA（家庭IP）产品介绍",
+    "items": [
+      {
+        "text": "什么是双ISP DIA",
+        "link": "/ip-network/dual-isp-dia/what-is"
+      },
+      {
+        "text": "产品优势",
+        "link": "/ip-network/dual-isp-dia/advantages"
+      },
+      {
+        "text": "适用场景",
+        "link": "/ip-network/dual-isp-dia/scenarios"
+      },
+      {
+        "text": "产品规格",
+        "link": "/ip-network/dual-isp-dia/specs"
+      },
+      {
+        "text": "如何购买",
+        "link": "/ip-network/dual-isp-dia/how-to-purchase"
+      },
+      {
+        "text": "升级与变更",
+        "link": "/ip-network/dual-isp-dia/upgrade-change"
+      },
+      {
+        "text": "管理订单",
+        "link": "/ip-network/dual-isp-dia/manage-orders"
+      },
+      {
+        "text": "如何验证 IP 属性",
+        "link": "/ip-network/dual-isp-dia/verify-ip"
+      },
+      {
+        "text": "常见问题",
+        "link": "/ip-network/dual-isp-dia/faq"
+      }
+    ]
+  }
+]
