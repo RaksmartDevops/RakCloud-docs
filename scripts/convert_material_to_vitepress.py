@@ -280,6 +280,30 @@ BOOKS = {
             },
         ],
     },
+    "ip-network": {
+        "slug": "ip-network",
+        "title": "IP 及网络服务",
+        "material_dir": "IP及网络服务介绍",
+        "chapters": [
+            {
+                "dir": "01、双ISP DIA（家庭IP）产品介绍",
+                "file": "双ISP DIA（家庭IP）产品介绍.md",
+                "slug": "dual-isp-dia",
+                "weight": 10,
+                "docs": {
+                    "什么是双ISP DIA": "what-is",
+                    "产品优势": "advantages",
+                    "适用场景": "scenarios",
+                    "产品规格": "specs",
+                    "如何购买": "how-to-purchase",
+                    "升级与变更": "upgrade-change",
+                    "管理订单": "manage-orders",
+                    "如何验证 IP 属性": "verify-ip",
+                    "常见问题": "faq",
+                },
+            },
+        ],
+    },
 }
 
 
@@ -771,5 +795,6 @@ if __name__ == "__main__":
     convert_book("dedicatedserver")
     convert_book("baremetal")
     convert_book("beginners-guide")
+    convert_book("ip-network")
     convert_ops_kb()
-    print("VPS / 独服 / 裸机云 / 新手指南 / OPS 知识库(中文) 转换完成")
+    print("VPS / 独服 / 裸机云 / 新手指南 / IP 及网络服务 / OPS 知识库(中文) 转换完成")
