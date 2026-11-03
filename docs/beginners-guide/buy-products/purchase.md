@@ -102,7 +102,7 @@ title: 购买 RakSmart 产品
 
 - **查看账单费用**
 
-  查看账单明细，参考[账单管理](/beginners-guide/billing/billing-management.md)。
+  查看账单明细，参考[账单管理](新手指南/08、账单管理/账单管理)。
 
 - **资源调整**
 
