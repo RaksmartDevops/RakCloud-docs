@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概览
 
-RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、OPS 知识库（ops-knowledge-base）共五本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。上线地址 `https://docs.raksmart.com/`（根路径）；发布采用"GitHub 构建产物 → `dist` 分支 → 文档服务器拉取到 staging → 人工晋升 production"，见"部署"一节。
+RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、IP 及网络服务（ip-network）、OPS 知识库（ops-knowledge-base）共六本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。上线地址 `https://docs.raksmart.com/`（根路径）；发布采用"GitHub 构建产物 → `dist` 分支 → 文档服务器拉取到 staging → 人工晋升 production"，见"部署"一节。
 
 ## 常用命令
 
