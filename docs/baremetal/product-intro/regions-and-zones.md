@@ -25,56 +25,20 @@ title: 区域和可用区
 
 下表列出 RakSmart 裸机云支持的全部区域和可用区，有关地域和可用区的更多信息请参见 [RakSmart 官网](https://cn.raksmart.com/)首页 - 全球数据中心网络。
 
-<table width="100%">
-  <tr style="text-align: left;">
-    <th width="20%">区域</th>
-    <th width="40%">可用区</th>
-    <th width="40%">可用区标识</th>
-  </tr>
-  <tr>
-    <td rowspan="3">美洲</td>
-    <td>硅谷</td>
-    <td>SV</td>
-  </tr>
-  <tr>
-    <td>洛杉矶</td>
-    <td>LA</td>
-  </tr>
-  <tr>
-    <td>西雅图</td>
-    <td>SEA</td>
-  </tr>
-  <tr>
-    <td rowspan="6">亚洲</td>
-    <td>香港</td>
-    <td>HK</td>
-  </tr>
-  <tr>
-    <td>台湾</td>
-    <td>TW</td>
-  </tr>
-  <tr>
-    <td>东京</td>
-    <td>TYO</td>
-  </tr>
-  <tr>
-    <td>首尔</td>
-    <td>SEL</td>
-  </tr>
-  <tr>
-    <td>新加坡</td>
-    <td>SG</td>
-  </tr>
-  <tr>
-    <td>吉隆坡</td>
-    <td>KUL</td>
-  </tr>
-   <tr>
-    <td>欧洲</td>
-    <td>法兰克福</td>
-    <td>FRA</td>
-  </tr>
-</table>
+| 区域 | 可用区 | 可用区标识 |
+| --- | --- | --- |
+| 美洲 | 硅谷 | SV |
+| 美洲 | 洛杉矶 | LA |
+| 美洲 | 西雅图 | SEA |
+| 亚洲 | 香港 | HK |
+| 亚洲 | 台湾 | TW |
+| 亚洲 | 东京 | TYO |
+| 亚洲 | 首尔 | SEL |
+| 亚洲 | 新加坡 | SG |
+| 亚洲 | 吉隆坡 | KUL |
+| 欧洲 | 法兰克福 | FRA |
+
+---
 
 ### 如何选择区域和可用区
 
