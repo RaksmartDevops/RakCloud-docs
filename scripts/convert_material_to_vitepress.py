@@ -338,6 +338,8 @@ LINK_FIXES: dict[str, str] = {
     "新手指南/07、账户管理/账户管理.md#账户管理##为普通用户授权": "/beginners-guide/account/user-permissions.md",
     "账单管理.md": "/beginners-guide/billing/index.md",
     "账单管理.md#账单管理": "/beginners-guide/billing/billing-management.md",
+    # 同事来稿里残留的旧式路径写法（缺 .md 后缀），防止被回退后再次失效
+    "新手指南/08、账单管理/账单管理": "/beginners-guide/billing/billing-management.md",
     "技术支持.md": "/beginners-guide/technical-support/index.md",
     "独服/01、产品介绍/产品介绍.md": "/dedicatedserver/product-intro/overview.md",
     "裸机云/01、产品介绍/产品介绍.md": "/baremetal/product-intro/overview.md",
@@ -347,6 +349,11 @@ LINK_FIXES: dict[str, str] = {
 
 # [text](#anchor)]？ 形式的站内锚点链接；末尾可选的 "]" 是素材里的既有笔误，一并吃掉
 LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)]+)\)(\])?")
+
+
+def slugify_anchor(fragment: str) -> str:
+    """按 VitePress 标题锚点规则规范化：小写、连续空白转连字符（中文不变）。"""
+    return re.sub(r"\s+", "-", fragment.strip().lower())
 
 
 def strip_front_matter(text: str) -> str:
@@ -408,7 +415,8 @@ def rewrite_links(body: str, doc_map: dict, current_chapter_slug: str) -> str:
             fragment = unquote(url[1:]).strip()
             target = doc_map.get(fragment)
             if target is None:
-                return m.group(0)
+                # 页内 H3/H4 锚点：把 Obsidian 风格的 %20 写法规范成 VitePress 实际生成的 id
+                return f"[{text}](#{slugify_anchor(fragment)})" + (m.group(3) or "")
             target_chapter_slug, target_doc_slug = target
             if target_chapter_slug == current_chapter_slug:
                 new_url = f"./{target_doc_slug}.md"
@@ -462,7 +470,7 @@ def convert_book(book_key: str) -> None:
             )
 
         # 章节 index.md：H1 标题 + 简介 + 子文章列表
-        intro_text = "\n".join(intro_lines).strip()
+        intro_text = rewrite_links("\n".join(intro_lines).strip(), doc_map, chapter["slug"])
         index_lines = [
             "---",
             f"title: {h1_title}",

@@ -28,7 +28,7 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
   - “分类目录多文件”（OPS 知识库）：`convert_ops_kb()`，一个 `.md` 就是一篇独立文章，H1 只作标题不进正文
 - 脚本里的 `BOOKS` / `OPS_KB_CATEGORIES` 章节-slug 映射表最初照搬自已归档的 Hugo 项目（`~/ccp/_archive/rs-docs-v2/scripts/import_material_books.py`），已人工核对过，不要重新 derive；此后以本仓库的脚本为准，归档项目不再同步。
 - 跨书/跨章节的相对链接（如 `[账单管理](账单管理.md#账单管理)`）转换脚本没法自动解析，只能靠脚本里的 `LINK_FIXES` 表逐条修复已知案例。
-- **页内锚点（`#标题`）转换脚本不做任何 slugify**：`rewrite_links()` 只处理映射表里能查到的"引用另一整篇文档标题"式锚点（对应 H2），对页内 H3/H4 级锚点一律原样保留，默认假设 materials/ 原文写的就是 VitePress 会自动生成的标准格式（小写 + 空格转连字符）。**如果 materials/ 原文用了 Obsidian 导出习惯的 `#标题%20带空格` 写法，这个假设就不成立，会产生实际跳转失效但构建不报错的死锚点**（`docs/.vitepress/config.ts` 的 `ignoreDeadLinks: [/%/]` 会把这类链接从死链检查里豁免掉，所以构建绿灯不代表锚点都能跳转）。
+- **页内锚点（`#标题`）的处理（2026-11-09 起）**：`rewrite_links()` 对映射表里能查到的“引用另一整篇文档标题”式锚点（H2）改写为跨页链接；其余页内 H3/H4 锚点由 `slugify_anchor()` 按 VitePress 规则规范化（先 `unquote`，再小写、空白转 `-`，中文不变），所以 materials/ 里 Obsidian 风格的 `#标题%20带空格` 写法会被自动转成 `#标题-带空格`。注意 `docs/.vitepress/config.ts` 的 `ignoreDeadLinks: [/%/]` 仍会豁免含 `%` 的链接，构建绿灯不代表所有锚点都能跳转；新增文档时建议仍直接写标准格式。
 
 ### 新增手册与外部来稿的处理规则（2026-11-03）
 
@@ -44,14 +44,7 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
 - `materials/新手指南/04、购买 RakSmart 产品/购买 RakSmart 产品.md`：`[账单管理](新手指南/08、账单管理/账单管理)` 这个残留的旧式路径改成了 `[账单管理](账单管理.md#账单管理)`，并在 `LINK_FIXES` 里新增 `"账单管理.md#账单管理": "/beginners-guide/billing/billing-management.md"`。
 - `materials/VPS/03、管理 VPS/管理 VPS.md`：`[购买弹性 IP](#购买弹性%20IP)` 改成了 `[购买弹性 IP](#购买弹性-ip)`。
 
-**以下 5 处同类 `#标题%20带空格` 锚点问题仍未修复**（用户明确决定本轮只处理上面 2 处已知案例，暂不做脚本层的通用 slugify 规则，也不逐一手改剩余案例）：
-- `materials/VPS/03、管理 VPS/管理 VPS.md:73` — `[查看 VPS 详情信息](#查看%20VPS%20详情信息)`
-- `materials/VPS/03、管理 VPS/管理 VPS.md:74` — `[执行 VPS 操作](#执行%20VPS%20操作)`
-- `materials/VPS/03、管理 VPS/管理 VPS.md:142` — `[弹性 IP](#弹性%20IP)`
-- `materials/VPS/02、快速入门/快速入门.md:83` — `[通过官网 VPS 入口购买](#通过官网%20VPS%20入口购买)`
-- `materials/VPS/02、快速入门/快速入门.md:214` 和 `:224` — `[登录 VPS](#登录%20VPS)`、`[购买 VPS](#购买%20VPS)`
-
-这些链接目前点击后跳转不到目标位置（非阻断性问题，不影响构建/发布）。如果以后要处理，做法是把 `#标题%20带空格` 改成 `#标题-带空格对应部分转小写连字符`（例如 `#购买弹性-ip` 这个已验证过的写法：原标题空格转 `-`，英文字母转小写，中文字符不变）。**新增文档时如果沿用 Obsidian 导出的 `%20` 锚点写法，会持续产生同类问题**，写作时应直接使用 VitePress 标准锚点格式。
+**原先记录的 5 处同类 `%20` 锚点问题，以及后来在 `elastic-ip.html` 发现的 `#购买弹性%20IP`，已于 2026-11-09 由脚本通用规范化一并解决**（无需再手改 materials/）。遗留的一处原文笔误：`materials/VPS/03、管理 VPS/管理 VPS.md:48` 链接末尾多了一个 `]`，尚未修改。
 
 ## 站点功能（2026-09-02 新增）
 
