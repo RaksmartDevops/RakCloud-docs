@@ -338,6 +338,8 @@ LINK_FIXES: dict[str, str] = {
     "新手指南/07、账户管理/账户管理.md#账户管理##为普通用户授权": "/beginners-guide/account/user-permissions.md",
     "账单管理.md": "/beginners-guide/billing/index.md",
     "账单管理.md#账单管理": "/beginners-guide/billing/billing-management.md",
+    # 同事来稿里残留的旧式路径写法（缺 .md 后缀），防止被回退后再次失效
+    "新手指南/08、账单管理/账单管理": "/beginners-guide/billing/billing-management.md",
     "技术支持.md": "/beginners-guide/technical-support/index.md",
     "独服/01、产品介绍/产品介绍.md": "/dedicatedserver/product-intro/overview.md",
     "裸机云/01、产品介绍/产品介绍.md": "/baremetal/product-intro/overview.md",
@@ -468,7 +470,7 @@ def convert_book(book_key: str) -> None:
             )
 
         # 章节 index.md：H1 标题 + 简介 + 子文章列表
-        intro_text = "\n".join(intro_lines).strip()
+        intro_text = rewrite_links("\n".join(intro_lines).strip(), doc_map, chapter["slug"])
         index_lines = [
             "---",
             f"title: {h1_title}",
