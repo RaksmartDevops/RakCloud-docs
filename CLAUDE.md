@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概览
 
-RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、OPS 知识库（ops-knowledge-base）共五本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。上线地址 `https://docs.raksmart.com/`（根路径）；发布采用"GitHub 构建产物 → `dist` 分支 → 文档服务器拉取到 staging → 人工晋升 production"，见"部署"一节。
+RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、IP 及网络服务（ip-network）、OPS 知识库（ops-knowledge-base）共六本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。上线地址 `https://docs.raksmart.com/`（根路径）；发布采用"GitHub 构建产物 → `dist` 分支 → 文档服务器拉取到 staging → 人工晋升 production"，见"部署"一节。
 
 ## 常用命令
 
@@ -29,6 +29,14 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
 - 脚本里的 `BOOKS` / `OPS_KB_CATEGORIES` 章节-slug 映射表最初照搬自已归档的 Hugo 项目（`~/ccp/_archive/rs-docs-v2/scripts/import_material_books.py`），已人工核对过，不要重新 derive；此后以本仓库的脚本为准，归档项目不再同步。
 - 跨书/跨章节的相对链接（如 `[账单管理](账单管理.md#账单管理)`）转换脚本没法自动解析，只能靠脚本里的 `LINK_FIXES` 表逐条修复已知案例。
 - **页内锚点（`#标题`）转换脚本不做任何 slugify**：`rewrite_links()` 只处理映射表里能查到的"引用另一整篇文档标题"式锚点（对应 H2），对页内 H3/H4 级锚点一律原样保留，默认假设 materials/ 原文写的就是 VitePress 会自动生成的标准格式（小写 + 空格转连字符）。**如果 materials/ 原文用了 Obsidian 导出习惯的 `#标题%20带空格` 写法，这个假设就不成立，会产生实际跳转失效但构建不报错的死锚点**（`docs/.vitepress/config.ts` 的 `ignoreDeadLinks: [/%/]` 会把这类链接从死链检查里豁免掉，所以构建绿灯不代表锚点都能跳转）。
+
+### 新增手册与外部来稿的处理规则（2026-11-03）
+
+- **新增一本书必须登记**：转换脚本是显式登记制，在 `materials/` 放新目录不会自动生成页面。需要同时改 `scripts/convert_material_to_vitepress.py`（`BOOKS` 增加书、章节、H2→slug 映射，`__main__` 增加 `convert_book(...)`）、`docs/.vitepress/config.ts`（import 侧边栏 JSON、`nav`、`sidebar`）、`docs/index.md`（首页卡片）。H2 标题与映射表对不上会直接抛 ValueError。例：`ip-network`（《IP及网络服务介绍》）。
+- **图片引用必须写成 `./images/文件名.png`**：脚本只整份复制章节的 `images/` 目录，不改写路径。写成裸文件名（`xxx.png`）或错误的长路径，会让 `npm run docs:build` 报 `Could not resolve` 失败。2026-11-03 已修复注册、控制台手册中 4 处此类写法。
+- **`docs/` 与 `materials/` 的不同步已消除**：2026-11-03 在 `docs/sync-colleague-edits` 分支按当前 `materials/` 重新生成过一次（24 个文件）。此前不同步的原因是 9 月 6 日同步 materials 后一直没重跑脚本，而重跑会被上述裸文件名图片路径挡住构建。
+- **同事/外部提供整份手册副本时不要直接覆盖 `materials/`**：对方多半基于旧版修改。做法是以其所基于的旧版 commit 为基线，对每个有差异的文件做三方合并（`git merge-file <当前materials文件> <基线> <对方文件>`），只合入对方相对基线的增量，并核对其中是否有回退（如把 `#购买弹性-ip` 改回 `%20`）。
+- 面向其他团队的简版发布流程见 [`deploy-overview.md`](deploy-overview.md)。
 
 ### 隐患修复记录（2026-09-02）
 
