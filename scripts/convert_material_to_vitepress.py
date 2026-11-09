@@ -349,6 +349,11 @@ LINK_FIXES: dict[str, str] = {
 LINK_RE = re.compile(r"\[([^\]]*)\]\(([^)]+)\)(\])?")
 
 
+def slugify_anchor(fragment: str) -> str:
+    """按 VitePress 标题锚点规则规范化：小写、连续空白转连字符（中文不变）。"""
+    return re.sub(r"\s+", "-", fragment.strip().lower())
+
+
 def strip_front_matter(text: str) -> str:
     if not text.startswith("---"):
         return text
@@ -408,7 +413,8 @@ def rewrite_links(body: str, doc_map: dict, current_chapter_slug: str) -> str:
             fragment = unquote(url[1:]).strip()
             target = doc_map.get(fragment)
             if target is None:
-                return m.group(0)
+                # 页内 H3/H4 锚点：把 Obsidian 风格的 %20 写法规范成 VitePress 实际生成的 id
+                return f"[{text}](#{slugify_anchor(fragment)})" + (m.group(3) or "")
             target_chapter_slug, target_doc_slug = target
             if target_chapter_slug == current_chapter_slug:
                 new_url = f"./{target_doc_slug}.md"
