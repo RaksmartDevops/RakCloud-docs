@@ -45,7 +45,7 @@ description: RakSmart VPS（Virtual Private Server，虚拟专用服务器）基
 
 了解更多 VPS 的详细信息和可执行的操作可参考：
 
-- [查看 VPS 详情信息](#查看%20VPS%20详情信息)]
+- [查看 VPS 详情信息](#查看%20VPS%20详情信息)
 - [执行 VPS 操作](#执行%20VPS%20操作)
 
 ## 查看 VPS 详情信息
