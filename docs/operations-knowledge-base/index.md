@@ -7,7 +7,6 @@ title: Operations Knowledge Base
 ## Categories
 - [Network](./network/index.md)
 - [SSL](./ssl/index.md)
-- [Cloud Native](./cloud-native/index.md)
 - [Sales](./sales-issues/index.md)
 - [Operating System](./operating-system/index.md)
 - [Billing](./billing-issues/index.md)

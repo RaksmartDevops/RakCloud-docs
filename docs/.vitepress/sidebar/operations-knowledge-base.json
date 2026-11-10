@@ -32,42 +32,6 @@
     ]
   },
   {
-    "text": "Cloud Native",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "Cloud Native Load Balancing",
-        "link": "/operations-knowledge-base/cloud-native/cloud-native-load-balancing"
-      },
-      {
-        "text": "Cloud Native Security Group Settings",
-        "link": "/operations-knowledge-base/cloud-native/cloud-native-security-group-settings"
-      },
-      {
-        "text": "Cloud-Native Backup Usage Instructions",
-        "link": "/operations-knowledge-base/cloud-native/cloud-native-backup-usage-instructions"
-      },
-      {
-        "text": "Cloud DB MySQL Plus",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "Database Connection 1",
-            "link": "/operations-knowledge-base/cloud-native/cloud-db-mysql-plus/database-connection-1"
-          },
-          {
-            "text": "Database Connection 2",
-            "link": "/operations-knowledge-base/cloud-native/cloud-db-mysql-plus/database-connection-2"
-          },
-          {
-            "text": "Unable to connect to the database",
-            "link": "/operations-knowledge-base/cloud-native/cloud-db-mysql-plus/unable-to-connect-to-the-database"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "text": "Sales",
     "collapsed": true,
     "items": [

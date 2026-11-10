@@ -832,7 +832,6 @@ OPS_KB_EN_MATERIAL_DIR = "Operations Knowledge Base"
 OPS_KB_EN_CATEGORIES: list[tuple[str, str, list[tuple[str, str]]]] = [
     ("Network", "network", []),
     ("SSL", "ssl", []),
-    ("Cloud Native", "cloud-native", [("Cloud DB MySQL Plus", "cloud-db-mysql-plus")]),
     ("Sales", "sales-issues", []),
     ("Operating System", "operating-system", [("Linux", "linux"), ("Windows", "windows")]),
     ("Billing", "billing-issues", []),
