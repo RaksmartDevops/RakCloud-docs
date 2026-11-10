@@ -1,8 +1,8 @@
 ---
-title: OPS 知识库
+title: 运维知识库
 ---
 
-# OPS 知识库
+# 运维知识库
 
 ## 分类
 - [网络](./network/index.md)

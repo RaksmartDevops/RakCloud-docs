@@ -13,7 +13,7 @@ hero:
       text: 新手指南
       link: /beginners-guide/about-raksmart/products-and-services
     - theme: alt
-      text: 浏览 OPS 知识库
+      text: 浏览运维知识库
       link: /ops-knowledge-base/
 
 features:
@@ -43,8 +43,13 @@ features:
     link: /ip-network/dual-isp-dia/what-is
     linkText: 查看文档
   - icon: 📚
-    title: OPS 知识库
+    title: 运维知识库
     details: 常见问题、故障排查与运维操作指南，覆盖网络/系统/账单等场景
     link: /ops-knowledge-base/
     linkText: 查看文档
+  - icon: 🌍
+    title: Operations Knowledge Base
+    details: FAQs, troubleshooting and operation guides for VPS, dedicated servers, bare metal cloud, networking and billing
+    link: /operations-knowledge-base/
+    linkText: Read the docs
 ---
