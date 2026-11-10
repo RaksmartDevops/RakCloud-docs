@@ -2,7 +2,7 @@
 
 一.可以使用Linux\_tools.sh脚本自动添加
 
-- 下载安装链接：[system tools](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/189/system-tools.html)
+- 下载安装链接：[system tools](/ops-knowledge-base/operating-system/)
 
 ![](./images/36805aca49ed6468.png)
 

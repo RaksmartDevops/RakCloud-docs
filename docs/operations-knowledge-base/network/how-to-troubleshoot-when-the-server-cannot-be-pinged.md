@@ -124,4 +124,4 @@ Use a cloud server in the same region to Ping the unresponsive public IP. If the
 
 Packet loss or high latency issues during Ping tests can be caused by network congestion, node failures, or high server loads.
 
-Please refer to the specific troubleshooting steps for further investigation:[Installation and Usage of MTR Tool](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/576/Installation-and-Usage-of-MTR-Tool.html)
+Please refer to the specific troubleshooting steps for further investigation:[Installation and Usage of MTR Tool](/operations-knowledge-base/network/installation-and-usage-of-mtr-tool)

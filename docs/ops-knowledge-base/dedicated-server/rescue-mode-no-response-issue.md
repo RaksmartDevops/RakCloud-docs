@@ -13,7 +13,7 @@ title: 物理服务器进入救援模式无响应故障描述
 
 可以尝试打开VNC看下具体进度
 
-VNC使用参考：[物理服务器打开VNC窗口](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/533/%E7%89%A9%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%93%E5%BC%80VNC%E7%AA%97%E5%8F%A3.html)
+VNC使用参考：[物理服务器打开VNC窗口](/ops-knowledge-base/dedicated-server/open-vnc-window)
 
 例如：
 

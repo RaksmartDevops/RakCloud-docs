@@ -4,7 +4,7 @@ title: How to configure multiple IP addresses in CentOS operating system
 
 一.You can use the "Linux\_tools.sh" script to automatically add multiple IP addresses.
 
-- Download and install the script using the following link：[system tools](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/189/system-tools.html)
+- Download and install the script using the following link：[system tools](/operations-knowledge-base/operating-system/)
 
 ![](./images/36805aca49ed6468.png)
 

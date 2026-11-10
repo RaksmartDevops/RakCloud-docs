@@ -80,7 +80,7 @@ On the Upgrade/Downgrade page, you can adjust the following configuration items 
 
 After the upgrade or downgrade is completed, you can view the updated server configuration under the **Configuration Options** section on the server management page.
 
-For more details, please refer to the **Configuration Options** section in the [*Bare Metal Cloud Control Panel Guide*](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F1152%2F%E8%A3%B8%E6%9C%BA%E4%BA%91%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97.html&language=english).
+For more details, please refer to the **Configuration Options** section in the [*Bare Metal Cloud Control Panel Guide*](/operations-knowledge-base/baremetal/bare-metal-cloud-control-panel-user-guide).
 
 ---
 

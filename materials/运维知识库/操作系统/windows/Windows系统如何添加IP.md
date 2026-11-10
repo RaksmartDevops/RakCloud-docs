@@ -1,6 +1,6 @@
 # Windows系统如何添加IP
 
-方法一：可以使用 [系統工具](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/189/%E7%B3%BB%E7%B5%B1%E5%B7%A5%E5%85%B7.html) 该文档内的脚本，直接配置命令
+方法一：可以使用 [系統工具](/ops-knowledge-base/operating-system/) 该文档内的脚本，直接配置命令
 
 连续添加IP
 

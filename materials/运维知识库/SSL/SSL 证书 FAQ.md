@@ -2,7 +2,7 @@
 
 本文解答有关 **SSL 证书申请** 和 **域名控制权验证（Domain Control Validation，DCV）** 的常见问题。
 
-如需查看详细操作步骤，请参阅 **《[SSL 证书验证方式指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/739/SSL%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E6%96%B9%E5%BC%8F%E6%8C%87%E5%8D%97.html)》**。
+如需查看详细操作步骤，请参阅 **《[SSL 证书验证方式指南](/ops-knowledge-base/ssl/ssl-certificate-verification-guide)》**。
 
 ## 1. 验证邮件会发送到哪个邮箱？
 

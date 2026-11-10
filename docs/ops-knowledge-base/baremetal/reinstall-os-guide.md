@@ -73,7 +73,7 @@ Linux 系统支持使用 SSH 公钥登录。
 
 如尚未创建 SSH 公钥，请先完成公钥添加。
 
-> **详细操作请参考：《[SSH 公钥管理指南](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F989%2FSSH-KEY-%E7%AE%A1%E7%90%86.html&language=chinese-cn)》**
+> **详细操作请参考：《[SSH 公钥管理指南](/ops-knowledge-base/vps/ssh-key-management-guide)》**
 
 ---
 

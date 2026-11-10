@@ -2,7 +2,7 @@
 
 1.Formatting the hard drive by entering rescue mode.
 
-Please refer to the method for entering rescue mode：[Rescue mode for Dedicated Server](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/442/Rescue-mode-for-Dedicated-Server.html)
+Please refer to the method for entering rescue mode：[Rescue mode for Dedicated Server](/operations-knowledge-base/dedicated-server/how-to-use-rescue-mode-on-a-dedicated-server)
 
 2.Click on the DiskGenius software.
 

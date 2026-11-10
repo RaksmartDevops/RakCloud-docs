@@ -142,7 +142,7 @@ After logging in to the operating system through VNC, you can change your passwo
 
 If you have forgotten your password, you can also use the **Reset Password** feature in the control panel.
 
-For more information, please refer to the [**Bare Metal Cloud Password Change and Reset Guide**.](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F530%2F%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9%E4%B8%8E%E9%87%8D%E7%BD%AE%E6%8C%87%E5%8D%97.html&language=english)
+For more information, please refer to the [**Bare Metal Cloud Password Change and Reset Guide**.](/operations-knowledge-base/baremetal/bare-metal-cloud-password-change-and-reset-guide)
 
 ---
 

@@ -131,7 +131,7 @@
 
 详细操作请参考：
 
-**《[裸机云 密码修改与重置指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/530/%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9%E4%B8%8E%E9%87%8D%E7%BD%AE%E6%8C%87%E5%8D%97.html)》**
+**《[裸机云 密码修改与重置指南](/ops-knowledge-base/baremetal/password-change-reset-guide)》**
 
 ---
 
@@ -147,7 +147,7 @@
 
 详细操作请参考：
 
-**《[裸机云 重装系统指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1155/%E8%A3%B8%E6%9C%BA%E4%BA%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%8C%87%E5%8D%97.html)》**
+**《[裸机云 重装系统指南](/ops-knowledge-base/baremetal/reinstall-os-guide)》**
 
 ---
 
@@ -164,7 +164,7 @@
 
 详细操作请参考：
 
-**《[裸机云 救援系统（Rescue）使用指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/525/%E8%A3%B8%E6%9C%BA%E4%BA%91-Rescue%E6%95%91%E6%8F%B4%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)》**
+**《[裸机云 救援系统（Rescue）使用指南](/ops-knowledge-base/baremetal/rescue-mode-guide)》**
 
 ---
 
@@ -184,7 +184,7 @@
 
 详细操作请参考：
 
-**《[裸机云 VNC 控制台使用指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1153/%E8%A3%B8%E6%9C%BA%E4%BA%91-VNC-%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)》**
+**《[裸机云 VNC 控制台使用指南](/ops-knowledge-base/baremetal/vnc-console-guide)》**
 
 ---
 
@@ -201,7 +201,7 @@
 
 详细操作请参考：
 
-**《[裸机云 升级/降级操作指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1139/%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%8D%87%E7%BA%A7or%E9%99%8D%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97.html)》**
+**《[裸机云 升级/降级操作指南](/ops-knowledge-base/baremetal/upgrade-downgrade-guide)》**
 
 ---
 
@@ -220,7 +220,7 @@
 
 详细操作请参考：
 
-**《[VPS 监控功能说明](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F810%2FVPS-%E7%9B%91%E6%8E%A7%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E.html&language=chinese-cn)》**
+**《[VPS 监控功能说明](/ops-knowledge-base/vps/monitoring-guide)》**
 
 ---
 
@@ -250,7 +250,7 @@
 
 详细操作请参考：
 
-**《[VPS 弹性 IP 使用指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/918/VPS-%E5%BC%B9%E6%80%A7-IP-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)》**
+**《[VPS 弹性 IP 使用指南](/ops-knowledge-base/vps/elastic-ip-guide)》**
 
 ---
 
@@ -270,7 +270,7 @@
 
 详细操作请参考：
 
-**《[VPS 独立云盘使用指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/915/VPS-%E7%8B%AC%E7%AB%8B%E4%BA%91%E7%9B%98%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)》**
+**《[VPS 独立云盘使用指南](/ops-knowledge-base/vps/cloud-disk-guide)》**
 
 ---
 
@@ -289,7 +289,7 @@
 
 详细操作请参考：
 
-**《[VPS 安全组使用指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1021/%E5%AE%89%E5%85%A8%E7%BB%84.html)》**
+**《[VPS 安全组使用指南](/ops-knowledge-base/vps/security-group-guide)》**
 
 ---
 

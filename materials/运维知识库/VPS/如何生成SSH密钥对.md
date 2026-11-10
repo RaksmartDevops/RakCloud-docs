@@ -89,4 +89,4 @@
 
 #chmod 600 ~/.ssh/authorized\_keys
 
-[**接下来会从macOS系统、windows系统和不同的远程工具介绍如何通过私钥进行远程登录。**](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/977/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%A7%81%E9%92%A5%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95.html)
+[**接下来会从macOS系统、windows系统和不同的远程工具介绍如何通过私钥进行远程登录。**](/ops-knowledge-base/vps/remote-login-with-private-key)

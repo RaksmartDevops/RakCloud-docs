@@ -4,7 +4,7 @@
 
 This article answers common questions about **SSL certificate applications** and **Domain Control Validation (DCV)**.
 
-For step-by-step instructions, please refer to the [**SSL Certificate Validation Methods Guide**](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F739%2FSSL%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E6%96%B9%E5%BC%8F%E6%8C%87%E5%8D%97.html&language=english).
+For step-by-step instructions, please refer to the [**SSL Certificate Validation Methods Guide**](/operations-knowledge-base/ssl/ssl-certificate-validation-methods-guide).
 
 ---
 

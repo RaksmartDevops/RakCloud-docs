@@ -133,7 +133,7 @@ Typical use cases:
 
 For detailed instructions, please refer to:
 
-**[Bare Metal Cloud Password Change & Reset Guide](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F530%2F%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9%E4%B8%8E%E9%87%8D%E7%BD%AE%E6%8C%87%E5%8D%97.html&language=english)**
+**[Bare Metal Cloud Password Change & Reset Guide](/operations-knowledge-base/baremetal/bare-metal-cloud-password-change-and-reset-guide)**
 
 ---
 
@@ -149,7 +149,7 @@ Reinstalling the operating system will erase all data on the system disk. Please
 
 For detailed instructions, please refer to:
 
-**[Bare Metal Cloud OS Reinstallation Guide](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F1155%2F%E8%A3%B8%E6%9C%BA%E4%BA%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%8C%87%E5%8D%97.html&language=english)**
+**[Bare Metal Cloud OS Reinstallation Guide](/operations-knowledge-base/baremetal/bare-metal-cloud-os-reinstallation-guide)**
 
 ---
 
@@ -166,7 +166,7 @@ Typical use cases:
 
 For detailed instructions, please refer to:
 
-**[Bare Metal Cloud Rescue System Guide](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F525%2F%E8%A3%B8%E6%9C%BA%E4%BA%91-Rescue%E6%95%91%E6%8F%B4%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html&language=english)**
+**[Bare Metal Cloud Rescue System Guide](/operations-knowledge-base/baremetal/bare-metal-cloud-rescue-mode-user-guide)**
 
 ---
 
@@ -186,7 +186,7 @@ Typical use cases:
 
 For detailed instructions, please refer to:
 
-**[Bare Metal Cloud VNC Console Guide](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F1153%2F%E8%A3%B8%E6%9C%BA%E4%BA%91-VNC-%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html&language=english)**
+**[Bare Metal Cloud VNC Console Guide](/operations-knowledge-base/baremetal/bare-metal-cloud-vnc-console-user-guide)**
 
 ---
 
@@ -205,7 +205,7 @@ The available resources depend on the options displayed in the control panel.
 
 For detailed instructions, please refer to:
 
-**[Bare Metal Cloud Upgrade/Downgrade Guide](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F1139%2F%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%8D%87%E7%BA%A7or%E9%99%8D%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97.html&language=english)**
+**[Bare Metal Cloud Upgrade/Downgrade Guide](/operations-knowledge-base/baremetal/bare-metal-cloud-upgrade-downgrade-guide)**
 
 ---
 
@@ -224,7 +224,7 @@ These charts help you monitor the operating status and resource utilization of y
 
 For more information, please refer to:
 
-[**VPS Monitoring Features Guide**](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F810%2FVPS-%E7%9B%91%E6%8E%A7%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E.html&language=english)
+[**VPS Monitoring Features Guide**](/operations-knowledge-base/vps/vps-monitoring-features-guide)
 
 ---
 
@@ -254,7 +254,7 @@ Supported operations include:
 
 For detailed instructions, please refer to:
 
-[**VPS Elastic IP Guide**](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F918%2FVPS-%E5%BC%B9%E6%80%A7-IP-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html&language=english)
+[**VPS Elastic IP Guide**](/operations-knowledge-base/vps/vps-elastic-ip-user-guide)
 
 ---
 
@@ -274,7 +274,7 @@ After attaching a Cloud Disk through the control panel, you must log in to the o
 
 For detailed instructions, please refer to:
 
-[**VPS Cloud Disk Guide**](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F915%2FVPS-%E7%8B%AC%E7%AB%8B%E4%BA%91%E7%9B%98%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html&language=english)
+[**VPS Cloud Disk Guide**](/operations-knowledge-base/vps/vps-cloud-disk-user-guide)
 
 ---
 
@@ -293,7 +293,7 @@ Security Groups help control network access by allowing or denying specific port
 
 For detailed instructions, please refer to:
 
-[**VPS Security Group Guide**](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1021/VPS-%E5%AE%89%E5%85%A8%E7%BB%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
+[**VPS Security Group Guide**](/operations-knowledge-base/vps/vps-security-group-user-guide)
 
 ---
 

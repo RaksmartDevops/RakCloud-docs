@@ -153,7 +153,7 @@ The system will automatically install the selected public key on the server, ena
 
 > **Note:**
 >
-> After creating an SSH key pair, please refer to **"[How to Log In to a Linux Server Using an SSH Private Key](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F977%2F%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%A7%81%E9%92%A5%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95.html&language=english)"** for instructions on using the downloaded private key (**id\_rsa.pem**) to access your server.
+> After creating an SSH key pair, please refer to **"[How to Log In to a Linux Server Using an SSH Private Key](/operations-knowledge-base/vps/how-to-use-a-private-key-for-remote-login)"** for instructions on using the downloaded private key (**id\_rsa.pem**) to access your server.
 
 ---
 

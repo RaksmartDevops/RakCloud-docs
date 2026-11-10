@@ -9,7 +9,7 @@
 
 If the rescue process gets stuck at \*%, you could open VNC to check the specific progress.
 
-Reference for VNC Usage：[How to open a VNC window in a bare-metal cloud](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/516/How-to-open-a-VNC-window-in-a-bare-metal-cloud.html)
+Reference for VNC Usage：[How to open a VNC window in a bare-metal cloud](/operations-knowledge-base/dedicated-server/how-to-open-the-vnc-console-for-a-physical-server)
 
 For example: 
 

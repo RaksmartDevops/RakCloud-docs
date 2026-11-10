@@ -111,7 +111,7 @@ Common use cases include:
 - Entering single-user mode
 - Viewing the system boot process
 
-For detailed instructions, please refer to [**Bare Metal Cloud VNC Console User Guide**.](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F1153%2F%E8%A3%B8%E6%9C%BA%E4%BA%91-VNC-%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html&language=english)
+For detailed instructions, please refer to [**Bare Metal Cloud VNC Console User Guide**.](/operations-knowledge-base/baremetal/bare-metal-cloud-vnc-console-user-guide)
 
 ---
 
@@ -124,7 +124,7 @@ Typical use cases:
 - Forgotten login password
 - Initial password replacement
 
-For detailed instructions, please refer to [**Bare Metal Cloud Password Change and Reset Guide**.](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F530%2F%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9%E4%B8%8E%E9%87%8D%E7%BD%AE%E6%8C%87%E5%8D%97.html&language=english)
+For detailed instructions, please refer to [**Bare Metal Cloud Password Change and Reset Guide**.](/operations-knowledge-base/baremetal/bare-metal-cloud-password-change-and-reset-guide)
 
 ---
 
@@ -140,7 +140,7 @@ Supported operating systems include Linux and Windows (depending on the options 
 >
 > Please back up any important data before proceeding.
 
-For detailed instructions, please refer to [**Bare Metal Cloud OS Reinstallation Guide**](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1155/%E8%A3%B8%E6%9C%BA%E4%BA%91%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E6%8C%87%E5%8D%97.html).
+For detailed instructions, please refer to [**Bare Metal Cloud OS Reinstallation Guide**](/operations-knowledge-base/baremetal/bare-metal-cloud-os-reinstallation-guide).
 
 ---
 
@@ -155,7 +155,7 @@ Common use cases include:
 - Boot configuration repair
 - Data recovery
 
-For detailed instructions, please refer to [**Bare Metal Cloud Rescue Mode User Guide**](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/525/%E8%A3%B8%E6%9C%BA%E4%BA%91-Rescue%E6%95%91%E6%8F%B4%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html).
+For detailed instructions, please refer to [**Bare Metal Cloud Rescue Mode User Guide**](/operations-knowledge-base/baremetal/bare-metal-cloud-rescue-mode-user-guide).
 
 ---
 
@@ -170,7 +170,7 @@ Available upgrade or downgrade options depend on your server configuration and m
 - Bandwidth
 - Traffic
 
-For detailed instructions, please refer to [**Bare Metal Cloud Upgrade/Downgrade Guide**](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1139/%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%8D%87%E7%BA%A7or%E9%99%8D%E7%BA%A7%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97.html).
+For detailed instructions, please refer to [**Bare Metal Cloud Upgrade/Downgrade Guide**](/operations-knowledge-base/baremetal/bare-metal-cloud-upgrade-downgrade-guide).
 
 ---
 
@@ -215,7 +215,7 @@ The monitoring charts help you analyze resource utilization, such as:
 - Whether memory resources are insufficient
 - Whether network traffic is abnormal
 
-For detailed instructions, please refer to [**Bare Metal Cloud Monitoring Guide**](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1160/%E8%A3%B8%E6%9C%BA%E4%BA%91%E7%9B%91%E6%8E%A7%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E.html).
+For detailed instructions, please refer to [**Bare Metal Cloud Monitoring Guide**](/operations-knowledge-base/baremetal/bare-metal-cloud-monitoring-feature-guide).
 
 ---
 
@@ -233,7 +233,7 @@ The following functions are available:
 
 Security Groups allow you to control inbound network access and manage firewall rules, improving server security.
 
-For detailed instructions, please refer to [**Bare Metal Cloud Security Group Guide**](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/1021/%E5%AE%89%E5%85%A8%E7%BB%84.html).
+For detailed instructions, please refer to [**Bare Metal Cloud Security Group Guide**](/operations-knowledge-base/vps/vps-security-group-user-guide).
 
 ---
 

@@ -157,7 +157,7 @@ SSH 公钥主要用于 Linux 系统的身份认证。
 >
 > SSH 公钥创建完成后，如需了解如何使用私钥登录服务器，请参考：
 >
-> **《[如何使用 SSH 私钥远程登录 Linux 服务器](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/977/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E7%A7%81%E9%92%A5%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95.html)》**
+> **《[如何使用 SSH 私钥远程登录 Linux 服务器](/ops-knowledge-base/vps/remote-login-with-private-key)》**
 
 ---
 

@@ -2,7 +2,7 @@
 title: Add an IP address in Windows System
 ---
 
-Method 1: You can use the scripts provided in the [system tools](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/189/system-tools.html) document to configure the commands directly.
+Method 1: You can use the scripts provided in the [system tools](/operations-knowledge-base/operating-system/) document to configure the commands directly.
 
 Adding IP addresses consecutively.
 

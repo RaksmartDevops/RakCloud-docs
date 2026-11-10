@@ -73,7 +73,7 @@ When selecting **SSH Key Login**, choose an SSH public key from the list of keys
 
 If you have not created an SSH public key yet, please add one first.
 
-> **For more information, please refer to the [*SSH Public Key Management Guide*](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/989/SSH-KEY-%E7%AE%A1%E7%90%86.html).**
+> **For more information, please refer to the [*SSH Public Key Management Guide*](/operations-knowledge-base/vps/ssh-public-key-management-guide).**
 
 ---
 

@@ -30,4 +30,4 @@ To log out, click on the button in the upper right corner and select the option 
 
 四、Google two-factor authentication is available to improve machine security for customer dashboard and single server login. This involves configuring a dynamic key for authentication to improve security for our customers.
 
-Please refer to：[To enable Google two-factor authentication in the public cloud](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/312/To-enable-Google-two-factor-authentication-in-the-public-cloud.html)
+Please refer to：[To enable Google two-factor authentication in the public cloud](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/312/To-enable-Google-two-factor-authentication-in-the-public-cloud.html&language=english)

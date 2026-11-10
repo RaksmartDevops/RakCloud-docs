@@ -143,7 +143,7 @@ VNC 直接连接服务器控制台，因此即使网络配置异常或远程服�
 
 如果忘记服务器密码，也可以使用控制台中的 **重置密码** 功能重新设置密码。
 
-详细操作请参考：《[裸机云密码修改与重置指南](https://billing.raksmart.com/whmcs/index.php?rp=%2Fknowledgebase%2F530%2F%E8%A3%B8%E6%9C%BA%E4%BA%91%E5%AF%86%E7%A0%81%E4%BF%AE%E6%94%B9%E4%B8%8E%E9%87%8D%E7%BD%AE%E6%8C%87%E5%8D%97.html&language=chinese-cn)》。
+详细操作请参考：《[裸机云密码修改与重置指南](/ops-knowledge-base/baremetal/password-change-reset-guide)》。
 
 ---
 

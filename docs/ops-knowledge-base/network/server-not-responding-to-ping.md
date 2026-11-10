@@ -127,4 +127,4 @@ Linux系统
 
 链路拥塞、链路节点故障、服务器负载高等问题均可能引起执行Ping命令时出现丢包或时延过高的问题。
 
-具体检查操作请参考：[MTR工具安装及使用](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/576/MTR%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8.html)
+具体检查操作请参考：[MTR工具安装及使用](/ops-knowledge-base/network/mtr-installation-and-usage)
