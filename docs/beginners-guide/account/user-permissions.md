@@ -18,7 +18,7 @@ title: 为普通用户授权
 
 管理权限通过选择或取消选择权限项，完成对用户的权限调整。
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在个人资料列表单击**用户管理**，进入**用户管理**页面。
 

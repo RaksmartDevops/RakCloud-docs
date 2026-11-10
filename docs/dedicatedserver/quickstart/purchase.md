@@ -46,7 +46,7 @@ title: 购买物理服务器
 
 本文主要介绍通过 RakSmart 控制台购买中心入口购买物理服务器。
 
-1. 使用注册的 RakSmart 账号登录 [RakSmart 官网](https://cn.raksmart.com/login/index.html)。
+1. 使用注册的 RakSmart 账号登录 [RakSmart 官网](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
    ![登录rak官网.png](./images/登录rak官网.png)
 

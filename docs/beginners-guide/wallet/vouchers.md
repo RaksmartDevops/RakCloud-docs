@@ -10,7 +10,7 @@ title: 代金券管理
 
 支持通过状态和适用产品查看代金券。
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航产品管理区域，单击**财务管理**->**我的钱包**。
 

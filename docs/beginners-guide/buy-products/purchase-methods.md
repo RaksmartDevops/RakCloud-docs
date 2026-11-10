@@ -46,7 +46,7 @@ title: 了解 RakSmart 产品购买方式
 
 RakSmart 控制台购买中心集中提供产品与服务选购、配置、下单、支付等功能。
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在**控制台**左侧导航，单击**购买中心**，进入**购买中心**页面。
 

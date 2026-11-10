@@ -1,13 +1,12 @@
 ---
-title: OPS 知识库
+title: 运维知识库
 ---
 
-# OPS 知识库
+# 运维知识库
 
 ## 分类
 - [网络](./network/index.md)
 - [SSL](./ssl/index.md)
-- [云原生](./cloud-native/index.md)
 - [销售问题](./sales-issues/index.md)
 - [操作系统](./operating-system/index.md)
 - [账单问题](./billing-issues/index.md)

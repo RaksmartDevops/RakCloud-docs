@@ -10,7 +10,7 @@ title: 服务面板密码重置
 
 DCIM 服务面板（Data Center Infrastructure Management Service Panel）是 RakSmart 为物理服务器用户提供的数据中心基础设施管理控制台，用于远程管理和监控物理服务器的硬件状态、网络配置及运维操作。本文主要介绍如何在 RakSmart 控制台重置 DCIM 服务面板密码。
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航栏中，单击**技术支持** -> **服务面板密码重置**，进入**服务面板密码重置**页面。
 
@@ -36,7 +36,7 @@ DCIM 服务面板（Data Center Infrastructure Management Service Panel）是 Ra
 
 RAK Cloud 服务面板是 RakSmart 为云服务器用户提供的云资源管理控制台，用于自助管理/监控 云服务器、云存储、云网络等弹性云资源，支持系统重装、网络配置、快照管理等云服务全生命周期操作。本文主要介绍如何在 RakSmart 控制台重置 RAK Cloud 服务面板密码。
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航栏中，单击**技术支持** -> **服务面板密码重置**，进入**服务面板密码重置**页面。
 

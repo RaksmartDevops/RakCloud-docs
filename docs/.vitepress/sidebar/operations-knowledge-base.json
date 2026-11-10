@@ -1,0 +1,496 @@
+[
+  {
+    "text": "Network",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "How to troubleshoot when the server cannot be pinged",
+        "link": "/operations-knowledge-base/network/how-to-troubleshoot-when-the-server-cannot-be-pinged"
+      },
+      {
+        "text": "Installation and Usage of MTR Tool",
+        "link": "/operations-knowledge-base/network/installation-and-usage-of-mtr-tool"
+      }
+    ]
+  },
+  {
+    "text": "SSL",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Business Email FAQ",
+        "link": "/operations-knowledge-base/ssl/business-email-faq"
+      },
+      {
+        "text": "SSL Certificate FAQ",
+        "link": "/operations-knowledge-base/ssl/ssl-certificate-faq"
+      },
+      {
+        "text": "SSL Certificate Validation Methods Guide",
+        "link": "/operations-knowledge-base/ssl/ssl-certificate-validation-methods-guide"
+      }
+    ]
+  },
+  {
+    "text": "Sales",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Domain registration information requirements",
+        "link": "/operations-knowledge-base/sales-issues/domain-registration-information-requirements"
+      },
+      {
+        "text": "How to buy a Bare-Metal Cloud",
+        "link": "/operations-knowledge-base/sales-issues/how-to-buy-a-bare-metal-cloud"
+      },
+      {
+        "text": "How to place an order",
+        "link": "/operations-knowledge-base/sales-issues/how-to-place-an-order"
+      },
+      {
+        "text": "How to register an account",
+        "link": "/operations-knowledge-base/sales-issues/how-to-register-an-account"
+      },
+      {
+        "text": "User registration and login",
+        "link": "/operations-knowledge-base/sales-issues/user-registration-and-login"
+      }
+    ]
+  },
+  {
+    "text": "Operating System",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Linux",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "An incorrect configuration in the /etc/fstab file on the Linux system is causing login issues",
+            "link": "/operations-knowledge-base/operating-system/linux/an-incorrect-configuration-in-the-etc-fstab-file-on-the-linux-system-is-causing"
+          },
+          {
+            "text": "CentOS 7.x Firewall: Enable/Disable and Add Ports",
+            "link": "/operations-knowledge-base/operating-system/linux/centos-7-x-firewall-enable-disable-and-add-ports"
+          },
+          {
+            "text": "Changing Language and Timezone in CentOS 6/7",
+            "link": "/operations-knowledge-base/operating-system/linux/changing-language-and-timezone-in-centos-6-7"
+          },
+          {
+            "text": "Enable/Disable Firewall and Modify Remote Port in Ubuntu 18.04-22.04",
+            "link": "/operations-knowledge-base/operating-system/linux/enable-disable-firewall-and-modify-remote-port-in-ubuntu-18-04-22-04"
+          },
+          {
+            "text": "Enabling and disabling the firewall in Ubuntu",
+            "link": "/operations-knowledge-base/operating-system/linux/enabling-and-disabling-the-firewall-in-ubuntu"
+          },
+          {
+            "text": "Expand inode available space in a Linux system",
+            "link": "/operations-knowledge-base/operating-system/linux/expand-inode-available-space-in-a-linux-system"
+          },
+          {
+            "text": "How to configure multiple IP addresses in CentOS operating system",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-configure-multiple-ip-addresses-in-centos-operating-system"
+          },
+          {
+            "text": "How to enable/disable ping on Linux system",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-enable-disable-ping-on-linux-system"
+          },
+          {
+            "text": "How to handle the \"Permission denied, please try again\" error when SSH logging into Linux",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-handle-the-permission-denied-please-try-again-error-when-ssh-logging-i"
+          },
+          {
+            "text": "How to remotely access a Linux system using Putty tool",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-remotely-access-a-linux-system-using-putty-tool"
+          },
+          {
+            "text": "How to switch to a different repository for CentOS 8 EOL",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-switch-to-a-different-repository-for-centos-8-eol"
+          },
+          {
+            "text": "How to transfer data in a Linux system",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-transfer-data-in-a-linux-system"
+          },
+          {
+            "text": "How to use the atop monitoring tool in Linux",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-use-the-atop-monitoring-tool-in-linux"
+          },
+          {
+            "text": "How to View Memory Usage and Clear Cache in Linux System",
+            "link": "/operations-knowledge-base/operating-system/linux/how-to-view-memory-usage-and-clear-cache-in-linux-system"
+          },
+          {
+            "text": "Linux System BT Panel Installation Tutorial",
+            "link": "/operations-knowledge-base/operating-system/linux/linux-system-bt-panel-installation-tutorial"
+          },
+          {
+            "text": "Linux System RuiSu Installation Tutorial",
+            "link": "/operations-knowledge-base/operating-system/linux/linux-system-ruisu-installation-tutorial"
+          },
+          {
+            "text": "Mounting and Expanding Linux System Disk",
+            "link": "/operations-knowledge-base/operating-system/linux/mounting-and-expanding-linux-system-disk"
+          },
+          {
+            "text": "Resetting the password in CentOS 7.x system",
+            "link": "/operations-knowledge-base/operating-system/linux/resetting-the-password-in-centos-7-x-system"
+          },
+          {
+            "text": "The error message \"Not enough cached data to install\" typically occurs when using the yum package manager in a Linux system",
+            "link": "/operations-knowledge-base/operating-system/linux/the-error-message-not-enough-cached-data-to-install-typically-occurs-when-usin"
+          },
+          {
+            "text": "To change the network interface name in CentOS 7.x",
+            "link": "/operations-knowledge-base/operating-system/linux/to-change-the-network-interface-name-in-centos-7-x"
+          },
+          {
+            "text": "To modify the hostname on CentOS",
+            "link": "/operations-knowledge-base/operating-system/linux/to-modify-the-hostname-on-centos"
+          },
+          {
+            "text": "Unable to use Yum and Dnf on CentOS 8",
+            "link": "/operations-knowledge-base/operating-system/linux/unable-to-use-yum-and-dnf-on-centos-8"
+          },
+          {
+            "text": "Upgrading CentOS 7.x to CentOS 7.9",
+            "link": "/operations-knowledge-base/operating-system/linux/upgrading-centos-7-x-to-centos-7-9"
+          }
+        ]
+      },
+      {
+        "text": "Windows",
+        "collapsed": true,
+        "items": [
+          {
+            "text": "Add an IP address in Windows System",
+            "link": "/operations-knowledge-base/operating-system/windows/add-an-ip-address-in-windows-system"
+          },
+          {
+            "text": "Change Administrator Password in Windows",
+            "link": "/operations-knowledge-base/operating-system/windows/change-administrator-password-in-windows"
+          },
+          {
+            "text": "Change the remote port number in Windows",
+            "link": "/operations-knowledge-base/operating-system/windows/change-the-remote-port-number-in-windows"
+          },
+          {
+            "text": "Compress/Expand Disk Space in Windows System",
+            "link": "/operations-knowledge-base/operating-system/windows/compress-expand-disk-space-in-windows-system"
+          },
+          {
+            "text": "CredSSP encryption oracle remediation error in Windows Remote Desktop",
+            "link": "/operations-knowledge-base/operating-system/windows/credssp-encryption-oracle-remediation-error-in-windows-remote-desktop"
+          },
+          {
+            "text": "Encounter the message \"Enhanced Security Configuration is preventing the content from being displayed\" while using Internet Explorer, you can resolve it by following these steps",
+            "link": "/operations-knowledge-base/operating-system/windows/encounter-the-message-enhanced-security-configuration-is-preventing-the-content"
+          },
+          {
+            "text": "How to change the language in Windows",
+            "link": "/operations-knowledge-base/operating-system/windows/how-to-change-the-language-in-windows"
+          },
+          {
+            "text": "How to create a partition in Windows system",
+            "link": "/operations-knowledge-base/operating-system/windows/how-to-create-a-partition-in-windows-system"
+          },
+          {
+            "text": "How to Create Shortcut Icons in Windows",
+            "link": "/operations-knowledge-base/operating-system/windows/how-to-create-shortcut-icons-in-windows"
+          },
+          {
+            "text": "How to remotely log in to a Windows system",
+            "link": "/operations-knowledge-base/operating-system/windows/how-to-remotely-log-in-to-a-windows-system"
+          },
+          {
+            "text": "Installing and Using Baota Panel on Windows System",
+            "link": "/operations-knowledge-base/operating-system/windows/installing-and-using-baota-panel-on-windows-system"
+          },
+          {
+            "text": "One-click deployment of Palworld on Windows server",
+            "link": "/operations-knowledge-base/operating-system/windows/one-click-deployment-of-palworld-on-windows-server"
+          },
+          {
+            "text": "Setting up Ping Block on Windows System",
+            "link": "/operations-knowledge-base/operating-system/windows/setting-up-ping-block-on-windows-system"
+          },
+          {
+            "text": "The error message \"An authentication error has occurred. The requested security package does not exist\" can be resolved by following the steps below",
+            "link": "/operations-knowledge-base/operating-system/windows/the-error-message-an-authentication-error-has-occurred-the-requested-security"
+          },
+          {
+            "text": "To disable automatic system updates on Windows",
+            "link": "/operations-knowledge-base/operating-system/windows/to-disable-automatic-system-updates-on-windows"
+          },
+          {
+            "text": "To resolve the error message \"To log on remotely, you need the right to log on through Remote Desktop Services,\"",
+            "link": "/operations-knowledge-base/operating-system/windows/to-resolve-the-error-message-to-log-on-remotely-you-need-the-right-to-log-on-t"
+          },
+          {
+            "text": "What to do if you are unable to access the desktop of a Windows Server 2012 system after uninstalling certain software",
+            "link": "/operations-knowledge-base/operating-system/windows/what-to-do-if-you-are-unable-to-access-the-desktop-of-a-windows-server-2012-syst"
+          },
+          {
+            "text": "Windows system cannot start Remote Assistance",
+            "link": "/operations-knowledge-base/operating-system/windows/windows-system-cannot-start-remote-assistance"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Billing",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Billing - My Invoices",
+        "link": "/operations-knowledge-base/billing-issues/billing-my-invoices"
+      },
+      {
+        "text": "Recharge - Support Virtual Currency Transfer",
+        "link": "/operations-knowledge-base/billing-issues/recharge-support-virtual-currency-transfer"
+      }
+    ]
+  },
+  {
+    "text": "VPS",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "How to generate an SSH key pair",
+        "link": "/operations-knowledge-base/vps/how-to-generate-an-ssh-key-pair"
+      },
+      {
+        "text": "How to use a private key for remote login",
+        "link": "/operations-knowledge-base/vps/how-to-use-a-private-key-for-remote-login"
+      },
+      {
+        "text": "SSH Public Key Management Guide",
+        "link": "/operations-knowledge-base/vps/ssh-public-key-management-guide"
+      },
+      {
+        "text": "VPS (hourly billing) product purchase and  its notes",
+        "link": "/operations-knowledge-base/vps/vps-hourly-billing-product-purchase-and-its-notes"
+      },
+      {
+        "text": "VPS Cloud Disk User Guide",
+        "link": "/operations-knowledge-base/vps/vps-cloud-disk-user-guide"
+      },
+      {
+        "text": "VPS Control Panel User Guide",
+        "link": "/operations-knowledge-base/vps/vps-control-panel-user-guide"
+      },
+      {
+        "text": "VPS Elastic IP User Guide",
+        "link": "/operations-knowledge-base/vps/vps-elastic-ip-user-guide"
+      },
+      {
+        "text": "VPS Monitoring Features Guide",
+        "link": "/operations-knowledge-base/vps/vps-monitoring-features-guide"
+      },
+      {
+        "text": "VPS Security Group User Guide",
+        "link": "/operations-knowledge-base/vps/vps-security-group-user-guide"
+      }
+    ]
+  },
+  {
+    "text": "Managed Cloud",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "How to Host Servers",
+        "link": "/operations-knowledge-base/managed-cloud/how-to-host-servers"
+      }
+    ]
+  },
+  {
+    "text": "Account Security",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Enable dynamic authentication for login Raksmart",
+        "link": "/operations-knowledge-base/account-security/enable-dynamic-authentication-for-login-raksmart"
+      }
+    ]
+  },
+  {
+    "text": "Pre-sales Support",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Account - My Details",
+        "link": "/operations-knowledge-base/presales-support/account-my-details"
+      },
+      {
+        "text": "Account  – Contacts",
+        "link": "/operations-knowledge-base/presales-support/account-contacts"
+      },
+      {
+        "text": "Account  – Payment Methods",
+        "link": "/operations-knowledge-base/presales-support/account-payment-methods"
+      },
+      {
+        "text": "Account – User Management",
+        "link": "/operations-knowledge-base/presales-support/account-user-management"
+      },
+      {
+        "text": "Billing – Coupons",
+        "link": "/operations-knowledge-base/presales-support/billing-coupons"
+      },
+      {
+        "text": "How to Find Purchased Products",
+        "link": "/operations-knowledge-base/presales-support/how-to-find-purchased-products"
+      },
+      {
+        "text": "Login Logs",
+        "link": "/operations-knowledge-base/presales-support/login-logs"
+      },
+      {
+        "text": "My Abuse",
+        "link": "/operations-knowledge-base/presales-support/my-abuse"
+      },
+      {
+        "text": "My Wallet – Account Balance",
+        "link": "/operations-knowledge-base/presales-support/my-wallet-account-balance"
+      },
+      {
+        "text": "My Wallet – Voucher",
+        "link": "/operations-knowledge-base/presales-support/my-wallet-voucher"
+      },
+      {
+        "text": "Security – Change Password",
+        "link": "/operations-knowledge-base/presales-support/security-change-password"
+      },
+      {
+        "text": "Security – Security Settings",
+        "link": "/operations-knowledge-base/presales-support/security-security-settings"
+      },
+      {
+        "text": "Technical Support – My Ticket",
+        "link": "/operations-knowledge-base/presales-support/technical-support-my-ticket"
+      }
+    ]
+  },
+  {
+    "text": "Shared Hosting",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "How to purchase shared hosting",
+        "link": "/operations-knowledge-base/shared-hosting/how-to-purchase-shared-hosting"
+      }
+    ]
+  },
+  {
+    "text": "Domain",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Answers to Domain-Related Questions",
+        "link": "/operations-knowledge-base/domain/answers-to-domain-related-questions"
+      },
+      {
+        "text": "DNS Management",
+        "link": "/operations-knowledge-base/domain/dns-management"
+      }
+    ]
+  },
+  {
+    "text": "Dedicated Server",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "BMC Reset on Dedicated Server",
+        "link": "/operations-knowledge-base/dedicated-server/bmc-reset-on-dedicated-server"
+      },
+      {
+        "text": "Checking the health status of dedicated server disks",
+        "link": "/operations-knowledge-base/dedicated-server/checking-the-health-status-of-dedicated-server-disks"
+      },
+      {
+        "text": "Cracking the password of a dedicated server machine",
+        "link": "/operations-knowledge-base/dedicated-server/cracking-the-password-of-a-dedicated-server-machine"
+      },
+      {
+        "text": "Dedicated Server BIOS",
+        "link": "/operations-knowledge-base/dedicated-server/dedicated-server-bios"
+      },
+      {
+        "text": "Dedicated Server Traffic Statistics",
+        "link": "/operations-knowledge-base/dedicated-server/dedicated-server-traffic-statistics"
+      },
+      {
+        "text": "Description of the issue: No response with rescue mode for physical server",
+        "link": "/operations-knowledge-base/dedicated-server/description-of-the-issue-no-response-with-rescue-mode-for-physical-server"
+      },
+      {
+        "text": "Formatting a physical server hard drive",
+        "link": "/operations-knowledge-base/dedicated-server/formatting-a-physical-server-hard-drive"
+      },
+      {
+        "text": "How to Monitor Network Traffic on a Physical Server",
+        "link": "/operations-knowledge-base/dedicated-server/how-to-monitor-network-traffic-on-a-physical-server"
+      },
+      {
+        "text": "How to Open the VNC Console for a Physical Server",
+        "link": "/operations-knowledge-base/dedicated-server/how-to-open-the-vnc-console-for-a-physical-server"
+      },
+      {
+        "text": "How to Reinstall the Operating System on a Physical Server",
+        "link": "/operations-knowledge-base/dedicated-server/how-to-reinstall-the-operating-system-on-a-physical-server"
+      },
+      {
+        "text": "How to Use Rescue Mode on a Dedicated Server",
+        "link": "/operations-knowledge-base/dedicated-server/how-to-use-rescue-mode-on-a-dedicated-server"
+      },
+      {
+        "text": "Introduction to Management of Dedicated Server Control Panel",
+        "link": "/operations-knowledge-base/dedicated-server/introduction-to-management-of-dedicated-server-control-panel"
+      },
+      {
+        "text": "\"It is suspected that the physical server cannot boot properly due to the inability to recognize the hard drive.",
+        "link": "/operations-knowledge-base/dedicated-server/it-is-suspected-that-the-physical-server-cannot-boot-properly-due-to-the-inabili"
+      },
+      {
+        "text": "Physical Server Control Panel",
+        "link": "/operations-knowledge-base/dedicated-server/physical-server-control-panel"
+      }
+    ]
+  },
+  {
+    "text": "Bare Metal Cloud",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "Bare Metal Cloud Control Panel User Guide",
+        "link": "/operations-knowledge-base/baremetal/bare-metal-cloud-control-panel-user-guide"
+      },
+      {
+        "text": "Bare Metal Cloud Monitoring Feature Guide",
+        "link": "/operations-knowledge-base/baremetal/bare-metal-cloud-monitoring-feature-guide"
+      },
+      {
+        "text": "Bare Metal Cloud OS Reinstallation Guide",
+        "link": "/operations-knowledge-base/baremetal/bare-metal-cloud-os-reinstallation-guide"
+      },
+      {
+        "text": "Bare Metal Cloud Password Change and Reset Guide",
+        "link": "/operations-knowledge-base/baremetal/bare-metal-cloud-password-change-and-reset-guide"
+      },
+      {
+        "text": "Bare Metal Cloud Rescue Mode User Guide",
+        "link": "/operations-knowledge-base/baremetal/bare-metal-cloud-rescue-mode-user-guide"
+      },
+      {
+        "text": "Bare Metal Cloud Upgrade/Downgrade Guide",
+        "link": "/operations-knowledge-base/baremetal/bare-metal-cloud-upgrade-downgrade-guide"
+      },
+      {
+        "text": "Bare Metal Cloud VNC Console User Guide",
+        "link": "/operations-knowledge-base/baremetal/bare-metal-cloud-vnc-console-user-guide"
+      }
+    ]
+  }
+]

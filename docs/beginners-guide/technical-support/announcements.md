@@ -2,7 +2,7 @@
 title: 公告信息
 ---
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在控制台左侧导航单击**技术支持**，进入**技术支持**下拉列表。
 

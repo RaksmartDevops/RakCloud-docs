@@ -527,12 +527,13 @@ def convert_book(book_key: str) -> None:
 
 
 # ---------------------------------------------------------------------------
-# OPS 知识库(中文)："分类目录多文件"变体
+# 运维知识库(中文)："分类目录多文件"变体
 # ---------------------------------------------------------------------------
 
+# 中文版 URL 沿用 /ops-knowledge-base/，避免线上旧链接失效；仅显示名称改为"运维知识库"
 OPS_KB_BOOK_SLUG = "ops-knowledge-base"
-OPS_KB_TITLE = "OPS 知识库"
-OPS_KB_MATERIAL_DIR = "OPS知识库(中文)"
+OPS_KB_TITLE = "运维知识库"
+OPS_KB_MATERIAL_DIR = "运维知识库"
 
 # 照搬 rs-docs-v2/scripts/import_material_books.py 第 330-474 行，数据不做改动
 OPS_KB_CATEGORIES: list[dict] = [
@@ -545,17 +546,6 @@ OPS_KB_CATEGORIES: list[dict] = [
         "SSL证书验证方式指南.md": "ssl-certificate-verification-guide",
         "企业邮箱 FAQ.md": "enterprise-email-faq",
     }},
-    {"dir": "云原生", "slug": "cloud-native", "weight": 30, "docs": {
-        "云原生负载均衡.md": "load-balancer",
-        "云原生安全组设置.md": "security-group-setup",
-        "云原生备份使用操作.md": "backup-guide",
-    }, "subcategories": [
-        {"dir": "Cloud DB MySQL Plus", "slug": "cloud-db-mysql-plus", "weight": 10, "docs": {
-            "数据库连接1.md": "database-connection-1",
-            "数据库连接2.md": "database-connection-2",
-            "无法连接数据库.md": "cannot-connect-database",
-        }},
-    ]},
     {"dir": "销售问题", "slug": "sales-issues", "weight": 40, "docs": {
         "域名注册信息要求.md": "domain-registration-requirements",
         "用户注册与登录.md": "user-registration-and-login",
@@ -718,7 +708,58 @@ def validate_ops_kb_body(lines: list[str], doc_path: Path) -> None:
             )
 
 
-def convert_ops_kb_node(*, src_dir: Path, dst_dir: Path, node: dict):
+_YAML_SPECIAL_RE = re.compile(r"[:#'\"\[\]{}&*!|>%@`,]|^[-?\s]|\s$")
+
+
+def yaml_title(title: str) -> str:
+    """front matter 的 title 含 YAML 特殊字符（如英文标题里的冒号）时加双引号转义。"""
+    return json.dumps(title, ensure_ascii=False) if _YAML_SPECIAL_RE.search(title) else title
+
+
+# 正文里合法的 HTML 标签名；其余 "<Port Used>" 之类的尖括号占位文字会被 Vue 当成未闭合元素，需转义
+_HTML_TAGS = (
+    "a|img|br|p|div|span|b|i|u|strong|em|code|pre|table|thead|tbody|tr|td|th|ul|ol|li|"
+    "h[1-6]|hr|sup|sub|font|center|video|source|details|summary|blockquote|kbd"
+)
+_ANGLE_PLACEHOLDER_RE = re.compile(rf"<(?!/?(?:{_HTML_TAGS})[\s>/]|https?:|mailto:)(?=[A-Za-z])")
+_INLINE_CODE_RE = re.compile(r"(`[^`]*`)")
+
+
+def escape_angle_placeholders(line: str) -> str:
+    """转义行内非 HTML 标签的 "<"（行内代码不动）。"""
+    parts = _INLINE_CODE_RE.split(line)
+    return "".join(
+        part if i % 2 else _ANGLE_PLACEHOLDER_RE.sub("&lt;", part) for i, part in enumerate(parts)
+    )
+
+
+def demote_ops_kb_body_headings(lines: list[str]) -> list[str]:
+    """英文版素材正文里存在单 # 小节标题和孤立 # 符号行：代码块外的 "# 标题" 降级为 "## 标题"，
+    孤立 # 符号行删除，并转义尖括号占位文字（代码块内的内容不动）。"""
+    result: list[str] = []
+    in_fence = False
+    for line in lines:
+        stripped_line = line.strip()
+        if stripped_line.startswith("```"):
+            in_fence = not in_fence
+        elif not in_fence:
+            if re.fullmatch(r"#+", stripped_line):
+                continue
+            if _OPS_KB_H1_RE.match(line):
+                line = "#" + line
+            line = escape_angle_placeholders(line)
+        result.append(line)
+    return result
+
+
+def convert_ops_kb_node(
+    *,
+    src_dir: Path,
+    dst_dir: Path,
+    node: dict,
+    labels: tuple[str, str] = ("本分类内容", "子分类"),
+    demote_headings: bool = False,
+):
     """转换一个分类（或子分类）节点，返回 (本分类文章列表, 子分类结果列表) 供上层
     生成 index.md 和 sidebar 用：
     - 本分类文章列表: [(文章标题, doc_slug), ...]
@@ -732,9 +773,11 @@ def convert_ops_kb_node(*, src_dir: Path, dst_dir: Path, node: dict):
         doc_path = src_dir / filename
         raw = strip_front_matter(doc_path.read_text(encoding="utf-8"))
         title, body_lines = extract_ops_kb_title_and_body(raw)
+        if demote_headings:
+            body_lines = demote_ops_kb_body_headings(body_lines)
         validate_ops_kb_body(body_lines, doc_path)
         body = "\n".join(body_lines).strip("\n")
-        out = f"---\ntitle: {title}\n---\n\n{body}\n"
+        out = f"---\ntitle: {yaml_title(title)}\n---\n\n{body}\n"
         (dst_dir / f"{doc_slug}.md").write_text(out, encoding="utf-8")
         doc_entries.append((title, doc_slug))
 
@@ -746,16 +789,16 @@ def convert_ops_kb_node(*, src_dir: Path, dst_dir: Path, node: dict):
 
     sub_results: list[tuple[str, list[tuple[str, str]]]] = []
     for sub in node.get("subcategories", []):
-        sub_docs = convert_ops_kb_node(src_dir=src_dir / sub["dir"], dst_dir=dst_dir / sub["slug"], node=sub)
+        sub_docs = convert_ops_kb_node(src_dir=src_dir / sub["dir"], dst_dir=dst_dir / sub["slug"], node=sub, labels=labels, demote_headings=demote_headings)
         sub_results.append((sub, sub_docs))
 
     index_lines = ["---", f"title: {node['dir']}", "---", "", f"# {node['dir']}", ""]
     if doc_entries:
-        index_lines.append("## 本分类内容")
+        index_lines.append(f"## {labels[0]}")
         index_lines += [f"- [{t}](./{s}.md)" for t, s in doc_entries]
         index_lines.append("")
     if sub_results:
-        index_lines.append("## 子分类")
+        index_lines.append(f"## {labels[1]}")
         index_lines += [f"- [{sub['dir']}](./{sub['slug']}/index.md)" for sub, _ in sub_results]
     (dst_dir / "index.md").write_text("\n".join(index_lines) + "\n", encoding="utf-8")
 
@@ -777,24 +820,100 @@ def build_ops_kb_sidebar_item(node: dict, doc_entries: list[tuple[str, str]], su
     return {"text": node["dir"], "collapsed": True, "items": items}
 
 
-def convert_ops_kb() -> None:
-    src_root = MATERIALS_DIR / OPS_KB_MATERIAL_DIR
-    dst_root = DOCS_DIR / OPS_KB_BOOK_SLUG
+# ---------------------------------------------------------------------------
+# Operations Knowledge Base（英文）：分类顺序沿用中文版，文章 slug 由文件名自动生成
+# ---------------------------------------------------------------------------
+
+OPS_KB_EN_BOOK_SLUG = "operations-knowledge-base"
+OPS_KB_EN_TITLE = "Operations Knowledge Base"
+OPS_KB_EN_MATERIAL_DIR = "Operations Knowledge Base"
+
+# (英文目录名, slug, 子分类 [(目录名, slug)])，顺序与中文版 OPS_KB_CATEGORIES 一致
+OPS_KB_EN_CATEGORIES: list[tuple[str, str, list[tuple[str, str]]]] = [
+    ("Network", "network", []),
+    ("SSL", "ssl", []),
+    ("Sales", "sales-issues", []),
+    ("Operating System", "operating-system", [("Linux", "linux"), ("Windows", "windows")]),
+    ("Billing", "billing-issues", []),
+    ("VPS", "vps", []),
+    ("Managed Cloud", "managed-cloud", []),
+    ("Account Security", "account-security", []),
+    ("Pre-sales Support", "presales-support", []),
+    ("Shared Hosting", "shared-hosting", []),
+    ("Domain", "domain", []),
+    ("Dedicated Server", "dedicated-server", []),
+    ("Bare Metal Cloud", "baremetal", []),
+]
+
+# 文件名含中文、无法自动生成 slug 的文章，在此登记 {文件名: slug}
+OPS_KB_EN_SLUG_OVERRIDES: dict[str, str] = {}
+
+
+def slugify_filename(filename: str) -> str:
+    """文件名转 URL slug：去扩展名、小写、非字母数字转连字符。文件名含中文且无覆盖项时报错。"""
+    if filename in OPS_KB_EN_SLUG_OVERRIDES:
+        return OPS_KB_EN_SLUG_OVERRIDES[filename]
+    slug = re.sub(r"[^a-z0-9]+", "-", Path(filename).stem.lower()).strip("-")
+    if not slug:
+        raise ValueError(f"无法为 {filename!r} 生成 slug，请加入 OPS_KB_EN_SLUG_OVERRIDES")
+    return slug
+
+
+def build_ops_kb_en_node(src_dir: Path, dir_name: str, slug: str, subs: list[tuple[str, str]], weight: int) -> dict:
+    """扫描英文分类目录，生成与中文版 OPS_KB_CATEGORIES 同结构的节点。"""
+    docs: dict[str, str] = {}
+    for md in sorted(src_dir.glob("*.md"), key=lambda p: p.name.lower()):
+        doc_slug = slugify_filename(md.name)
+        if doc_slug in docs.values():
+            raise ValueError(f"{md}: slug {doc_slug!r} 与同目录其他文章重复")
+        docs[md.name] = doc_slug
+    node: dict = {"dir": dir_name, "slug": slug, "weight": weight, "docs": docs}
+    if subs:
+        node["subcategories"] = [
+            build_ops_kb_en_node(src_dir / sub_dir, sub_dir, sub_slug, [], (i + 1) * 10)
+            for i, (sub_dir, sub_slug) in enumerate(subs)
+        ]
+    return node
+
+
+def build_ops_kb_en_categories() -> list[dict]:
+    src_root = MATERIALS_DIR / OPS_KB_EN_MATERIAL_DIR
+    return [
+        build_ops_kb_en_node(src_root / d, d, slug, subs, (i + 1) * 10)
+        for i, (d, slug, subs) in enumerate(OPS_KB_EN_CATEGORIES)
+    ]
+
+
+def convert_ops_kb(
+    *,
+    book_slug: str = OPS_KB_BOOK_SLUG,
+    title: str = OPS_KB_TITLE,
+    material_dir: str = OPS_KB_MATERIAL_DIR,
+    categories: list[dict] | None = None,
+    section_heading: str = "分类",
+    labels: tuple[str, str] = ("本分类内容", "子分类"),
+    demote_headings: bool = False,
+) -> None:
+    categories = OPS_KB_CATEGORIES if categories is None else categories
+    src_root = MATERIALS_DIR / material_dir
+    dst_root = DOCS_DIR / book_slug
 
     sidebar_groups = []
-    for category in OPS_KB_CATEGORIES:
+    for category in categories:
         doc_entries, sub_results = convert_ops_kb_node(
             src_dir=src_root / category["dir"],
             dst_dir=dst_root / category["slug"],
             node=category,
+            labels=labels,
+            demote_headings=demote_headings,
         )
         sidebar_groups.append(
-            build_ops_kb_sidebar_item(category, doc_entries, sub_results, f"/{OPS_KB_BOOK_SLUG}")
+            build_ops_kb_sidebar_item(category, doc_entries, sub_results, f"/{book_slug}")
         )
-    write_sidebar_json(OPS_KB_BOOK_SLUG, sidebar_groups)
+    write_sidebar_json(book_slug, sidebar_groups)
 
-    index_lines = ["---", f"title: {OPS_KB_TITLE}", "---", "", f"# {OPS_KB_TITLE}", "", "## 分类"]
-    index_lines += [f"- [{c['dir']}](./{c['slug']}/index.md)" for c in OPS_KB_CATEGORIES]
+    index_lines = ["---", f"title: {title}", "---", "", f"# {title}", "", f"## {section_heading}"]
+    index_lines += [f"- [{c['dir']}](./{c['slug']}/index.md)" for c in categories]
     (dst_root / "index.md").write_text("\n".join(index_lines) + "\n", encoding="utf-8")
 
 
@@ -805,4 +924,13 @@ if __name__ == "__main__":
     convert_book("beginners-guide")
     convert_book("ip-network")
     convert_ops_kb()
-    print("VPS / 独服 / 裸机云 / 新手指南 / IP 及网络服务 / OPS 知识库(中文) 转换完成")
+    convert_ops_kb(
+        book_slug=OPS_KB_EN_BOOK_SLUG,
+        title=OPS_KB_EN_TITLE,
+        material_dir=OPS_KB_EN_MATERIAL_DIR,
+        categories=build_ops_kb_en_categories(),
+        section_heading="Categories",
+        labels=("Articles in this category", "Subcategories"),
+        demote_headings=True,
+    )
+    print("VPS / 独服 / 裸机云 / 新手指南 / IP 及网络服务 / 运维知识库 / Operations Knowledge Base 转换完成")

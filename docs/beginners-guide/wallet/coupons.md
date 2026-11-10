@@ -8,7 +8,7 @@ title: 优惠券管理
 
 ### 查看优惠券
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航产品管理区域，单击**财务管理**->**我的钱包**。
 

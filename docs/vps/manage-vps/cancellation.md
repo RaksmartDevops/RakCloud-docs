@@ -8,7 +8,7 @@ Raksmart VPS 取消指用户主动终止当前 VPS 的服务。包括 VPS 到期
 - 费用说明：提交取消后无法再对订单进行续费操作；
 - 数据注意：请在提交取消申请前备份服务器内的所有数据，服务终止后数据会被清理，无法恢复。
 
-1. 登录 [raksmart 控制台](https://billing.raksmart.com/whmcs/index.php?rp=/user/security)。
+1. 登录 [raksmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航**产品管理**区域，单击 **VPS**，进入**我的产品与服务**页面。
 

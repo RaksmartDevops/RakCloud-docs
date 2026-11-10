@@ -12,7 +12,7 @@ title: 升降级
 
 以 VPS 为例，如果需要对实例升降级，可前往 VPS 控制台，针对指定配置进行升降级操作。
 
-1. 使用 RakSmart 账号登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/index.php?rp=/user/security)。
+1. 使用 RakSmart 账号登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在控制台左侧导航**产品管理**区域，单击需要升降级的产品/服务名称进入**我的产品与服务**页面。
 

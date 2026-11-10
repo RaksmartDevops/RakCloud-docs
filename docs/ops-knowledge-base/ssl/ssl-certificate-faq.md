@@ -4,7 +4,7 @@ title: SSL 证书 FAQ
 
 本文解答有关 **SSL 证书申请** 和 **域名控制权验证（Domain Control Validation，DCV）** 的常见问题。
 
-如需查看详细操作步骤，请参阅 **《[SSL 证书验证方式指南](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/739/SSL%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E6%96%B9%E5%BC%8F%E6%8C%87%E5%8D%97.html)》**。
+如需查看详细操作步骤，请参阅 **《[SSL 证书验证方式指南](/ops-knowledge-base/ssl/ssl-certificate-verification-guide)》**。
 
 ## 1. 验证邮件会发送到哪个邮箱？
 
@@ -57,7 +57,7 @@ title: SSL 证书 FAQ
 
 ### （1）多个域名需要分别完成验证
 
-如果证书包含多个域名（例如 **example.com** 和 \*\*[www.example.com\*\*），则需要分别上传对应的验证文件。](http://www.example.xn--com%2A%2A),-bq8q29g1qy16axiark317mdmku07ant8ekk7dz2k6x9d2ss./)
+如果证书包含多个域名（例如 **example.com** 和 **[www.example.com](http://www.example.com/)**），则需要分别上传对应的验证文件。
 
 例如：
 
