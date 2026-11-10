@@ -32,42 +32,6 @@
     ]
   },
   {
-    "text": "云原生",
-    "collapsed": true,
-    "items": [
-      {
-        "text": "云原生负载均衡",
-        "link": "/ops-knowledge-base/cloud-native/load-balancer"
-      },
-      {
-        "text": "云原生安全组设置",
-        "link": "/ops-knowledge-base/cloud-native/security-group-setup"
-      },
-      {
-        "text": "云原生备份使用操作",
-        "link": "/ops-knowledge-base/cloud-native/backup-guide"
-      },
-      {
-        "text": "Cloud DB MySQL Plus",
-        "collapsed": true,
-        "items": [
-          {
-            "text": "数据库连接1",
-            "link": "/ops-knowledge-base/cloud-native/cloud-db-mysql-plus/database-connection-1"
-          },
-          {
-            "text": "数据库连接2",
-            "link": "/ops-knowledge-base/cloud-native/cloud-db-mysql-plus/database-connection-2"
-          },
-          {
-            "text": "无法连接数据库",
-            "link": "/ops-knowledge-base/cloud-native/cloud-db-mysql-plus/cannot-connect-database"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "text": "销售问题",
     "collapsed": true,
     "items": [

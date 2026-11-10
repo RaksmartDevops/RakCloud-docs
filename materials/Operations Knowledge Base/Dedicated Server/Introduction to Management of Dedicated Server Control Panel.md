@@ -1,6 +1,6 @@
 # Introduction to Management of Dedicated Server Control Panel
 
-一、The panel management display information is divided into four sections.
+1. The panel management display information is divided into four sections.
 
 **![](./images/98cfdff3de37b9f1.png)**
 
@@ -14,18 +14,18 @@
 
 **![](./images/f8c63b4b70f4f6a4.png)**
 
-二、Language switch. 
+2. Language switch. 
 
 Supported languages: Simplified Chinese, Traditional Chinese, English.
 
 **![](./images/4e083bc9d39d1fb0.png)**
 
-三、Log out
+3. Log out
 
 To log out, click on the button in the upper right corner and select the option to log out.
 
 **![](./images/aa09935f1f1d4f4d.png)**
 
-四、Google two-factor authentication is available to improve machine security for customer dashboard and single server login. This involves configuring a dynamic key for authentication to improve security for our customers.
+4. Google two-factor authentication is available to improve machine security for customer dashboard and single server login. This involves configuring a dynamic key for authentication to improve security for our customers.
 
 Please refer to：[To enable Google two-factor authentication in the public cloud](https://billing.raksmart.com/whmcs/index.php?rp=/knowledgebase/312/To-enable-Google-two-factor-authentication-in-the-public-cloud.html&language=english)

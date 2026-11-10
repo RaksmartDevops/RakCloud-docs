@@ -2,7 +2,7 @@
 title: Enabling and disabling the firewall in Ubuntu
 ---
 
-**一.Overview**
+**1. Overview**
 
 The firewall is a security device or software used to protect computer networks. In Ubuntu systems, the ufw (Uncomplicated Firewall) tool can be used to configure firewall rules to restrict network traffic entering and leaving the system.
 
@@ -10,7 +10,7 @@ ufw is a command-line-based tool that provides a simplified interface for config
 
 Here are the basic steps to configure the firewall using the ufw tool:
 
-**二.Install**
+**2. Install**
 
 ufw If ufw is not installed on your Ubuntu system, you can install it using the following commands:
 
@@ -27,7 +27,7 @@ To disable the ufw firewall, use the following command:
 
 - sudo ufw disable
 
-**三.Configure ufw rules**
+**3. Configure ufw rules**
 
 1.You can use ufw to allow specific ports/protocols.
 
@@ -69,7 +69,7 @@ View current firewall rules You can use the following command to view the curren
 
 This will display the currently enabled firewall rules, including allowed or denied ports, protocols, IP addresses, network interfaces, and applications.
 
-**四.Precautions**
+**4. Precautions**
 
 When configuring firewall rules, it is important to proceed with caution and ensure that only necessary traffic is allowed while blocking unnecessary traffic to maximize system security.
 

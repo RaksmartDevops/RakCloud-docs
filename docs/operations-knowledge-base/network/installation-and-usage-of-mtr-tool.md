@@ -8,7 +8,7 @@ After ruling out server-related issues, you can further diagnose the problem usi
 
 MTR is a route tracing and testing tool that allows you to view the latency and packet loss of all the routing nodes between your local machine and the server, as well as between the server and your local machine.  This helps in identifying the underlying issues.
 
-一.Windows System
+1. Windows System
 
 
 
@@ -46,7 +46,7 @@ Usage:
 - Worst: Longest response time.
 - Last: Recent response time.
 
-二.Linux System
+2. Linux System
 
 Installation:
 
@@ -84,7 +84,7 @@ The main output information is as follows:
 - Wrst: Longest response time.
 - StDev: Standard deviation. A higher deviation indicates greater variation in response times of packets at that node.
 
-三.Analysis and handling of reports from WinMTR and MTR
+3. Analysis and handling of reports from WinMTR and MTR
 
 ![](./images/96610da3612680cc.png)
 
@@ -114,7 +114,7 @@ If packet loss occurs at the destination server, it may be due to the network co
 
 If packet loss occurs in the hops close to the destination server, it may be a network issue with the hosting provider of the target server.
 
-四.Common cases of link abnormalities
+4. Common cases of link abnormalities
 
 1.Improper configuration of the destination host.
 

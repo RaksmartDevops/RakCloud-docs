@@ -1,8 +1,8 @@
 ---
-title: billings
+title: Billing
 ---
 
-# billings
+# Billing
 
 ## Articles in this category
 - [Billing - My Invoices](./billing-my-invoices.md)

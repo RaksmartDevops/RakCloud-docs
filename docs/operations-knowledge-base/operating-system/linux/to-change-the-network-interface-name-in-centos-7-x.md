@@ -2,7 +2,7 @@
 title: To change the network interface name in CentOS 7.x
 ---
 
-一.modify GRUB
+1. modify GRUB
 
 1.Edit the GRUB configuration file by running the command: `vi /etc/default/grub`.
 
@@ -18,7 +18,7 @@ title: To change the network interface name in CentOS 7.x
 
 ![](./images/3cc8aa3afacc7cbf.png)
 
-二.Rename the current network interface configuration file.
+2. Rename the current network interface configuration file.
 
 1.First, use the command "ip a" to check the current network interface names. Make sure not to modify any names that are already in use.
 
@@ -34,5 +34,5 @@ sed -i 's/eno1/eth0/g' ifcfg-eth0      #Modify "eno1" to "eth0" inside the file,
 
 ![](./images/76d762e8484f736c.png)
 
-三.Reboot the system to apply the above changes.
+3. Reboot the system to apply the above changes.
 reboot

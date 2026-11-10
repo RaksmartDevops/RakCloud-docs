@@ -546,17 +546,6 @@ OPS_KB_CATEGORIES: list[dict] = [
         "SSL证书验证方式指南.md": "ssl-certificate-verification-guide",
         "企业邮箱 FAQ.md": "enterprise-email-faq",
     }},
-    {"dir": "云原生", "slug": "cloud-native", "weight": 30, "docs": {
-        "云原生负载均衡.md": "load-balancer",
-        "云原生安全组设置.md": "security-group-setup",
-        "云原生备份使用操作.md": "backup-guide",
-    }, "subcategories": [
-        {"dir": "Cloud DB MySQL Plus", "slug": "cloud-db-mysql-plus", "weight": 10, "docs": {
-            "数据库连接1.md": "database-connection-1",
-            "数据库连接2.md": "database-connection-2",
-            "无法连接数据库.md": "cannot-connect-database",
-        }},
-    ]},
     {"dir": "销售问题", "slug": "sales-issues", "weight": 40, "docs": {
         "域名注册信息要求.md": "domain-registration-requirements",
         "用户注册与登录.md": "user-registration-and-login",
@@ -845,10 +834,10 @@ OPS_KB_EN_CATEGORIES: list[tuple[str, str, list[tuple[str, str]]]] = [
     ("SSL", "ssl", []),
     ("Cloud Native", "cloud-native", [("Cloud DB MySQL Plus", "cloud-db-mysql-plus")]),
     ("Sales", "sales-issues", []),
-    ("Operating System", "operating-system", [("linux", "linux"), ("windows", "windows")]),
-    ("billings", "billing-issues", []),
+    ("Operating System", "operating-system", [("Linux", "linux"), ("Windows", "windows")]),
+    ("Billing", "billing-issues", []),
     ("VPS", "vps", []),
-    ("Colocation", "managed-cloud", []),
+    ("Managed Cloud", "managed-cloud", []),
     ("Account Security", "account-security", []),
     ("Pre-sales Support", "presales-support", []),
     ("Shared Hosting", "shared-hosting", []),

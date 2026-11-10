@@ -1,8 +1,8 @@
 ---
-title: windows
+title: Windows
 ---
 
-# windows
+# Windows
 
 ## Articles in this category
 - [Add an IP address in Windows System](./add-an-ip-address-in-windows-system.md)

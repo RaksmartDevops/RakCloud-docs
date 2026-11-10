@@ -11,7 +11,7 @@ Linux systems allow ping responses by default. The ability to ping is determined
 
 To allow ping, both factors need to be enabled. If either of the two factors prohibits ping, it will not be possible to ping the system.
 
-一.The method to disable ping at the kernel level is as follows:
+1. The method to disable ping at the kernel level is as follows:
 
 First, let's check if the IP is responding properly by using the ping.pe website. Input the IP and test the connectivity. This will show if the target IP allows ping requests.
 

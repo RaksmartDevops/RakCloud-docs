@@ -2,7 +2,7 @@
 title: Linux System BT Panel Installation Tutorial
 ---
 
-一、 Installation Requirements:
+1. Installation Requirements:
 
 1.Memory: 512MB or more, recommended 768MB or more (the panel itself occupies approximately 60MB of memory).
 
@@ -16,7 +16,7 @@ title: Linux System BT Panel Installation Tutorial
 
 Note: CentOS officially announced the end of maintenance and updates for CentOS 6 in 2020. Major software developers are also gradually ceasing compatibility with CentOS 6. It is not recommended to use CentOS 6 for new servers.
 
-二、Installation Method for Baota Linux Panel 7.9.0:
+2. Installation Method for Baota Linux Panel 7.9.0:
 
 Official support for CentOS 8 has been discontinued. Please switch to CentOS 7 or CentOS 8 Stream to install Baota Linux Panel. Here are the detailed
 
@@ -42,7 +42,7 @@ wget -O install.sh https://download.bt.cn/install/install\_6.0.sh && bash instal
 
 curl https://download.bt.cn/install/update\_panel.sh|bash
 
-三、If the above nodes are not accessible, please use the following alternate nodes for installation:
+3. If the above nodes are not accessible, please use the following alternate nodes for installation:
 
 1.Alternate Node Guangdong:
 
@@ -60,7 +60,7 @@ After connecting to your Linux server using SSH tools such as Xshell or PuTTY, e
 
 ![](./images/720eaa1739931b35.png)
 
-四、Linux Panel 7.9.8 Update Features:
+4. Linux Panel 7.9.8 Update Features:
 
 1.Added RSA encryption verification mechanism for login form data.
 

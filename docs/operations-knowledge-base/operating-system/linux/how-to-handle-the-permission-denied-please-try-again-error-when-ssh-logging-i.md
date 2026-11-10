@@ -31,7 +31,7 @@ You can refer to the following solution for the issue caused by SELinux service:
 
 Solution:
 
-一．Solution for the issue caused by disabling root user login:
+1. Solution for the issue caused by disabling root user login:
 
 
 
@@ -66,7 +66,7 @@ Open the SSH configuration file:
 
 - systemctl restart sshd.service
 
-二．Solution for SELinux service causing the issue
+2. Solution for SELinux service causing the issue
 
 You can choose to temporarily or permanently disable the SELinux service based on your specific situation to resolve the SSH connection issue.
 

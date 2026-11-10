@@ -2,7 +2,7 @@
 
 For scenarios where additional hard disks need to be added to a machine and manually mounted and expanded Data is invaluable, so ensure that data is backed up before performing any formatting operations.
 
-**一、****Mounting a New Partition**
+**1. Mounting a New Partition**
 
 - #lsblk #View the currently recognized disks in the system and take note of the new disk's name.
 
@@ -39,7 +39,7 @@ w - Save and exit
 
 - # blkid   /dev/sdb1      #View the file system type and UUID
 
-![图片3](./images/fa5c31cbba7f8079.png)
+![Figure 3](./images/fa5c31cbba7f8079.png)
 
 - # mkdir  /mypart  #Create a mount point.
 
@@ -47,7 +47,7 @@ w - Save and exit
 
 UUID=[File system UUID]   /mypart    xfs    defaults   0   0
 
-![图片4](./images/3119ee99548c5ac7.png)
+![Figure 4](./images/3119ee99548c5ac7.png)
 
 - # mount   -a       # Refresh or reload the /etc/fstab file
 
@@ -57,11 +57,11 @@ Check if the entries in /etc/fstab are written correctly,
 
 - # df  -h
 
-![图片5](./images/83666dd29bb88747.png) 
+![Figure 5](./images/83666dd29bb88747.png) 
 
 After executing the reboot command, if there are no issues with the mounted points, it indicates that automatic mounting during startup is effective.
 
-**二****、****Expanding existing partitions.**
+**2. Expanding existing partitions**
 
 Here, we will take /www partition as an example for expanding:
 
@@ -69,15 +69,15 @@ First, verify if your hard disk is part of an LVM volume group. If your machine 
 
 - # lsblk  #Check the hard disks recognized by the current system and take note of their current capacities.
 
-![图片1](./images/6a31e1c005a9452f.png)
+![Figure 1](./images/6a31e1c005a9452f.png)
 
 - # pvdisplay   #Check the volume group names.
 
-![图片3](./images/07c2b69aa594d0d9.png)
+![Figure 3](./images/07c2b69aa594d0d9.png)
 
 - #parted /dev/sda    print   #Display the current disk partitions and check if the format is GPT. Remember the current parameters.
 
-![图片4](./images/b436d92f95ba9e51.png)
+![Figure 4](./images/b436d92f95ba9e51.png)
 
 If you encounter the error shown in the screenshot, follow the system prompt and enter "Fix". The system will automatically set the capacity of the expanded disk partition to GPT.
 
@@ -89,7 +89,7 @@ After completing the process, you can exit by typing "quit".
 
 - # df -h        #You can view the partition results, and here we can see that the partitioning has been successful.
 
-![图片5](./images/cef53288604fdb11.png)
+![Figure 5](./images/cef53288604fdb11.png)
 
 Add the partition to the volume group
 
@@ -103,7 +103,7 @@ Format the file system
 
 - # blkid  #Check the file system of the partition to be expanded.
 
-![图片6](./images/d447b5fee231cc28.png)
+![Figure 6](./images/d447b5fee231cc28.png)
 
 The command "xfs\_growfs" is used to expand the XFS file system, while "resize2fs" is used to expand the ext4 file system.
 
@@ -111,6 +111,6 @@ The command "xfs\_growfs" is used to expand the XFS file system, while "resize2f
 
 - # df -h  #Here we can see that the expansion has been successful.
 
-![图片7](./images/d4852966170674ea.png)
+![Figure 7](./images/d4852966170674ea.png)
 
 # reboot  Finally, restart the system and confirm again

@@ -4,7 +4,7 @@ Introduction to Putty software
 
 PuTTY is a Telnet, SSH, rlogin, raw TCP, and serial interface connection software. Earlier versions of PuTTY were only available for the Windows platform, but recent versions have started to support various Unix platforms and are planned to be ported to Mac OS X. In addition to the official version, there are many third-party groups or individuals who have ported PuTTY to other platforms, such as Symbian-based mobile phones. PuTTY is an open-source software primarily maintained by Simon Tatham and is licensed under the MIT license. With the increasing popularity of Linux in server-side applications, remote management of Linux systems heavily relies on remote login tools. Among various remote login tools, PuTTY stands out as an excellent option. PuTTY is a free Telnet, SSH, and rlogin client for Windows x86 platform, offering features comparable to commercial Telnet clients.
 
-Download link：[PuTTY：一个免费的SSH和Telnet客户端 (greenend.org.uk)](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
+Download link：[PuTTY: A Free SSH and Telnet Client (greenend.org.uk)](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
 
 ![](./images/d072a5f441c77950.png)
 

@@ -12,7 +12,7 @@ On the **remote server**, ensure that the configuration of SSH allows key authen
 
 #sudo vi /etc/ssh/sshd\_config
 
-    2. 确保以下行存在，并且没有被注释（没有 `#`）：Make sure the following lines exist and uncommented(no `#`):
+    2. Make sure the following lines exist and uncommented(no `#`):
 
 PubkeyAuthentication yes
 
@@ -112,9 +112,9 @@ Download private key using SCP or FileZilla.
 
 ## 3. Load the private key:
 
-3.1 在左侧菜单中，依次展开 **Connection > SSH > Auth**。
+3.1 In the left-hand menu, expand **Connection > SSH > Auth**.
 
-3.2 在 **Private key file for authentication** 中，点击 **Browse**，选择你保存的 `.ppk` 文件（如 `id_ed25519.ppk`）。
+3.2 Under **Private key file for authentication**, click **Browse** and select the `.ppk` file you saved (for example, `id_ed25519.ppk`).
 
 ![](./images/image-key2025030612.png)
 
@@ -128,7 +128,7 @@ Download private key using SCP or FileZilla.
 
 ![](./images/image-key2025030613.png)
 
-## 四、xshell connection method
+## 4. xshell connection method
 
 ## Open Xshell:
 

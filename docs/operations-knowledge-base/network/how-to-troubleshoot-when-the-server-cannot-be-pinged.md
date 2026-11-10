@@ -4,7 +4,7 @@ title: How to troubleshoot when the server cannot be pinged
 
 When the machine cannot communicate properly, you can use VNC to log in to the system and perform the following checks:
 
-一．Checking the status of the system network interface card (NIC):
+1. Checking the status of the system network interface card (NIC):
 
 To check the status of the NIC, you can use the following commands:
 
@@ -13,7 +13,7 @@ To check the status of the NIC, you can use the following commands:
 - systemctl restart network`: This command restarts the network service, including all network interfaces. It can be used to refresh the network settings and resolve any network-related issues.
 - Note: Replace "ethx" with the actual network interface name, such as eth0, eth1, etc.
 
-二．Checking the IP configuration in the network interface configuration file:
+2. Checking the IP configuration in the network interface configuration file:
 
 To check the IP configuration in the network interface configuration file, follow these steps:
 
@@ -31,9 +31,9 @@ To check the IP configuration in the network interface configuration file, follo
 
 If there are any configuration errors or the configuration is not successful, you may need to correct the configuration file and restart the network service again.
 
-三.Checking if ICMP rules are added to the security group in a cloud instance or bare metal cloud
+3. Checking if ICMP rules are added to the security group in a cloud instance or bare metal cloud
 
-四.To check the firewall settings on a Linux system:
+4. To check the firewall settings on a Linux system:
 
 Linux System
 
@@ -86,7 +86,7 @@ Outbound Rule
 
 ![](./images/9ae4d6b882120fb6.png)
 
-五.Check if it is due to ICMP (ping) being disabled, causing the inability to ping.
+5. Check if it is due to ICMP (ping) being disabled, causing the inability to ping.
 
 Windows system
 
@@ -108,13 +108,13 @@ Check the server's kernel parameters:
 
 To permanently allow Ping, modify the configuration in the following way: `net.ipv4.icmp\_echo\_ignore\_all=0`.
 
-六．Check if the IP address has any network attacks or complaints resulting in suspension.
+6. Check if the IP address has any network attacks or complaints resulting in suspension.
 
 ![](./images/510c76b8ace78e99.png)
 
 ![](./images/d39a15627985b568.png)
 
-七．Check if the network is functioning properly.
+7. Check if the network is functioning properly.
 
 1. Check the local network by performing a Ping test using a host in the same region.
 

@@ -1,8 +1,8 @@
 ---
-title: Colocation
+title: Managed Cloud
 ---
 
-# Colocation
+# Managed Cloud
 
 ## Articles in this category
 - [How to Host Servers](./how-to-host-servers.md)

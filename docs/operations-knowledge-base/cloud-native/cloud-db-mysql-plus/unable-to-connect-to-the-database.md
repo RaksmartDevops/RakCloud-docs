@@ -53,8 +53,8 @@ Possible solutions
 
 Example of correct connection method:
 
-- After enabling SSL encrypted transmission, connect using the public IP address：`mysql -h <外网地址> -P 3306 -u testuser -p --ssl-ca=ca.pem --ssl-cert=client-cert.pem --ssl-key=client-key.pem`
-- After enabling SSL encrypted transmission, connect using the internal IP address：`mysql -h <外网地址> -P 3306 -u testuser -p --ssl-ca=ca.pem --ssl-cert=client-cert.pem --ssl-key=client-key.pem`
+- After enabling SSL encrypted transmission, connect using the public IP address: `mysql -h <public IP address> -P 3306 -u testuser -p --ssl-ca=ca.pem --ssl-cert=client-cert.pem --ssl-key=client-key.pem`
+- After enabling SSL encrypted transmission, connect using the internal IP address: `mysql -h <internal IP address> -P 3306 -u testuser -p --ssl-ca=ca.pem --ssl-cert=client-cert.pem --ssl-key=client-key.pem`
 
 > Note
 >

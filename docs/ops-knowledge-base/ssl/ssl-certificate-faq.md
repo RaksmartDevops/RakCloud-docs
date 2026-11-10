@@ -57,7 +57,7 @@ title: SSL 证书 FAQ
 
 ### （1）多个域名需要分别完成验证
 
-如果证书包含多个域名（例如 **example.com** 和 \*\*[www.example.com\*\*），则需要分别上传对应的验证文件。](http://www.example.xn--com%2A%2A),-bq8q29g1qy16axiark317mdmku07ant8ekk7dz2k6x9d2ss./)
+如果证书包含多个域名（例如 **example.com** 和 **[www.example.com](http://www.example.com/)**），则需要分别上传对应的验证文件。
 
 例如：
 

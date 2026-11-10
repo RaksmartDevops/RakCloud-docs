@@ -6,7 +6,7 @@ Step 1: Install the recommended version of the kernel and reboot the machine aft
 
 Step 2: After the reboot, verify that the kernel installation is correct. Then, download the 91YUN RuiSu installation script, which will be automatically executed.
 
-一.Modify the network interface name.
+1. Modify the network interface name.
 
 1.Use the "ip address" command to check the network interface name.
 
@@ -58,7 +58,7 @@ NAME=eth\*
 
 ![](./images/115_blobid7.png) 
 
-二.Install the Speeder.
+2. Install the Speeder.
 
 1.Modify the specified optimized kernel：
 
@@ -88,7 +88,7 @@ Method of installing Rui Su (LsRuisu):
 
 Enter "y" and press Enter to continue.
 
-![](./images/100_blobid10.png)这里输入y回车继续
+![](./images/100_blobid10.png)Enter `y` here and press Enter to continue
 
 6.After the installation is completed, check the running status of Rui Su (LsRuisu) by using the following command:
 

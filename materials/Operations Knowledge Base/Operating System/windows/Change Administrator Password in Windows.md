@@ -2,13 +2,13 @@
 
 There are two ways to manually change the Windows Administrator password：
 
-一.Changing the password via command line
+1. Changing the password via command line
 
 1.Open PowerShell and use the following command to change the password: - Type "net user administrator xxxxx" (replace "xxxxx" with the new password)
 
 ![](./images/6d35dab661fe17d3.png)
 
-二.Graphical Interface Modification
+2. Graphical Interface Modification
 
 1.Open Server Manager Dashboard，Navigate to Tools -> Computer Management.
 

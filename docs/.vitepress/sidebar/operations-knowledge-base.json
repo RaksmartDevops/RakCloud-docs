@@ -98,7 +98,7 @@
     "collapsed": true,
     "items": [
       {
-        "text": "linux",
+        "text": "Linux",
         "collapsed": true,
         "items": [
           {
@@ -196,7 +196,7 @@
         ]
       },
       {
-        "text": "windows",
+        "text": "Windows",
         "collapsed": true,
         "items": [
           {
@@ -276,7 +276,7 @@
     ]
   },
   {
-    "text": "billings",
+    "text": "Billing",
     "collapsed": true,
     "items": [
       {
@@ -332,7 +332,7 @@
     ]
   },
   {
-    "text": "Colocation",
+    "text": "Managed Cloud",
     "collapsed": true,
     "items": [
       {

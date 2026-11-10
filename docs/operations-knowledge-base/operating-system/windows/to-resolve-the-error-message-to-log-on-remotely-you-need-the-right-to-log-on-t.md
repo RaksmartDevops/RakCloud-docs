@@ -2,17 +2,17 @@
 title: "To resolve the error message \"To log on remotely, you need the right to log on through Remote Desktop Services,\""
 ---
 
-## 一.Symptom of the problem.
+## 1. Symptom of the problem.
 
 When using the Administrator user to log in to the instance via Remote Desktop, the following message is displayed.
 
 ![](./images/0a1bdda522a82235.png)
 
-## 二.Root Cause
+## 2. Root Cause
 
 The local security policy on the Windows instance has been configured to disallow the Administrator user from logging in as a Remote Desktop Services client.
 
-## 三.Solution
+## 3. Solution
 
 Please refer to the following steps for the operation:
 

@@ -13,13 +13,13 @@ If you are creating a backup for the first time, you need to purchase a backup s
 
 ![](./images/62860ebd9862bade.png)
 
-一．Create Backup
+1. Create Backup
 
 1.Enter the backup name, click submit to initiate the creation process. Once successfully created, a backup record will be generated, as shown in the following image. 
 
 ![](./images/e76a1823876ee64f.png)
 
-二．Backup Rollback
+2. Backup Rollback
 
 1.Select the backup point you want to roll back to, click confirm to initiate the rollback process and apply the backup. Wait for the rollback to complete.
 
@@ -27,7 +27,7 @@ If you are creating a backup for the first time, you need to purchase a backup s
 
 ![](./images/9487954a3d83f940.png)
 
-三．Delete Backup
+3. Delete Backup
 
 You can delete the entire backup chain or delete a specific backup point.
 
@@ -45,7 +45,7 @@ Click confirm to delete the incremental backup point along with all its child no
 
 ![](./images/bac4ed1bd92e706c.png)
 
-四.Upgrade Backup
+4. Upgrade Backup
 
 If the backup capacity is insufficient, you can upgrade the backup capacity size. 
 

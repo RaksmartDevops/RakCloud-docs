@@ -1,8 +1,8 @@
 ---
-title: linux
+title: Linux
 ---
 
-# linux
+# Linux
 
 ## Articles in this category
 - [An incorrect configuration in the /etc/fstab file on the Linux system is causing login issues](./an-incorrect-configuration-in-the-etc-fstab-file-on-the-linux-system-is-causing.md)

@@ -14,7 +14,7 @@
 
 To start atop, execute the following command:
 
-- service atop start 或 systemctl start atop
+- service atop start or systemctl start atop
 
 ![](./images/e3538ea4fc0781d1.png)
 

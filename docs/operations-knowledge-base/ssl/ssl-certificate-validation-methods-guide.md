@@ -135,9 +135,9 @@ The system will generate a validation file that needs to be created in the websi
 
 | Item | Example |
 | --- | --- |
-| File Path | `/.well-known/pki-validation/文件名.txt` |
+| File Path | `/.well-known/pki-validation/filename.txt` |
 | File Content | verification code + CA domain |
-| Validation URL | `<http://yourdomain.com/.well-known/pki-validation/文件名.txt`> |
+| Validation URL | `http://yourdomain.com/.well-known/pki-validation/filename.txt` |
 
 **Step 3: Create the validation file in the website root directory**
 
