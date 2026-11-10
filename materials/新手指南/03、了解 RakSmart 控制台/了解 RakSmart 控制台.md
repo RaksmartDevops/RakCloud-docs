@@ -153,7 +153,7 @@ RakSmart 控制台主要包含以下核心区域：
 
 在控制台内可直接选购新的产品与服务。
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航单击**购买中心**，进入产品和服务**购物车**页面。
 
@@ -169,7 +169,7 @@ RakSmart 控制台主要包含以下核心区域：
 
 产品管理模块管理已购买的物理服务器、裸机云等产品。
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航**产品管理**区域，单击某一个产品或服务名称，进入**我的产品与服务**页面。
 

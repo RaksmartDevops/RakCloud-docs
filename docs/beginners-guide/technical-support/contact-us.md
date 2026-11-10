@@ -18,7 +18,7 @@ title: 联系我们
 
 ### 技术支持
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 2. 单击**技术支持** -> **我的工单**，提交问题描述及相关截图，技术人员会实时回复。
    ![我的工单11.png](./images/我的工单11.png)
 

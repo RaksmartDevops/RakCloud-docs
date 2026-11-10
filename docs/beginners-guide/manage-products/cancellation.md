@@ -16,7 +16,7 @@ RakSmart 产品取消包括到期用户不再续费和立即取消两种情况�
 > - 费用说明：提交取消后无法再对订单进行续费操作；
 > - 数据注意：请在提交取消申请前备份服务器内的所有数据，服务终止后数据会被清理，无法恢复。
 
-1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/index.php?rp=/user/security)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在控制台左侧导航**产品管理**区域，单击需要取消服务的产品，进入**我的产品与服务**详情页面。
 

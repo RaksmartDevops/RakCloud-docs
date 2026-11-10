@@ -10,7 +10,7 @@ title: 查看账户资料
 
 平台账户信息模块致力于为用户打造便捷、个性化的账户管理体验，涵盖资料维护、邮件及通知订阅等多维度设置，助力用户高效掌控账户相关内容，及时获取关键信息。包含我的资料、邮件首选项和 Telegram 通知订阅选项等功能。
 
-1.  登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/index.php?rp=/user/security)。
+1.  登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2.  在个人头像下拉列表单击**我的资料**，进入**我的资料**页面。
 

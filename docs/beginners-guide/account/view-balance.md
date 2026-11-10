@@ -2,7 +2,7 @@
 title: 查看账户余额
 ---
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在控制台右上角，单击个人头像展开下拉列表。您可直接查看账户余额。
 

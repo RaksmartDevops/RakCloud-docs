@@ -4,7 +4,7 @@ title: 账单管理
 
 ### 查看账单
 
-1.  登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1.  登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2.  在控制台左侧导航，单击**财务管理** -> **我的账单**，进入**我的账单**页面。账单列表顶部提供账单状态标签，可快速查看对应类型的账单。
 

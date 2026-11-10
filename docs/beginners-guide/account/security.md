@@ -11,7 +11,7 @@ title: 账号安全设置
 
 ### 修改登录密码
 
-1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/index.php?rp=/user/security)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在控制台右上角个人头像下拉列表中，单击**修改密码**，进入**修改密码**页面。
 
@@ -53,7 +53,7 @@ title: 账号安全设置
 
 #### 操作步骤
 
-1. 登录 [raksmart 控制台](https://billing.raksmart.com/whmcs/index.php?rp=/user/security)。
+1. 登录 [raksmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在控制台右上角个人头像在下拉列表中，单击**安全设置**，进入**安全设置**页面。
 

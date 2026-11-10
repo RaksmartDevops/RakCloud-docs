@@ -8,7 +8,7 @@ title: 账户余额管理
 
 ### 查看账户余额
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)。
 
 2. 在左侧导航会员中心区域，单击**财务管理**->**我的钱包**。
 
@@ -28,7 +28,7 @@ title: 账户余额管理
 
 ##### 从客户中心入口充值
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)，进入**客户中心**页面。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)，进入**客户中心**页面。
 
 2. 在**账户信息**区域，单击**充值**，进入**账户充值**页面。
 
@@ -47,7 +47,7 @@ title: 账户余额管理
 
 ##### 从个人资料入口充值
 
-1. 登录 [RakSmart 控制台](https://cn.raksmart.com/login/index.html)，可进入**客户中心**页面。
+1. 登录 [RakSmart 控制台](https://billing.raksmart.com/whmcs/clientarea.php?language=chinese-cn)，可进入**客户中心**页面。
 
 2. 在个人头像下拉列表，单击**充值**。
 
