@@ -42,6 +42,11 @@ features:
     details: 双ISP DIA（家庭属性 IP）等 IP 与网络产品的介绍、购买与验证方法
     link: /ip-network/dual-isp-dia/what-is
     linkText: 查看文档
+  - icon: 🧩
+    title: 应用中心
+    details: 一键部署 OpenClaw、WordPress、MySQL、宝塔面板等开源应用，无需专业运维
+    link: /app-center/guide/overview
+    linkText: 查看文档
   - icon: 📚
     title: 运维知识库
     details: 常见问题、故障排查与运维操作指南，覆盖网络/系统/账单等场景

@@ -88,3 +88,16 @@ gh run view <run-id> -R RaksmartDevops/RakCloud-docs --log
 ```
 
 旧的 `deploy.yml`（SSH + rsync 推送）和 GitHub secret `SERVER_SSH_KEY_B64` 已不再使用，secret 需在 GitHub 仓库设置中手动删除。
+
+### 生产环境现状（2026-11-11）
+
+- **已上线**：`https://docs.raksmart.com/` 运行 commit `f8e91e8`（构建 `2026-11-10T14:42:02Z`），与 staging 一致。服务器路径 `/opt/nginx/html/rakcloud-docs/{releases,staging,production}`，Nginx 在 Docker 中，前面有 Cloudflare。
+- **旧站归档**：旧 `docs.raksmart.com` 的配置与目录在服务器 `/opt/nginx/archive/<上线时间戳>/`，未删除，回退方法见 `deploy/README.md` 阶段 C。
+- **日常发布**：Nginx 已指向 `production` 软链接，之后只需 `promote.sh`（见上），不再改 Nginx。生产机在 JumpServer 之后，由人工在服务器上执行。
+- **已知现象**：`/vps/`、`/beginners-guide/` 目录地址返回 403（无目录首页，staging 同样），页面本身可正常访问。
+- **安全检查（被动，未做配置）**：无高危问题，TLS 仅 1.2/1.3，敏感路径不可访问。
+- **待办**：
+  - 在无代理环境复测源站端口（22/80/443/3306/8080）及能否绕过 Cloudflare 直连源站（优先级最高，本次探测被代理干扰，结果不可信）。
+  - 增加安全响应头（HSTS、`X-Content-Type-Options`、`X-Frame-Options`、`Referrer-Policy`），源站防火墙仅放行 Cloudflare IP 段。
+  - 旧站路径（`/raksmart/zh/…`、`/marketplace/zh/…`）目前 404，需补旧→新 301 映射。
+  - 补 `robots.txt`；评估是否限制 `/BUILD_INFO` 公开。

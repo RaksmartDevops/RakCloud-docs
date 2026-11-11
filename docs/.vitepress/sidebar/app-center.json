@@ -1,0 +1,197 @@
+[
+  {
+    "text": "应用中心使用指南",
+    "items": [
+      {
+        "text": "产品概述",
+        "link": "/app-center/guide/overview"
+      },
+      {
+        "text": "快速开始",
+        "link": "/app-center/guide/quick-start"
+      },
+      {
+        "text": "更多的部署选择",
+        "link": "/app-center/guide/more-deployment"
+      },
+      {
+        "text": "应用管理",
+        "link": "/app-center/guide/manage-apps"
+      },
+      {
+        "text": "常见问题",
+        "link": "/app-center/guide/faq"
+      }
+    ]
+  },
+  {
+    "text": "OpenClaw 使用指南",
+    "items": [
+      {
+        "text": "访问应用",
+        "link": "/app-center/openclaw/access"
+      },
+      {
+        "text": "模型配置",
+        "link": "/app-center/openclaw/model-config"
+      },
+      {
+        "text": "关键目录说明",
+        "link": "/app-center/openclaw/key-directories"
+      },
+      {
+        "text": "常用操作",
+        "link": "/app-center/openclaw/operations"
+      },
+      {
+        "text": "深入学习",
+        "link": "/app-center/openclaw/learn-more"
+      },
+      {
+        "text": "模型配置指引",
+        "link": "/app-center/openclaw/model-config-guide"
+      }
+    ]
+  },
+  {
+    "text": "CoPaw 使用指南",
+    "items": [
+      {
+        "text": "访问应用",
+        "link": "/app-center/copaw/access"
+      },
+      {
+        "text": "模型配置",
+        "link": "/app-center/copaw/model-config"
+      },
+      {
+        "text": "关键目录说明",
+        "link": "/app-center/copaw/key-directories"
+      },
+      {
+        "text": "常用操作",
+        "link": "/app-center/copaw/operations"
+      },
+      {
+        "text": "深入学习",
+        "link": "/app-center/copaw/learn-more"
+      }
+    ]
+  },
+  {
+    "text": "WordPress 使用指南",
+    "items": [
+      {
+        "text": "访问应用",
+        "link": "/app-center/wordpress/access"
+      },
+      {
+        "text": "配置说明",
+        "link": "/app-center/wordpress/configuration"
+      },
+      {
+        "text": "初始化配置",
+        "link": "/app-center/wordpress/initial-setup"
+      },
+      {
+        "text": "关键信息",
+        "link": "/app-center/wordpress/key-info"
+      },
+      {
+        "text": "常用操作",
+        "link": "/app-center/wordpress/operations"
+      },
+      {
+        "text": "常见问题",
+        "link": "/app-center/wordpress/faq"
+      },
+      {
+        "text": "深入学习",
+        "link": "/app-center/wordpress/learn-more"
+      }
+    ]
+  },
+  {
+    "text": "MySQL 使用指南",
+    "items": [
+      {
+        "text": "访问应用",
+        "link": "/app-center/mysql/access"
+      },
+      {
+        "text": "关键信息",
+        "link": "/app-center/mysql/key-info"
+      },
+      {
+        "text": "常用操作",
+        "link": "/app-center/mysql/operations"
+      },
+      {
+        "text": "验证安装",
+        "link": "/app-center/mysql/verify"
+      },
+      {
+        "text": "深入学习",
+        "link": "/app-center/mysql/learn-more"
+      }
+    ]
+  },
+  {
+    "text": "PostgreSQL 使用指南",
+    "items": [
+      {
+        "text": "访问应用",
+        "link": "/app-center/postgresql/access"
+      },
+      {
+        "text": "关键信息",
+        "link": "/app-center/postgresql/key-info"
+      },
+      {
+        "text": "常用操作",
+        "link": "/app-center/postgresql/operations"
+      },
+      {
+        "text": "验证安装",
+        "link": "/app-center/postgresql/verify"
+      },
+      {
+        "text": "深入学习",
+        "link": "/app-center/postgresql/learn-more"
+      }
+    ]
+  },
+  {
+    "text": "宝塔面板使用指南",
+    "items": [
+      {
+        "text": "访问应用",
+        "link": "/app-center/baota/access"
+      },
+      {
+        "text": "关键信息",
+        "link": "/app-center/baota/key-info"
+      },
+      {
+        "text": "容器环境说明",
+        "link": "/app-center/baota/container-env"
+      },
+      {
+        "text": "命令行示例",
+        "link": "/app-center/baota/cli-examples"
+      },
+      {
+        "text": "常用操作",
+        "link": "/app-center/baota/operations"
+      },
+      {
+        "text": "常见问题",
+        "link": "/app-center/baota/faq"
+      },
+      {
+        "text": "深入学习",
+        "link": "/app-center/baota/learn-more"
+      }
+    ]
+  }
+]
