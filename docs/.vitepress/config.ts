@@ -5,6 +5,7 @@ import dedicatedserverSidebar from './sidebar/dedicatedserver.json'
 import baremetalSidebar from './sidebar/baremetal.json'
 import beginnersGuideSidebar from './sidebar/beginners-guide.json'
 import ipNetworkSidebar from './sidebar/ip-network.json'
+import appCenterSidebar from './sidebar/app-center.json'
 import opsKnowledgeBaseSidebar from './sidebar/ops-knowledge-base.json'
 import operationsKnowledgeBaseSidebar from './sidebar/operations-knowledge-base.json'
 
@@ -55,6 +56,7 @@ export default defineConfig({
       { text: '裸机云', link: '/baremetal/product-intro/overview' },
       { text: '新手指南', link: '/beginners-guide/about-raksmart/products-and-services' },
       { text: 'IP 及网络服务', link: '/ip-network/dual-isp-dia/what-is' },
+      { text: '应用中心', link: '/app-center/guide/overview' },
       { text: '运维知识库', link: '/ops-knowledge-base/' },
       { text: 'Operations Knowledge Base', link: '/operations-knowledge-base/' },
     ],
@@ -65,6 +67,7 @@ export default defineConfig({
       '/baremetal/': baremetalSidebar,
       '/beginners-guide/': beginnersGuideSidebar,
       '/ip-network/': ipNetworkSidebar,
+      '/app-center/': appCenterSidebar,
       '/ops-knowledge-base/': opsKnowledgeBaseSidebar,
       '/operations-knowledge-base/': operationsKnowledgeBaseSidebar,
     },

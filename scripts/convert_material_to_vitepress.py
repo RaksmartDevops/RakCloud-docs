@@ -304,6 +304,109 @@ BOOKS = {
             },
         ],
     },
+    "app-center": {
+        "slug": "app-center",
+        "title": "应用中心",
+        "material_dir": "应用中心",
+        "chapters": [
+            {
+                "dir": "01、应用中心使用指南",
+                "file": "应用中心使用指南.md",
+                "slug": "guide",
+                "weight": 10,
+                "docs": {
+                    "产品概述": "overview",
+                    "快速开始": "quick-start",
+                    "更多的部署选择": "more-deployment",
+                    "应用管理": "manage-apps",
+                    "常见问题": "faq",
+                },
+            },
+            {
+                "dir": "02、OpenClaw 使用指南",
+                "file": "OpenClaw 使用指南.md",
+                "slug": "openclaw",
+                "weight": 20,
+                "docs": {
+                    "访问应用": "access",
+                    "模型配置": "model-config",
+                    "关键目录说明": "key-directories",
+                    "常用操作": "operations",
+                    "深入学习": "learn-more",
+                    "模型配置指引": "model-config-guide",
+                },
+            },
+            {
+                "dir": "03、CoPaw 使用指南",
+                "file": "CoPaw 使用指南.md",
+                "slug": "copaw",
+                "weight": 30,
+                "docs": {
+                    "访问应用": "access",
+                    "模型配置": "model-config",
+                    "关键目录说明": "key-directories",
+                    "常用操作": "operations",
+                    "深入学习": "learn-more",
+                },
+            },
+            {
+                "dir": "04、WordPress 使用指南",
+                "file": "WordPress 使用指南.md",
+                "slug": "wordpress",
+                "weight": 40,
+                "docs": {
+                    "访问应用": "access",
+                    "配置说明": "configuration",
+                    "初始化配置": "initial-setup",
+                    "关键信息": "key-info",
+                    "常用操作": "operations",
+                    "常见问题": "faq",
+                    "深入学习": "learn-more",
+                },
+            },
+            {
+                "dir": "05、MySQL 使用指南",
+                "file": "MySQL 使用指南.md",
+                "slug": "mysql",
+                "weight": 50,
+                "docs": {
+                    "访问应用": "access",
+                    "关键信息": "key-info",
+                    "常用操作": "operations",
+                    "验证安装": "verify",
+                    "深入学习": "learn-more",
+                },
+            },
+            {
+                "dir": "06、PostgreSQL 使用指南",
+                "file": "PostgreSQL 使用指南.md",
+                "slug": "postgresql",
+                "weight": 60,
+                "docs": {
+                    "访问应用": "access",
+                    "关键信息": "key-info",
+                    "常用操作": "operations",
+                    "验证安装": "verify",
+                    "深入学习": "learn-more",
+                },
+            },
+            {
+                "dir": "07、宝塔面板使用指南",
+                "file": "宝塔面板使用指南.md",
+                "slug": "baota",
+                "weight": 70,
+                "docs": {
+                    "访问应用": "access",
+                    "关键信息": "key-info",
+                    "容器环境说明": "container-env",
+                    "命令行示例": "cli-examples",
+                    "常用操作": "operations",
+                    "常见问题": "faq",
+                    "深入学习": "learn-more",
+                },
+            },
+        ],
+    },
 }
 
 
@@ -923,6 +1026,7 @@ if __name__ == "__main__":
     convert_book("baremetal")
     convert_book("beginners-guide")
     convert_book("ip-network")
+    convert_book("app-center")
     convert_ops_kb()
     convert_ops_kb(
         book_slug=OPS_KB_EN_BOOK_SLUG,
@@ -933,4 +1037,4 @@ if __name__ == "__main__":
         labels=("Articles in this category", "Subcategories"),
         demote_headings=True,
     )
-    print("VPS / 独服 / 裸机云 / 新手指南 / IP 及网络服务 / 运维知识库 / Operations Knowledge Base 转换完成")
+    print("VPS / 独服 / 裸机云 / 新手指南 / IP 及网络服务 / 应用中心 / 运维知识库 / Operations Knowledge Base 转换完成")
