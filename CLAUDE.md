@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 项目概览
 
-RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、IP 及网络服务（ip-network）、运维知识库（ops-knowledge-base，中文）、Operations Knowledge Base（operations-knowledge-base，英文）共七本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。上线地址 `https://docs.raksmart.com/`（根路径）；发布采用"GitHub 构建产物 → `dist` 分支 → 文档服务器拉取到 staging → 人工晋升 production"，见"部署"一节。
+RakCloud（RakSmart）云产品官方文档站：VPS、独服（dedicatedserver）、裸机云（baremetal）、新手指南（beginners-guide）、IP 及网络服务（ip-network）、应用中心（app-center）、运维知识库（ops-knowledge-base，中文）、Operations Knowledge Base（operations-knowledge-base，英文）共八本书，用 VitePress 构建成静态站点。本仓库是 materials 素材和站点的**唯一源头**（此前并行的 Hugo 项目 `rs-docs-v2` 已归档到 `~/ccp/_archive/rs-docs-v2`，不再维护）。上线地址 `https://docs.raksmart.com/`（根路径）；发布采用"GitHub 构建产物 → `dist` 分支 → 文档服务器拉取到 staging → 人工晋升 production"，见"部署"一节。
 
 ## 常用命令
 
@@ -32,7 +32,8 @@ python3 scripts/convert_material_to_vitepress.py   # 从 materials/ 重新生成
 
 ### 新增手册与外部来稿的处理规则（2026-11-03）
 
-- **新增一本书必须登记**：转换脚本是显式登记制，在 `materials/` 放新目录不会自动生成页面。需要同时改 `scripts/convert_material_to_vitepress.py`（`BOOKS` 增加书、章节、H2→slug 映射，`__main__` 增加 `convert_book(...)`）、`docs/.vitepress/config.ts`（import 侧边栏 JSON、`nav`、`sidebar`）、`docs/index.md`（首页卡片）。H2 标题与映射表对不上会直接抛 ValueError。例：`ip-network`（《IP及网络服务介绍》）。
+- **新增一本书必须登记**：转换脚本是显式登记制，在 `materials/` 放新目录不会自动生成页面。需要同时改 `scripts/convert_material_to_vitepress.py`（`BOOKS` 增加书、章节、H2→slug 映射，`__main__` 增加 `convert_book(...)`）、`docs/.vitepress/config.ts`（import 侧边栏 JSON、`nav`、`sidebar`）、`docs/index.md`（首页卡片）。H2 标题与映射表对不上会直接抛 ValueError。例：`ip-network`（《IP及网络服务介绍》）、`app-center`（《应用中心》）。
+- **应用中心（`app-center`，2026-11-11 上线）**：`materials/应用中心/` 共 7 章（应用中心使用指南 + OpenClaw / CoPaw / WordPress / MySQL / PostgreSQL / 宝塔面板），章节 slug 依次为 `guide`、`openclaw`、`copaw`、`wordpress`、`mysql`、`postgresql`、`baota`，入口页 `/app-center/guide/overview`。内容改写自 `2026.11.6/应用中心`（docsify 结构的外部来稿，未入库，其中 OpenClaw 凭证示例含疑似真实的 Gateway Token，不得提交）。改写时的取舍：Gateway Token 换成占位符；宝塔三个被截断的示例合并为“命令行示例”一节；缺失的 `openclaw_login.jpg` 改为文字说明；产品概述补充“AI 智能体”分类。章内图片只在“应用中心使用指南”章的 `images/` 下。
 - **图片引用必须写成 `./images/文件名.png`**：脚本只整份复制章节的 `images/` 目录，不改写路径。写成裸文件名（`xxx.png`）或错误的长路径，会让 `npm run docs:build` 报 `Could not resolve` 失败。2026-11-03 已修复注册、控制台手册中 4 处此类写法。
 - **`docs/` 与 `materials/` 的不同步已消除**：2026-11-03 在 `docs/sync-colleague-edits` 分支按当前 `materials/` 重新生成过一次（24 个文件）。此前不同步的原因是 9 月 6 日同步 materials 后一直没重跑脚本，而重跑会被上述裸文件名图片路径挡住构建。
 - **同事/外部提供整份手册副本时不要直接覆盖 `materials/`**：对方多半基于旧版修改。做法是以其所基于的旧版 commit 为基线，对每个有差异的文件做三方合并（`git merge-file <当前materials文件> <基线> <对方文件>`），只合入对方相对基线的增量，并核对其中是否有回退（如把 `#购买弹性-ip` 改回 `%20`）。
@@ -89,9 +90,9 @@ gh run view <run-id> -R RaksmartDevops/RakCloud-docs --log
 
 旧的 `deploy.yml`（SSH + rsync 推送）和 GitHub secret `SERVER_SSH_KEY_B64` 已不再使用，secret 需在 GitHub 仓库设置中手动删除。
 
-### 生产环境现状（2026-11-11）
+### 生产环境现状（2026-11-12 更新）
 
-- **已上线**：`https://docs.raksmart.com/` 运行 commit `f8e91e8`（构建 `2026-11-10T14:42:02Z`），与 staging 一致。服务器路径 `/opt/nginx/html/rakcloud-docs/{releases,staging,production}`，Nginx 在 Docker 中，前面有 Cloudflare。
+- **已上线**：`https://docs.raksmart.com/` 运行 commit `cd0cdd1`（构建 `2026-11-11T07:23:35Z`，含应用中心手册），与 staging 一致；11-11 首次切换到新站时为 `f8e91e8`。服务器路径 `/opt/nginx/html/rakcloud-docs/{releases,staging,production}`，Nginx 在 Docker 中，前面有 Cloudflare。
 - **旧站归档**：旧 `docs.raksmart.com` 的配置与目录在服务器 `/opt/nginx/archive/<上线时间戳>/`，未删除，回退方法见 `deploy/README.md` 阶段 C。
 - **日常发布**：Nginx 已指向 `production` 软链接，之后只需 `promote.sh`（见上），不再改 Nginx。生产机在 JumpServer 之后，由人工在服务器上执行。
 - **已知现象**：`/vps/`、`/beginners-guide/` 目录地址返回 403（无目录首页，staging 同样），页面本身可正常访问。
