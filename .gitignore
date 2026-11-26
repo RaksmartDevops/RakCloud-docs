@@ -3,3 +3,13 @@ materials/**/.obsidian/
 node_modules/
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+
+# 本地素材 / 外部来稿目录，不同步到 GitHub
+# （可能含真实凭证，如 OpenClaw 的 Gateway Token）
+new-docs/
+
+# AI 助手规范文件只保留在本地，不入库
+AGENTS.md
+
+# 生产环境状态记录（含服务器 IP 与安全待办），仓库为公开库，不入库
+deploy/production-status.md
