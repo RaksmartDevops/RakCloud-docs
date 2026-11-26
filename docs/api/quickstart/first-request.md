@@ -1,0 +1,209 @@
+---
+title: 发起第一次调用
+---
+
+本节通过两个示例，演示如何使用 API Key 调用 API 并解读返回结果。
+
+在开始之前，请将示例中的 `YOUR_API_KEY` 替换为您的 API Key。建议将 Key 保存在环境变量中，而不是直接写入代码：
+
+```bash
+export RAKSMART_API_KEY="YOUR_API_KEY"
+```
+
+## 示例一：查询账户信息
+
+调用 `GET /user`，获取当前 API Key 所属账户的基本信息。
+
+::: code-group
+
+```bash [curl]
+curl -s https://rak-api.raksmart.com/rakapi/v2/user \
+  -H "X-API-Key: $RAKSMART_API_KEY"
+```
+
+```python [Python]
+import os
+import requests
+
+resp = requests.get(
+    "https://rak-api.raksmart.com/rakapi/v2/user",
+    headers={"X-API-Key": os.environ["RAKSMART_API_KEY"]},
+    timeout=30,
+)
+print(resp.status_code)
+print(resp.json())
+```
+
+```go [Go]
+package main
+
+import (
+	"fmt"
+	"io"
+	"net/http"
+	"os"
+	"time"
+)
+
+func main() {
+	req, _ := http.NewRequest(http.MethodGet, "https://rak-api.raksmart.com/rakapi/v2/user", nil)
+	req.Header.Set("X-API-Key", os.Getenv("RAKSMART_API_KEY"))
+
+	client := &http.Client{Timeout: 30 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	body, _ := io.ReadAll(resp.Body)
+	fmt.Println(resp.StatusCode)
+	fmt.Println(string(body))
+}
+```
+
+:::
+
+请求成功时，返回 HTTP 状态码 `200`，响应体示例如下：
+
+```json
+{
+  "firstname": "San",
+  "lastname": "Zhang",
+  "email": "user@example.com",
+  "credit": "100.00",
+  "credit_prefix": "$",
+  "credit_suffix": "USD"
+}
+```
+
+| 字段 | 说明 |
+| --- | --- |
+| `firstname` / `lastname` | 账户联系人姓名 |
+| `email` | 账户邮箱 |
+| `credit` | 账户余额 |
+| `credit_prefix` / `credit_suffix` | 货币符号与货币代码 |
+
+## 示例二：查询 VPS 列表
+
+调用 `GET /vps`，获取账户下状态为 `Active` 的 VPS，每页返回 5 条。
+
+::: code-group
+
+```bash [curl]
+curl -s "https://rak-api.raksmart.com/rakapi/v2/vps?status=Active&limit=5" \
+  -H "X-API-Key: $RAKSMART_API_KEY"
+```
+
+```python [Python]
+import os
+import requests
+
+resp = requests.get(
+    "https://rak-api.raksmart.com/rakapi/v2/vps",
+    headers={"X-API-Key": os.environ["RAKSMART_API_KEY"]},
+    params={"status": "Active", "limit": 5},
+    timeout=30,
+)
+print(resp.json())
+```
+
+```go [Go]
+package main
+
+import (
+	"fmt"
+	"io"
+	"net/http"
+	"net/url"
+	"os"
+	"time"
+)
+
+func main() {
+	q := url.Values{}
+	q.Set("status", "Active")
+	q.Set("limit", "5")
+
+	req, _ := http.NewRequest(http.MethodGet, "https://rak-api.raksmart.com/rakapi/v2/vps?"+q.Encode(), nil)
+	req.Header.Set("X-API-Key", os.Getenv("RAKSMART_API_KEY"))
+
+	client := &http.Client{Timeout: 30 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	body, _ := io.ReadAll(resp.Body)
+	fmt.Println(string(body))
+}
+```
+
+:::
+
+响应体示例：
+
+```json
+{
+  "count": 12,
+  "offset": 0,
+  "limit": 5,
+  "services": [
+    {
+      "id": 12345,
+      "type": "vps",
+      "product_id": 101,
+      "product_name": "VPS 2C4G",
+      "hostname": "web-01",
+      "region": "sv2",
+      "domainstatus": "Active",
+      "billingcycle": "Monthly",
+      "amount": "9.90",
+      "firstpaymentamount": "9.90",
+      "regdate": "2026-01-15",
+      "nextduedate": "2026-12-15",
+      "has_unpaid_invoice": false,
+      "has_pending_cancellation": false
+    }
+  ]
+}
+```
+
+| 字段 | 说明 |
+| --- | --- |
+| `count` | 符合条件的记录总数 |
+| `offset` / `limit` | 本次请求的分页参数，详见 [分页](../general/pagination.md) |
+| `services` | 服务列表 |
+| `services[].id` | 服务 ID，用于调用详情和操作类接口 |
+
+获得服务 ID 后，即可查询该 VPS 的详情：
+
+```bash
+curl -s https://rak-api.raksmart.com/rakapi/v2/vps/12345 \
+  -H "X-API-Key: $RAKSMART_API_KEY"
+```
+
+## 请求失败时
+
+如果请求失败，API 会返回相应的 HTTP 状态码，并在响应体中给出错误信息：
+
+```json
+{
+  "error_message": "Unauthorized"
+}
+```
+
+常见原因：
+
+| 状态码 | 可能原因 |
+| --- | --- |
+| `401` | 未携带 `X-API-Key`，或 API Key 无效 |
+| `404` | 资源不存在，或不属于当前账户 |
+
+完整说明请参见 [HTTP 状态码](../general/status-codes.md)。
+
+## 下一步
+
+- 了解 [认证方式](../authentication/api-key.md) 与 [安全最佳实践](../authentication/best-practices.md)
+- 阅读 [通用说明](../general/request.md)，了解分页、异步操作等通用约定

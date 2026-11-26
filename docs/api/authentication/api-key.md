@@ -1,0 +1,51 @@
+---
+title: 认证方式
+---
+
+RakSmart Cloud API 使用 API Key 进行身份认证。每个请求都必须在 HTTP 请求头中携带 API Key。
+
+## 携带 API Key
+
+将 API Key 放在请求头 `X-API-Key` 中：
+
+```http
+GET /rakapi/v2/user HTTP/1.1
+Host: rak-api.raksmart.com
+X-API-Key: rpk_01JH5J3SQ81234567890123456
+```
+
+curl 示例：
+
+```bash
+curl -s https://rak-api.raksmart.com/rakapi/v2/user \
+  -H "X-API-Key: $RAKSMART_API_KEY"
+```
+
+## 使用规则
+
+- 每个请求只能携带**一个** `X-API-Key` 请求头。携带多个时，请求将被拒绝并返回 `400`。
+- API Key 只能通过请求头传递，不支持放在 URL 参数或请求体中。
+- API Key 区分大小写，请完整复制，不要添加多余的空格或引号。
+
+## 认证失败
+
+认证失败时，API 返回 HTTP 状态码 `401`：
+
+```json
+{
+  "error_message": "Unauthorized"
+}
+```
+
+常见原因：
+
+| 原因 | 处理建议 |
+| --- | --- |
+| 请求头中没有 `X-API-Key` | 检查请求代码是否正确设置了请求头 |
+| API Key 格式不正确 | 确认 Key 以 `rpk_` 开头，且完整无多余字符 |
+| API Key 与控制台显示的不一致 | 在控制台 **API Key** 页面重新复制 |
+| 请求头名称拼写错误 | 请求头名称为 `X-API-Key` |
+
+## 权限范围
+
+API Key 代表其所属的账户，可以查询和操作该账户下的全部资源，无法访问其他账户的资源。
