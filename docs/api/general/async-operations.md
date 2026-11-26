@@ -1,0 +1,84 @@
+---
+title: 异步操作
+---
+
+开机、关机、重启、挂载、绑定、快照恢复等操作需要一定时间才能完成。为避免请求长时间等待，这类接口采用异步方式处理。
+
+## 工作方式
+
+1. 调用操作接口，例如 `POST /vps/12345/stop`。
+2. API 受理请求并下发指令，返回 `204`。
+3. 操作在后台执行。
+4. 通过查询接口确认操作结果。
+
+::: warning 注意
+`204` 仅表示指令已成功下发，**不代表操作已经完成**。操作可能需要几秒到几分钟不等，具体取决于操作类型和资源状态。
+:::
+
+## 涉及的接口
+
+| 产品 | 操作 | 确认结果的接口 |
+| --- | --- | --- |
+| VPS | `start`、`stop`、`restart`、`hard_stop`、`hard_restart` | `GET /vps/{id}` |
+| 裸机云 | `start`、`stop`、`restart`、`hard_stop`、`hard_restart` | `GET /bare-metals/{id}` |
+| 独立服务器 | `start`、`stop`、`restart` | `GET /dedicated-servers/{id}` |
+| 独立云盘 | `attach`、`detach` | `GET /volumes/{id}` |
+| 弹性 IP | `attach`、`detach` | `GET /elastic-ips/{id}` |
+| 快照 | `restore` | 对应实例的详情接口 |
+
+## 普通操作与强制操作
+
+| 操作 | 说明 |
+| --- | --- |
+| `stop` | 关机。向操作系统发送关机信号，由系统正常关闭 |
+| `hard_stop` | 强制关机。直接切断电源，相当于拔掉电源线 |
+| `restart` | 重启。由操作系统正常重启 |
+| `hard_restart` | 强制重启。直接断电后重新启动 |
+
+::: warning 注意
+独立服务器的 `stop` 和 `restart` 直接控制服务器电源，效果等同于强制关机和强制重启。
+:::
+
+::: danger 风险提示
+强制关机和强制重启可能导致未保存的数据丢失或文件系统损坏。请仅在普通操作无响应时使用。
+:::
+
+## 轮询确认结果
+
+调用操作接口后，定期查询资源详情，直到 `status` 变为预期的状态。
+
+建议：
+
+- **轮询间隔**：5 到 10 秒。
+- **超时时间**：根据操作类型设置，例如开关机设置为 5 分钟。超时后请登录控制台查看，或提交工单。
+- 轮询时注意 [请求频率限制](./rate-limits.md)。
+
+```python
+import os
+import time
+import requests
+
+BASE = "https://rak-api.raksmart.com/rakapi/v2"
+HEADERS = {"X-API-Key": os.environ["RAKSMART_API_KEY"]}
+
+def stop_vps_and_wait(service_id, expected_status, timeout=300, interval=10):
+    resp = requests.post(f"{BASE}/vps/{service_id}/stop", headers=HEADERS, timeout=30)
+    if resp.status_code != 204:
+        raise RuntimeError(f"stop failed: {resp.status_code} {resp.text}")
+
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        time.sleep(interval)
+        detail = requests.get(f"{BASE}/vps/{service_id}", headers=HEADERS, timeout=30).json()
+        if detail.get("status") == expected_status:
+            return detail
+    raise TimeoutError("operation not finished in time")
+```
+
+<!-- TODO: 补充各产品实例 status 的取值（如运行中、已关机对应的值），并替换示例中的 expected_status -->
+
+`status` 的具体取值请参见 [在线 API 参考](https://rak-api.raksmart.com/) 中各产品的详情接口。
+
+## 避免重复操作
+
+操作指令下发后，在确认结果之前，请勿重复调用同一操作。如果调用操作接口时出现超时等网络错误，请先查询资源状态，再决定是否需要重新操作。详见 [错误处理与重试](./error-handling.md)。

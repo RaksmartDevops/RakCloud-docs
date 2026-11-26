@@ -987,19 +987,66 @@ def build_ops_kb_en_categories() -> list[dict]:
     ]
 
 
+# ---------------------------------------------------------------------------
+# API 文档：分类目录多文件 + 两个顶层独立页（API 参考 / 常见问题）
+# 素材来自外部来稿 new-docs/api-docs（原为多文件目录结构），已改写成本仓库的
+# 「书 → 分类目录 → .md」素材。文章 slug 与来稿文件名保持一致，因此正文里的
+# 英文相对链接（如 ./rate-limits.md、../authentication/api-key.md）转换后仍能
+# 直接解析，不需要登记到 LINK_FIXES 表。
+# ---------------------------------------------------------------------------
+API_DOCS_BOOK_SLUG = "api"
+API_DOCS_TITLE = "API 文档"
+API_DOCS_MATERIAL_DIR = "API文档"
+
+API_DOCS_CATEGORIES: list[dict] = [
+    {"dir": "概述", "slug": "overview", "weight": 10, "docs": {
+        "API 简介.md": "introduction",
+        "基本信息.md": "basics",
+    }},
+    {"dir": "快速入门", "slug": "quickstart", "weight": 20, "docs": {
+        "使用流程.md": "workflow",
+        "获取 API Key.md": "get-api-key",
+        "发起第一次调用.md": "first-request",
+    }},
+    {"dir": "认证与安全", "slug": "authentication", "weight": 30, "docs": {
+        "认证方式.md": "api-key",
+        "安全最佳实践.md": "best-practices",
+    }},
+    {"dir": "通用说明", "slug": "general", "weight": 40, "docs": {
+        "请求结构.md": "request",
+        "响应结构.md": "response",
+        "HTTP 状态码.md": "status-codes",
+        "分页.md": "pagination",
+        "异步操作.md": "async-operations",
+        "请求频率限制.md": "rate-limits",
+        "错误处理与重试.md": "error-handling",
+    }},
+]
+
+API_DOCS_ROOT_PAGES: list[dict] = [
+    {"file": "API 参考.md", "slug": "reference", "weight": 50},
+    {"file": "常见问题.md", "slug": "faq", "weight": 60},
+]
+
+
 def convert_ops_kb(
     *,
     book_slug: str = OPS_KB_BOOK_SLUG,
     title: str = OPS_KB_TITLE,
     material_dir: str = OPS_KB_MATERIAL_DIR,
     categories: list[dict] | None = None,
+    root_pages: list[dict] | None = None,
     section_heading: str = "分类",
     labels: tuple[str, str] = ("本分类内容", "子分类"),
     demote_headings: bool = False,
 ) -> None:
+    """root_pages 为「顶层独立页」：素材放在书本根目录下，转换后直接落在
+    docs/<book_slug>/<slug>.md，不进任何分类目录，sidebar 里是一条平级链接
+    （用于 API 文档的「API 参考」「常见问题」这类单页章节）。"""
     categories = OPS_KB_CATEGORIES if categories is None else categories
     src_root = MATERIALS_DIR / material_dir
     dst_root = DOCS_DIR / book_slug
+    dst_root.mkdir(parents=True, exist_ok=True)
 
     sidebar_groups = []
     for category in categories:
@@ -1013,10 +1060,27 @@ def convert_ops_kb(
         sidebar_groups.append(
             build_ops_kb_sidebar_item(category, doc_entries, sub_results, f"/{book_slug}")
         )
+
+    root_entries: list[tuple[str, str]] = []
+    for page in root_pages or []:
+        page_path = src_root / page["file"]
+        raw = strip_front_matter(page_path.read_text(encoding="utf-8"))
+        page_title, body_lines = extract_ops_kb_title_and_body(raw)
+        if demote_headings:
+            body_lines = demote_ops_kb_body_headings(body_lines)
+        validate_ops_kb_body(body_lines, page_path)
+        body = "\n".join(body_lines).strip("\n")
+        (dst_root / f"{page['slug']}.md").write_text(
+            f"---\ntitle: {yaml_title(page_title)}\n---\n\n{body}\n", encoding="utf-8"
+        )
+        root_entries.append((page_title, page["slug"]))
+
+    sidebar_groups.extend({"text": t, "link": f"/{book_slug}/{s}"} for t, s in root_entries)
     write_sidebar_json(book_slug, sidebar_groups)
 
     index_lines = ["---", f"title: {title}", "---", "", f"# {title}", "", f"## {section_heading}"]
     index_lines += [f"- [{c['dir']}](./{c['slug']}/index.md)" for c in categories]
+    index_lines += [f"- [{t}](./{s}.md)" for t, s in root_entries]
     (dst_root / "index.md").write_text("\n".join(index_lines) + "\n", encoding="utf-8")
 
 
@@ -1029,6 +1093,13 @@ if __name__ == "__main__":
     convert_book("app-center")
     convert_ops_kb()
     convert_ops_kb(
+        book_slug=API_DOCS_BOOK_SLUG,
+        title=API_DOCS_TITLE,
+        material_dir=API_DOCS_MATERIAL_DIR,
+        categories=API_DOCS_CATEGORIES,
+        root_pages=API_DOCS_ROOT_PAGES,
+    )
+    convert_ops_kb(
         book_slug=OPS_KB_EN_BOOK_SLUG,
         title=OPS_KB_EN_TITLE,
         material_dir=OPS_KB_EN_MATERIAL_DIR,
@@ -1037,4 +1108,4 @@ if __name__ == "__main__":
         labels=("Articles in this category", "Subcategories"),
         demote_headings=True,
     )
-    print("VPS / 独服 / 裸机云 / 新手指南 / IP 及网络服务 / 应用中心 / 运维知识库 / Operations Knowledge Base 转换完成")
+    print("VPS / 独服 / 裸机云 / 新手指南 / IP 及网络服务 / 应用中心 / 运维知识库 / Operations Knowledge Base / API 文档 转换完成")

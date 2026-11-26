@@ -1,0 +1,90 @@
+[
+  {
+    "text": "概述",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "API 简介",
+        "link": "/api/overview/introduction"
+      },
+      {
+        "text": "基本信息",
+        "link": "/api/overview/basics"
+      }
+    ]
+  },
+  {
+    "text": "快速入门",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "使用流程",
+        "link": "/api/quickstart/workflow"
+      },
+      {
+        "text": "获取 API Key",
+        "link": "/api/quickstart/get-api-key"
+      },
+      {
+        "text": "发起第一次调用",
+        "link": "/api/quickstart/first-request"
+      }
+    ]
+  },
+  {
+    "text": "认证与安全",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "认证方式",
+        "link": "/api/authentication/api-key"
+      },
+      {
+        "text": "安全最佳实践",
+        "link": "/api/authentication/best-practices"
+      }
+    ]
+  },
+  {
+    "text": "通用说明",
+    "collapsed": true,
+    "items": [
+      {
+        "text": "请求结构",
+        "link": "/api/general/request"
+      },
+      {
+        "text": "响应结构",
+        "link": "/api/general/response"
+      },
+      {
+        "text": "HTTP 状态码",
+        "link": "/api/general/status-codes"
+      },
+      {
+        "text": "分页",
+        "link": "/api/general/pagination"
+      },
+      {
+        "text": "异步操作",
+        "link": "/api/general/async-operations"
+      },
+      {
+        "text": "请求频率限制",
+        "link": "/api/general/rate-limits"
+      },
+      {
+        "text": "错误处理与重试",
+        "link": "/api/general/error-handling"
+      }
+    ]
+  },
+  {
+    "text": "API 参考",
+    "link": "/api/reference"
+  },
+  {
+    "text": "常见问题",
+    "link": "/api/faq"
+  }
+]

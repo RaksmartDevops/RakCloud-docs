@@ -47,6 +47,11 @@ features:
     details: 一键部署 OpenClaw、WordPress、MySQL、宝塔面板等开源应用，无需专业运维
     link: /app-center/guide/overview
     linkText: 查看文档
+  - icon: 🔌
+    title: API 文档
+    details: RakSmart Cloud API 使用手册，支持以编程方式查询和管理账户下的云资源
+    link: /api/overview/introduction
+    linkText: 查看文档
   - icon: 📚
     title: 运维知识库
     details: 常见问题、故障排查与运维操作指南，覆盖网络/系统/账单等场景
